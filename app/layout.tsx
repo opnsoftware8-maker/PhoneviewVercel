@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./global.css";
 import { Trirong, Prompt } from "next/font/google";
 
 // 1. นำเข้าและตั้งค่าฟอนต์ Trirong (สำหรับชื่อรุ่นมือถือ และ ราคา)

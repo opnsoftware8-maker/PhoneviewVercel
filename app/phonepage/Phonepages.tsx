@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone } from './Type'; 
+import { Phone } from '../../data/Type'; 
 
 interface PhonePageProps {
   phoneDat: Phone;

@@ -1,7 +1,4 @@
 
-
-@import "tailwindcss";
-
 @theme {
   --font-trirong: var(--font-trirong);
   --font-prompt: var(--font-prompt);

@@ -43,13 +43,5 @@ export function Phonecard({ Device }: { Device: any }) {
              </div>
          </div>
     </div>
-  )
-}
-             <button className="font-prompt whitespace-nowrap bg-black font-bold text-white py-1 px-4 rounded-[12px] h-10 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md hover:shadow-lg">
-                     สำรวจสเปค
-                 </button>
-             </div>
-         </div>
-    </div>
-  )
+  );
 }

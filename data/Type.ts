@@ -88,10 +88,7 @@ export type Phone = {
   lazada?: string;
   youtube?: string;
 };
-
- string[];    
   cons: string[];         
-  cons: string[];
 
   official: string;
   shopee?: string;                                        

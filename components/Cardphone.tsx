@@ -77,13 +77,17 @@ export function Phonecard({ Device }: { Device: any }) {
       
       <hr className="my-3 border-gray-300" />
       
-      <div className="flex flex-col justify-between h-full">
-        <p className="font-trirong font-semibold text-lg text-black">
-          {Device.latestPrice?.defaultPrice ? `${Device.latestPrice.defaultPrice.toLocaleString()} บาท` : "ไม่ระบุราคา"}
-        </p>  
-        <button className="font-prompt whitespace-nowrap bg-black font-bold text-white px-4 rounded-[12px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md">สำรวจสเปค</button>
-        
-      </div>
+      <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+  <p className="font-trirong font-semibold text-lg text-black">
+    {Device.latestPrice?.defaultPrice
+      ? `${Device.latestPrice.defaultPrice.toLocaleString()} บาท`
+      : "ไม่ระบุราคา"}
+  </p>
+
+  <button className="font-prompt whitespace-nowrap bg-black font-bold text-white px-4 py-2 rounded-[12px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md">
+    สำรวจสเปค
+  </button>
+</div>
     </div>
   );
               }

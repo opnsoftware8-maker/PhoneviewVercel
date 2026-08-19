@@ -1,4 +1,3 @@
-
 @theme {
   --font-trirong: var(--font-trirong);
   --font-prompt: var(--font-prompt);
@@ -10,8 +9,31 @@ html {
 
 body {
   background-color: white;
+  
+  /* ล็อคไม่ให้ก๊อปปี้ คลุมดำ หรือกดค้างเลือกข้อความทั้งหน้าเว็บ */
+  -webkit-user-select: none; /* Safari / iOS */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE / Edge */
+  user-select: none;         /* Standard */
+  
+  /* ปิดแถบไฮไลต์สีเทา/ฟ้า เวลากดสัมผัสบนมือถือ Android/iOS */
+  -webkit-tap-highlight-color: transparent; 
 }
 
+/* ยกเว้นช่องกรอกข้อมูล ให้ผู้ใช้คลิกพิมพ์และก๊อปปี้คำค้นหาได้ตามปกติ */
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* บังคับให้ Input, Button, Select สืบทอดฟอนต์มาใช้ */
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+/* ซ่อน Scrollbar สำหรับ Element ที่ใช้คลาส .hide-scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -20,37 +42,3 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-ebkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-input, button, select, textarea {
-  font-family: inherit;
-}
-/* เปลี่ยนสีแถบคลุมดำ (Selection) ทั่วทั้งเว็บ */
-::selection {
-  background-color: rgba(59, 130, 246, 0.2); /* เปลี่ยนเป็นสีฟ้าใสๆ นุ่มตา */
-  color: inherit; /* คงสีตัวอักษรเดิมไว้ */
-}
-
-/* รองรับ Mozilla Firefox */
-::-moz-selection {
-  background-color: rgba(59, 130, 246, 0.2);
-  color: inherit;
-}
-/* ปิดการคลุมดำเฉพาะปุ่มกด และลิงก์ */
-button, a {
-  -webkit-user-select: none; /* Safari / iOS */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE / Edge */
-  user-select: none;         /* Standard */
-  
-  /* ปิดแถบไฮไลต์สีเทา/ฟ้า เวลากดบนมือถือ Android/iOS */
-  -webkit-tap-highlight-color: transparent; 
-}
-
-

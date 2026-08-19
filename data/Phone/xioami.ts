@@ -1,4 +1,4 @@
-import { CalcuGame, PriceTier, Phone, SaleStatus, DeviceType } from './Type';
+import { CalcuGame, PriceTier, Phone, SaleStatus, DeviceType } from '../Type';
 
 export const xiaomiphone: Phone[] = [
   {

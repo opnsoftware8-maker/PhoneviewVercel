@@ -77,7 +77,7 @@ export function Phonecard({ Device }: { Device: any }) {
       
       <hr className="my-3 border-gray-300" />
       
-      <div className="flex justify-between items-center py-[1px]">
+      <div className="flex flex-col justify-between h-full">
         <p className="font-trirong font-semibold text-lg text-black">
           {Device.latestPrice?.defaultPrice ? `${Device.latestPrice.defaultPrice.toLocaleString()} บาท` : "ไม่ระบุราคา"}
         </p>  

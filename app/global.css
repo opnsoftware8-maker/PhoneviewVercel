@@ -28,3 +28,6 @@ ebkit-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+input, button, select, textarea {
+  font-family: inherit;
+}

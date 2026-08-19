@@ -63,7 +63,7 @@ export default function App() {
       </header>
       
       <main className="p-4 max-w-6xl mx-auto">
-        <div>
+        <div className="flex flex-wrap gap-2 p-2>
           <div>
             <input 
               placeholder="ค้นหามือถือได้ที่นี่!" 

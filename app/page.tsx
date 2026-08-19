@@ -20,9 +20,10 @@ export default function App() {
   const [PhoneArr, setPhoneArr] = useState<any[]>([]); 
   
   useEffect(() => {
-      if (!Allphone || !Allphone.xiaomiphone) return;
+      if (!Allphone) return;
 
-      const FilteredData = Allphone.xiaomiphone.filter(phone => {
+      // ใช้ .filter() ชั้นเดียวให้ถูกต้องตามโครงสร้าง Array
+      const FilteredData = Allphone.filter(phone => {
           if (searchTerm.trim() !== "") {
               const searchWords = searchTerm.toLowerCase().trim().split(/\s+/);
               const phoneName = phone.name?.toLowerCase() || "";

@@ -1,6 +1,6 @@
 import { xiaomiphone } from "./Phone/xioami"
 
-export const Allphone = {
+export const Allphone = [
   ...xiaomiphone,
 
-};
+];

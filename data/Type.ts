@@ -76,42 +76,11 @@ export type Phone = {
     durability: boolean;
     budget: boolean;
     performance: boolean;
-    battery: boolean;
-    entertainment: boolean;
-  };
+  }; /* ปิดปีกกาของ recommended ตรงนี้ */
 
-  pros: string[];
+  /* เอาพวก cons และลิงก์ต่างๆ กลับมาใส่ไว้ในระดับเดียวกับ scores/recommended */
+  youtube?: string;
   cons: string[];
-
   official: string;
   shopee?: string;
-  lazada?: string;
-  youtube?: string;
-};
-  cons: string[];         
-
-  official: string;
-  shopee?: string;                                        
-  lazada?: string;
-  youtube?: string;
-};be?: string;
-};: boolean
-  };
-
-  pros: string[];    
-  cons: string[];         
-  cons: string[];
-
-  official: string;
-  shopee?: string;                                        
-  lazada?: string;
-  youtube?: string;
-};    lazada?: string;
-  youtube?: string;
-};tring;
-  shopee?: string;                                        
-  lazada?: string;
-  youtube?: string;
-};    lazada?: string;
-  youtube?: string;
-};
+}; /* ปิดปีกกาสุดท้ายของ Phone ตรงนี้! */

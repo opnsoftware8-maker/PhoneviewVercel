@@ -76,11 +76,15 @@ export type Phone = {
     durability: boolean;
     budget: boolean;
     performance: boolean;
-  }; /* ปิดปีกกาของ recommended ตรงนี้ */
+    battery: boolean;
+    entertainment: boolean;
+  };
 
-  /* เอาพวก cons และลิงก์ต่างๆ กลับมาใส่ไว้ในระดับเดียวกับ scores/recommended */
-  youtube?: string;
+  pros: string[];
   cons: string[];
+
   official: string;
   shopee?: string;
-}; /* ปิดปีกกาสุดท้ายของ Phone ตรงนี้! */
+  lazada?: string;
+  youtube?: string;
+};

@@ -65,6 +65,7 @@ export default function App() {
       <main className="p-4 max-w-6xl mx-auto">
         <div className="flex flex-wrap gap-2 p-2>
           <div>
+          <div>
             <input 
               placeholder="ค้นหามือถือได้ที่นี่!" 
               value={searchTerm} 
@@ -107,6 +108,7 @@ export default function App() {
             )}
           </div>
         </div>
+    </div>
         
         <div className="mt-4">
           <button className="bg-blue-600 hover:bg-blue-700 text-white p-2 px-6 rounded font-semibold transition-colors" onClick={() => SetfindButton(!getfindButton)}>

@@ -1,14 +1,12 @@
 import "./global.css";
 import { Trirong, Prompt } from "next/font/google";
 
-// 1. นำเข้าและตั้งค่าฟอนต์ Trirong
 const trirong = Trirong({
   subsets: ["thai", "latin"],
   weight: ["400", "600", "700", "800"],
   variable: "--font-trirong",
 });
 
-// 2. นำเข้าและตั้งค่าฟอนต์ Prompt
 const prompt = Prompt({
   subsets: ["thai", "latin"],
   weight: ["300", "400", "500", "600"],
@@ -28,14 +26,26 @@ export default function RootLayout({
   return (
     <html lang="th">
       <head>
-        {/* ดึง Tailwind ผ่าน CDN ตรงนี้ เพื่อให้ Vercel ไม่งอแงเรื่องแพ็กเกจ */}
         <script src="https://cdn.tailwindcss.com"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              tailwind.config = {
+                theme: {
+                  extend: {
+                    fontFamily: {
+                      trirong: ['var(--font-trirong)', 'serif'],
+                      prompt: ['var(--font-prompt)', 'sans-serif'],
+                    }
+                  }
+                }
+              }
+            `,
+          }}
+        />
       </head>
-      
-      {/* 🟢 จุดที่แก้: กำหนด style fontFamily โดยตรงผ่าน variable ของ prompt */}
       <body 
-        className={`${trirong.variable} ${prompt.variable} antialiased`}
-        style={{ fontFamily: 'var(--font-prompt), sans-serif' }}
+        className={`${trirong.variable} ${prompt.variable} font-prompt antialiased`}
       >
         {children}
       </body>

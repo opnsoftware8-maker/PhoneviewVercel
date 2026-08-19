@@ -42,3 +42,8 @@ input, button, select, textarea {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+/* ป้องกันการ double-tap เพื่อซูมบนมือถือ */
+html, body {
+  touch-action: manipulation;
+}
+

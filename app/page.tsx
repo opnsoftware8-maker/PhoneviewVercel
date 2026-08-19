@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Allphone } from '../data/index';
-import { Phonecard } from '../components/Cardphone'; 
+import { Phonecard } from './Cardphone'; 
 
 export default function App() {
   const [filterbutton, setFilterbutton] = useState(false);

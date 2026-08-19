@@ -25,7 +25,7 @@ export function Phonecard({ Device }: { Device: any }) {
   return (
     // 1. ใส่ h-[400px] (กำหนดความสูงตายตัว ปรับตัวเลขได้ตามต้องการ) 
     // 2. ใส่ flex flex-col (บังคับโครงสร้างแนวตั้ง)
-    <div className="w-full max-w-sm h-[400px] flex flex-col overflow-hidden border-[2px] border-zinc-300 rounded-xl p-4 bg-white transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:border-zinc-500">
+    <div className="w-full max-w-sm h-[200px] flex flex-col overflow-hidden border-[2px] border-zinc-300 rounded-xl p-4 bg-white transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:border-zinc-500">
       
       {/* --- ส่วนเนื้อหาด้านบน (ให้ยืดหดตามพื้นที่ที่เหลือด้วย flex-1 min-h-0) --- */}
       <div className="flex-1 flex flex-col min-h-0 w-full">

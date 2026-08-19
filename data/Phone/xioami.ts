@@ -1,7 +1,7 @@
-import { CalcuGame,PriceTier,Phone,SaleStatus, DeviceType} from '../Type';
+import { CalcuGame, PriceTier, Phone, SaleStatus, DeviceType } from './Type';
 
-export const Xiaomiphone: Record<string, Phone> = {
-  Xiaomi15: {
+export const xiaomiphone: Phone[] = [
+  {
     name: "Xiaomi 15",
     brand: "Xiaomi",
     type: "phone",
@@ -71,4 +71,4 @@ export const Xiaomiphone: Record<string, Phone> = {
     shopee: "https://shopee.co.th/xiaomi_official_store",
     lazada: "https://www.lazada.co.th/shop/xiaomi",
   }
-};
+];

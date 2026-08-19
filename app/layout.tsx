@@ -54,3 +54,50 @@ export default function RootLayout({
     </html>
   );
 }
+"use client";
+import { useEffect } from "react";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    // 1. ป้องกันการซูมด้วยปุ่มลัดบนคีย์บอร์ด (Ctrl + +, Ctrl + -, Ctrl + 0)
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        (e.ctrlKey || e.metaKey) &&
+        (e.key === "+" || e.key === "-" || e.key === "=" || e.key === "0")
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    // 2. ป้องกันการซูมด้วยการหมุน Wheel เมาส์ร่วมกับ Ctrl
+    const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    };
+
+    // 3. ป้องกัน Gesture Zoom (ถ่างนิ้ว) บนมือถือ/Safari
+    const handleGesture = (e: Event) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    document.addEventListener("gesturestart", handleGesture);
+    document.addEventListener("gesturechange", handleGesture);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", handleWheel);
+      document.removeEventListener("gesturestart", handleGesture);
+      document.removeEventListener("gesturechange", handleGesture);
+    };
+  }, []);
+
+  return (
+    <html lang="th">
+      {/* ... */}
+      <body>{children}</body>
+    </html>
+  );
+}

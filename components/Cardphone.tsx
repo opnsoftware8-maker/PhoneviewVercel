@@ -84,7 +84,7 @@ export function Phonecard({ Device }: { Device: any }) {
       : "ไม่ระบุราคา"}
   </p>
 
-  <button className="font-prompt whitespace-nowrap bg-black font-bold text-white px-4 py-2 rounded-[12px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md">
+  <button className="font-prompt whitespace-nowrap bg-black font-bold h-10 text-white px-4 py-2 rounded-[12px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md">
     สำรวจสเปค
   </button>
 </div>

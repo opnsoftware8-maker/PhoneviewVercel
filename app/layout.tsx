@@ -31,8 +31,12 @@ export default function RootLayout({
         {/* ดึง Tailwind ผ่าน CDN ตรงนี้ เพื่อให้ Vercel ไม่งอแงเรื่องแพ็กเกจ */}
         <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      {/* ผูก variable ของฟอนต์เดิมไว้เหมือนเดิมเป๊ะ */}
-      <body className={`${trirong.variable} ${prompt.variable} font-prompt antialiased`}>
+      
+      {/* 🟢 จุดที่แก้: กำหนด style fontFamily โดยตรงผ่าน variable ของ prompt */}
+      <body 
+        className={`${trirong.variable} ${prompt.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-prompt), sans-serif' }}
+      >
         {children}
       </body>
     </html>

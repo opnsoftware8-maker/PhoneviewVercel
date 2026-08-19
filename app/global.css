@@ -31,3 +31,26 @@ ebkit-scrollbar {
 input, button, select, textarea {
   font-family: inherit;
 }
+/* เปลี่ยนสีแถบคลุมดำ (Selection) ทั่วทั้งเว็บ */
+::selection {
+  background-color: rgba(59, 130, 246, 0.2); /* เปลี่ยนเป็นสีฟ้าใสๆ นุ่มตา */
+  color: inherit; /* คงสีตัวอักษรเดิมไว้ */
+}
+
+/* รองรับ Mozilla Firefox */
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: inherit;
+}
+/* ปิดการคลุมดำเฉพาะปุ่มกด และลิงก์ */
+button, a {
+  -webkit-user-select: none; /* Safari / iOS */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE / Edge */
+  user-select: none;         /* Standard */
+  
+  /* ปิดแถบไฮไลต์สีเทา/ฟ้า เวลากดบนมือถือ Android/iOS */
+  -webkit-tap-highlight-color: transparent; 
+}
+
+

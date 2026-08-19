@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 export function Phonecard({ Device }: { Device: any }) {
-  
+  const specRef = useRef<HTMLDivElement>(null);
+  const tagRef = useRef<HTMLDivElement>(null);
+
   const getDeviceTypeTH = (type: string) => {
     switch (type?.toLowerCase()) {
       case 'phone':
@@ -11,6 +13,12 @@ export function Phonecard({ Device }: { Device: any }) {
         return 'แท็บเล็ต';
       default:
         return type || 'สมาร์ทโฟน';
+    }
+  };
+
+  const handleWheelScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (e.deltaY !== 0) {
+      e.currentTarget.scrollLeft += e.deltaY;
     }
   };
 
@@ -26,7 +34,12 @@ export function Phonecard({ Device }: { Device: any }) {
           )}
         </div>
       
-        <div className="max-h-40 overflow-x-auto flex gap-4 whitespace-nowrap w-full py-[2px] mt-2 text-sm font-prompt" style={{ scrollbarWidth: 'none' }}>
+        <div 
+          ref={specRef}
+          onWheel={handleWheelScroll}
+          className="max-h-40 overflow-x-auto flex gap-4 whitespace-nowrap w-full py-[2px] mt-2 text-sm font-prompt cursor-grab active:cursor-grabbing" 
+          style={{ scrollbarWidth: 'none' }}
+        >
           <p className="flex-shrink-0">•ประเภทอุปกรณ์: {getDeviceTypeTH(Device.type)}</p>
           {Device.chip && <p className="flex-shrink-0">•ชิปประมวลผล: {Device.chip}</p>}
           {Device.display && <p className="flex-shrink-0">•หน้าจอ: {Device.display}</p>}
@@ -47,7 +60,12 @@ export function Phonecard({ Device }: { Device: any }) {
         </div>
       </div>
     
-      <div className="flex gap-1.5 overflow-x-auto whitespace-nowrap w-full py-[2px] mt-2 font-prompt" style={{ scrollbarWidth: 'none' }}>
+      <div 
+        ref={tagRef}
+        onWheel={handleWheelScroll}
+        className="flex gap-1.5 overflow-x-auto whitespace-nowrap w-full py-[2px] mt-2 font-prompt cursor-grab active:cursor-grabbing" 
+        style={{ scrollbarWidth: 'none' }}
+      >
         {Device.recommended?.gaming && <p className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-lg cursor-default">เกมส์มิ่ง</p>} 
         {Device.recommended?.camera && <p className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-lg cursor-default">การถ่ายภาพ</p>}
         {Device.recommended?.durability && <p className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-lg cursor-default">ทนทาน</p>}
@@ -69,5 +87,5 @@ export function Phonecard({ Device }: { Device: any }) {
       </div>
     </div>
   );
-}
-
+              }
+        

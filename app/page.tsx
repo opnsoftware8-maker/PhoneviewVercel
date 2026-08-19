@@ -142,7 +142,7 @@ export default function App() {
         </div>
         
         {/* กล่องแสดงผลลัพธ์ Card มือถือ */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
               <Phonecard key={Data.id || index} Device={Data} />

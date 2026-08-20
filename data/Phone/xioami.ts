@@ -94,10 +94,9 @@ export const xiaomiphone: Phone[] = [
   speaker: "ลำโพงเดี่ยว",
 
   storageRam: [
-    { ram: 4, storage: 128, price: 0 },
-    { ram: 4, storage: 256, price: 0 },
-    { ram: 6, storage: 128, price: 0 },
-    { ram: 8, storage: 256, price: 0 },
+    { ram: 4, storage: 128, price:  3499},
+    { ram: 6, storage: 128, price: 3999 },
+    { ram: 8, storage: 256, price: 4999 },
   ],
 
   display: '6.9" LCD, 120Hz, 1600×720',

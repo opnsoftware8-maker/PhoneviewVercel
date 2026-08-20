@@ -79,7 +79,7 @@ export const xiaomiphone: Phone[] = [
   priceTier: "entry",
 
   latestPrice: {
-    defaultPrice: 0,
+    defaultPrice: 3499,
     priceFrom: "https://www.mi.com/th/product/redmi-15c/",
   },
 

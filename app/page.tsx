@@ -21,6 +21,7 @@ export default function App() {
       battery: false,
       entertainment: false
   });
+  const [CardProp, setCardProp] = useState<string>("null");
   
   useEffect(() => {
       if (!Allphone) return;

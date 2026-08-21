@@ -205,7 +205,7 @@ export default function App() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
-              <Phonecard key={Data.id || index} Device={Data} />
+              <Phonecard key={Data.id || index} Device={Data} PropCard={CardProp}/>
             ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300">

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-export function Phonecard({ Device, setCardProp}: { Device: any ,SetCardProp: any }) {
+export function Phonecard({ Device, PropCard}: { Device: any ,PropCard: any }) {
   const specRef = useRef<HTMLDivElement>(null);
   const tagRef = useRef<HTMLDivElement>(null);
 

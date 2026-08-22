@@ -226,6 +226,7 @@ export default function App() {
             </div>
           )}
         </div>
+        <Phonepage />
       </main>
     </div>
   );

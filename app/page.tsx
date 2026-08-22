@@ -226,7 +226,7 @@ export default function App() {
             </div>
           )}
         </div>
-        <Phonepage />
+        <Phonepage phoneDat={} PhoneProp={}/>
       </main>
     </div>
   );

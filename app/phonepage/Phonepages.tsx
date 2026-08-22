@@ -18,6 +18,7 @@ export default function Phonepage({ phoneDat, PhoneProp }: { phoneDat: any; Phon
         <button 
           type="button" 
           className="absolute top-4 right-4 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-medium px-3 py-1.5 rounded-lg text-sm transition"
+          onClick={() => PhoneProp("null")}
         >
           ปิด
         </button>

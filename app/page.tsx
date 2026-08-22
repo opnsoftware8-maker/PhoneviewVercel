@@ -24,6 +24,12 @@ export default function App() {
   });
   const [CardProp, setCardProp] = useState<string>("null");
   const [ResultphoneDat, setPhoneDat] = useState(Allphone.find(phone => phone.name === CardProp) );
+
+useEffect(() => {
+  setPhoneDat(
+    Allphone.find(phone => phone.name === CardProp)
+  );
+}, [CardProp]);
   
   useEffect(() => {
       if (!Allphone) return;

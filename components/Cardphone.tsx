@@ -89,7 +89,7 @@ export function Phonecard({ Device, PropCard}: { Device: any ,PropCard: any }) {
               : "ไม่ระบุราคา"}
           </p>
 
-          <button className="font-prompt whitespace-nowrap bg-black font-bold h-10 text-white px-4 rounded-[12px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md "onClick={() => PropCard(Device.name)}>
+          <button className="font-prompt whitespace-nowrap bg-black font-bold h-10 text-white px-4 rounded-[12px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105 hover:bg-zinc-800 active:bg-zinc-700/90 active:scale-95 shadow-md " onClick={() => PropCard(Device.name)}>
             สำรวจสเปค
           </button>
         </div>

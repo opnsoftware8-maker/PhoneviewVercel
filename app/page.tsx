@@ -227,7 +227,7 @@ const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp
             </div>
           )}
         </div>
-        <Phonepage phoneDat={ResultphoneDat} PhoneProp={setCardProp} />
+        {CardProp != "null" && <Phonepage phoneDat={ResultphoneDat} PhoneProp={setCardProp} /> }
       </main>
     </div>
   );

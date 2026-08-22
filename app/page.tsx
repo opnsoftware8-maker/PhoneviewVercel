@@ -23,6 +23,7 @@ export default function App() {
       entertainment: false
   });
   const [CardProp, setCardProp] = useState<string>("null");
+  const [ResultphoneDat, setphoneDat] = useState(CardProp);
   
   useEffect(() => {
       if (!Allphone) return;
@@ -226,7 +227,7 @@ export default function App() {
             </div>
           )}
         </div>
-        <Phonepage phoneDat={} PhoneProp={}/>
+        <Phonepage phoneDat={ResultphoneDat} PhoneProp={setCardProp} />
       </main>
     </div>
   );

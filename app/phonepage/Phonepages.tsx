@@ -5,7 +5,7 @@ interface PhonePageProps {
   phoneDat: Phone;
 }
 
-export default function Phonepage({ phoneDat }: PhonePageProps) {
+export default function Phonepage({ phoneDat,PhoneProp}: any) {
   if (!phoneDat) return null; 
 
   return (

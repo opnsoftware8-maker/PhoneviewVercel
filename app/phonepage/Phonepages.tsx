@@ -25,7 +25,7 @@ export default function Phonepage({ phoneDat, PhoneProp }: { phoneDat: any; Phon
 
         <header className="mb-8 border-b-2 border-zinc-100 pb-6 pr-12">
           <h1 itemProp="name" className="font-trirong text-3xl md:text-5xl font-extrabold text-black mb-4">
-            {phoneDat.brand} {phoneDat.name}
+            {phoneDat.name}
           </h1>
           <div className="flex flex-wrap gap-2 text-sm">
             <p className="bg-zinc-100 px-3 py-1 rounded-full border border-zinc-200 text-zinc-700">

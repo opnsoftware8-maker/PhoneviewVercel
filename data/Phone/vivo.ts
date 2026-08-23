@@ -325,7 +325,7 @@ export const vivophone: Phone[] = [
     official: "https://www.vivo.com/th",
     shopee: "https://shopee.co.th/",
     lazada: "https://www.lazada.co.th/"
-      }
+      },
   
 { name: "vivo Y28",
   brand: "vivo",
@@ -398,7 +398,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.vivo.com/th/products/y28",
   shopee: "https://shopee.co.th/list/vivo/Y28",
-}
+},
 
 {
   name: "vivo V50 Lite 5G",
@@ -472,7 +472,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.vivo.com/th/products/v50-lite-5g",
   shopee: "https://shopee.co.th/list/vivo/v50%20lite%205g",
-}
+},
 
 {
   name: "iQOO Z10 5G",
@@ -546,7 +546,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.iqoo.com/in/products/z10",
   shopee: "https://shopee.co.th/list/vivo/iQOO%20Z10",
-}
+},
 
 {
   name: "vivo V50 5G",
@@ -621,7 +621,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.vivo.com/th/products/v50",
   shopee: "https://shopee.co.th/list/vivo/V50",
-}
+},
 
 {
   name: "iQOO Neo 10",
@@ -697,7 +697,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.iqoo.com/in/products/neo10",
   shopee: "https://shopee.co.th/list/iQOO/Neo",
-}
+},
 
 {
   name: "iQOO 15R",
@@ -773,7 +773,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.iqoo.com/in/products/iqoo15r",
   shopee: "https://shopee.co.th/list/iQOO/15R",
-}
+},
 
 {
   name: "iQOO 15",
@@ -851,7 +851,7 @@ export const vivophone: Phone[] = [
 
   official: "https://shop.vivo.com/th/product/2280",
   shopee: "https://shopee.co.th/list/iQOO/15",
-}
+},
 
 {
   name: "vivo X300 Pro",
@@ -929,7 +929,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.vivo.com/th/products/x300-pro",
   shopee: "https://shopee.co.th/list/vivo/x300%20pro",
-}
+},
 
 {
   name: "vivo X200",
@@ -1006,7 +1006,7 @@ export const vivophone: Phone[] = [
 
   official: "https://www.vivo.com/th/products/x200",
   shopee: "https://shopee.co.th/list/vivo/X200",
-}
+},
 
     
 

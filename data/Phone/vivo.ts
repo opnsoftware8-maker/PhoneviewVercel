@@ -158,7 +158,7 @@ export const vivophone: Phone[] = [
     storageRam: [
       { ram: 16, storage: 512, price: 39999 }
     ],
-    display: "6.78" LTPO AMOLED, 120Hz",
+    display: "6.78 LTPO AMOLED, 120Hz",
     battery: 5400,
     charge: {
       wired: 100,
@@ -223,7 +223,7 @@ export const vivophone: Phone[] = [
     storageRam: [
       { ram: 12, storage: 256, price: 15999 }
     ],
-    display: "6.78" AMOLED, 120Hz",
+    display: "6.78 AMOLED, 120Hz",
     battery: 5000,
     charge: {
       wired: 80,

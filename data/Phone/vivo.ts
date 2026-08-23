@@ -326,8 +326,8 @@ export const vivophone: Phone[] = [
     shopee: "https://shopee.co.th/",
     lazada: "https://www.lazada.co.th/"
       }
-  {
-  name: "vivo Y28",
+  
+{ name: "vivo Y28",
   brand: "vivo",
   type: "phone",
   saleStatus: "discontinued",

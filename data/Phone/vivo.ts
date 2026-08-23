@@ -286,7 +286,7 @@ export const vivophone: Phone[] = [
     storageRam: [
       { ram: 12, storage: 256, price: 12999 }
     ],
-    display: "6.78" AMOLED, 120Hz",
+    display: "6.78 AMOLED, 120Hz",
     battery: 4600,
     charge: {
       wired: 80,

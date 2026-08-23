@@ -326,4 +326,689 @@ export const vivophone: Phone[] = [
     shopee: "https://shopee.co.th/",
     lazada: "https://www.lazada.co.th/"
       }
+  {
+  name: "vivo Y28",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "discontinued",
+  priceTier: "entry",
+
+  latestPrice: {
+    defaultPrice: 5999,
+    priceFrom: "vivo Thailand",
+  },
+
+  chip: "MediaTek Helio G85 (12nm)",
+  speaker: "ลำโพงเดี่ยว (Audio Booster 300%)",
+
+  camera: {
+    main: 50,
+    selfie: 8,
+    video: "1080p@30fps",
+    ois: false,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 8, storage: 128, price: 5999 },
+    { ram: 8, storage: 256, price: 6999 },
+  ],
+
+  display: "IPS LCD 6.68 นิ้ว 720x1608 90Hz",
+  battery: 6000,
+  charge: {
+    wired: 44,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 32,
+    gaming: 47,
+    battery: 78,
+    display: 45,
+    camera: 40,
+    value: 70,
+    thermal: 55,
+    overall: 48,
+  },
+
+  recommended: {
+    gaming: false,
+    camera: false,
+    durability: false,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: false,
+  },
+
+  pros: [
+    "แบต 6000mAh ใช้ได้ 2 วันสบาย",
+    "ชาร์จ 44W เร็วเกินราคา",
+    "ราคาถูกมาก เริ่มไม่ถึง 6 พัน",
+    "มีช่องหูฟัง 3.5mm + microSD",
+  ],
+  cons: [
+    "จอ LCD ความละเอียดแค่ HD+ ภาพไม่คม",
+    "Helio G85 เก่า เล่นเกมหนักไม่ไหว",
+    "ไม่มี NFC",
+    "ลำโพงเดี่ยว ไม่มีสเตอริโอ",
+    "กันน้ำแค่ IP64",
+  ],
+
+  official: "https://www.vivo.com/th/products/y28",
+  shopee: "https://shopee.co.th/list/vivo/Y28",
+}
+
+{
+  name: "vivo V50 Lite 5G",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "entry-midrange",
+
+  latestPrice: {
+    defaultPrice: 9999,
+    priceFrom: "BaNANA / vivo Thailand",
+  },
+
+  chip: "MediaTek Dimensity 6300 (6nm)",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 8,
+    selfie: 32,
+    video: "4K@30fps",
+    ois: false,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 8, storage: 256, price: 9999 },
+    { ram: 12, storage: 512, price: 12999 },
+  ],
+
+  display: "AMOLED 6.77 นิ้ว 1080x2392 120Hz 1800 nits",
+  battery: 6500,
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 48,
+    gaming: 63,
+    battery: 88,
+    display: 72,
+    camera: 58,
+    value: 78,
+    thermal: 68,
+    overall: 66,
+  },
+
+  recommended: {
+    gaming: false,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "แบต 6500mAh + ชาร์จ 90W ในราคาหมื่นเดียว",
+    "จอ AMOLED 120Hz สว่าง 1800 nits",
+    "บอดี้บาง แต่กันน้ำ IP65",
+    "กล้องหน้า 32MP คมกว่าคู่แข่งช่วงราคาเดียวกัน",
+  ],
+  cons: [
+    "Dimensity 6300 แรงระดับกลางล่าง เกมหนักต้องลดกราฟิก",
+    "กล้องหลักไม่มี OIS",
+    "อัลตราไวด์แค่ 8MP คุณภาพพอใช้",
+    "จอยังเป็นแบบไม่ LTPO",
+  ],
+
+  official: "https://www.vivo.com/th/products/v50-lite-5g",
+  shopee: "https://shopee.co.th/list/vivo/v50%20lite%205g",
+}
+
+{
+  name: "iQOO Z10 5G",
+  brand: "iQOO",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "budget",
+
+  latestPrice: {
+    defaultPrice: 9490,
+    priceFrom: "vivo Thailand Online Store",
+  },
+
+  chip: "Qualcomm Snapdragon 7s Gen 3 (4nm)",
+  speaker: "ลำโพงคู่สเตอริโอ (400% Volume)",
+
+  camera: {
+    main: 50,
+    selfie: 32,
+    video: "4K@30fps",
+    ois: true,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 8, storage: 256, price: 9490 },
+    { ram: 12, storage: 256, price: 10490 },
+  ],
+
+  display: "AMOLED 6.77 นิ้ว 1080x2392 120Hz 5000 nits",
+  battery: 7300,
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 62,
+    gaming: 72,
+    battery: 95,
+    display: 78,
+    camera: 62,
+    value: 88,
+    thermal: 74,
+    overall: 76,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "แบต 7300mAh ใหญ่สุดในช่วงราคาหมื่นต้น",
+    "ชาร์จ 90W + Bypass Charging เล่นเกมได้แบบไม่ผ่านแบต",
+    "กล้องหลัก Sony IMX882 มี OIS",
+    "จอ AMOLED สว่าง 5000 nits + ลำโพงคู่",
+    "ผ่านมาตรฐานทนทาน MIL-STD-810H",
+  ],
+  cons: [
+    "ไม่มีกล้องอัลตราไวด์ (ตัวที่สองเป็น 2MP วัดระยะ)",
+    "ไม่ระบุมาตรฐาน IP ชัดเจน (กันสาดน้ำเท่านั้น)",
+    "Snapdragon 7s Gen 3 แรงระดับกลาง ไม่ใช่ตัวท็อป",
+    "บอดี้พลาสติก",
+  ],
+
+  official: "https://www.iqoo.com/in/products/z10",
+  shopee: "https://shopee.co.th/list/vivo/iQOO%20Z10",
+}
+
+{
+  name: "vivo V50 5G",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "midrange",
+
+  latestPrice: {
+    defaultPrice: 15999,
+    priceFrom: "BaNANA / vivo Thailand",
+  },
+
+  chip: "Qualcomm Snapdragon 7 Gen 3 (4nm)",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    selfie: 50,
+    video: "4K@30fps",
+    ois: true,
+    digitalZoom: 20,
+  },
+
+  storageRam: [
+    { ram: 12, storage: 256, price: 15999 },
+    { ram: 12, storage: 512, price: 17999 },
+  ],
+
+  display: "AMOLED 6.77 นิ้ว 1080x2392 120Hz 4500 nits",
+  battery: 6000,
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 60,
+    gaming: 69,
+    battery: 82,
+    display: 80,
+    camera: 78,
+    value: 72,
+    thermal: 70,
+    overall: 74,
+  },
+
+  recommended: {
+    gaming: false,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: false,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "กล้อง ZEISS ครบ 3 ตัว 50MP ทั้งหลัก/อัลตราไวด์/หน้า",
+    "กันน้ำระดับ IP68 + IP69 ฉีดน้ำแรงดันสูงได้",
+    "จอ AMOLED สว่างสูงสุด 4500 nits",
+    "แบต 6000mAh ชาร์จ 90W",
+    "Aura Light ช่วยถ่ายพอร์ตเทรตกลางคืน",
+  ],
+  cons: [
+    "Snapdragon 7 Gen 3 แรงไม่พอสำหรับเกมกราฟิกสูงสุด",
+    "ไม่มีเลนส์เทเลโฟโต้ ซูมไกลคุณภาพตก",
+    "ไม่มีชาร์จไร้สาย",
+    "ราคาตั้งสูงเมื่อเทียบกับ iQOO ที่แรงกว่าในราคาใกล้กัน",
+  ],
+
+  official: "https://www.vivo.com/th/products/v50",
+  shopee: "https://shopee.co.th/list/vivo/V50",
+}
+
+{
+  name: "iQOO Neo 10",
+  brand: "iQOO",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "upper-midrange",
+
+  latestPrice: {
+    defaultPrice: 14490,
+    priceFrom: "vivo Thailand Online Store",
+  },
+
+  chip: "Qualcomm Snapdragon 8s Gen 4 (4nm) + Q1 Supercomputing Chip",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 8,
+    selfie: 32,
+    video: "4K@60fps",
+    ois: true,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 8, storage: 256, price: 14490 },
+    { ram: 12, storage: 256, price: 15900 },
+    { ram: 16, storage: 512, price: 17900 },
+  ],
+
+  display: "AMOLED 6.78 นิ้ว 1260x2800 144Hz 4400 nits",
+  battery: 7000,
+  charge: {
+    wired: 120,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 82,
+    gaming: 84,
+    battery: 92,
+    display: 84,
+    camera: 64,
+    value: 90,
+    thermal: 82,
+    overall: 83,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: false,
+    budget: true,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "Snapdragon 8s Gen 4 แรงระดับเรือธงรอง ในราคาหมื่นกลาง",
+    "จอ 1.5K 144Hz + ชิปกราฟิกเสริมดันเฟรมเกมได้ 144fps",
+    "แบต 7000mAh ชาร์จเร็ว 120W",
+    "คุ้มค่าที่สุดสำหรับสายเกมงบไม่เกิน 15,000",
+    "RAM LPDDR5X Ultra + UFS 4.1",
+  ],
+  cons: [
+    "กล้องเป็นจุดอ่อน อัลตราไวด์แค่ 8MP ไม่มีเทเลโฟโต้",
+    "กันน้ำแค่ IP65",
+    "ไม่มีชาร์จไร้สาย",
+    "เครื่องหนักและค่อนข้างหนา",
+  ],
+
+  official: "https://www.iqoo.com/in/products/neo10",
+  shopee: "https://shopee.co.th/list/iQOO/Neo",
+}
+
+{
+  name: "iQOO 15R",
+  brand: "iQOO",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "high-end",
+
+  latestPrice: {
+    defaultPrice: 19900,
+    priceFrom: "iQOO Thailand",
+  },
+
+  chip: "Qualcomm Snapdragon 8 Gen 5 (3nm) + Q2 Supercomputing Chip",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 8,
+    selfie: 32,
+    video: "4K@60fps",
+    ois: true,
+    digitalZoom: 20,
+  },
+
+  storageRam: [
+    { ram: 12, storage: 256, price: 19900 },
+    { ram: 12, storage: 512, price: 21900 },
+  ],
+
+  display: "AMOLED 6.59 นิ้ว 1260x2750 (1.5K) 144Hz 5000 nits",
+  battery: 7600,
+  charge: {
+    wired: 100,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 92,
+    gaming: 91,
+    battery: 96,
+    display: 86,
+    camera: 70,
+    value: 92,
+    thermal: 88,
+    overall: 88,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "Snapdragon 8 Gen 5 แรงระดับเรือธงในราคาไม่ถึง 20,000",
+    "แบต 7600mAh ใหญ่สุดในกลุ่ม + ชาร์จ 100W",
+    "ระบายความร้อน Vapor Chamber 6,500 ตร.มม. เล่นเกมนานได้",
+    "กันน้ำ IP68 + IP69",
+    "อัปเดต Android 4 เวอร์ชัน + แพตช์ความปลอดภัย 6 ปี",
+    "จอ 144Hz + Bypass Charging 2.0",
+  ],
+  cons: [
+    "กล้องยังไม่ใช่จุดขาย อัลตราไวด์ 8MP และไม่มีเทเลโฟโต้",
+    "ไม่มีชาร์จไร้สาย",
+    "จอ 1.5K ไม่ใช่ LTPO เต็มรูปแบบเหมือน iQOO 15",
+    "น้ำหนักราว 202-206 กรัม ค่อนข้างหนัก",
+  ],
+
+  official: "https://www.iqoo.com/in/products/iqoo15r",
+  shopee: "https://shopee.co.th/list/iQOO/15R",
+}
+
+{
+  name: "iQOO 15",
+  brand: "iQOO",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+
+  latestPrice: {
+    defaultPrice: 29900,
+    priceFrom: "vivo Thailand Online Store",
+  },
+
+  chip: "Qualcomm Snapdragon 8 Elite Gen 5 (3nm) + Q3 Supercomputing Chip",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    telephoto: 50,
+    selfie: 32,
+    video: "8K@30fps",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 3,
+  },
+
+  storageRam: [
+    { ram: 12, storage: 256, price: 29900 },
+    { ram: 16, storage: 512, price: 32900 },
+  ],
+
+  display: "LTPO AMOLED 6.85 นิ้ว 1440x3168 (2K) 144Hz 6000 nits",
+  battery: 7000,
+  charge: {
+    wired: 100,
+    wireless: 40,
+  },
+
+  scores: {
+    performance: 98,
+    gaming: 94,
+    battery: 90,
+    display: 96,
+    camera: 82,
+    value: 85,
+    thermal: 90,
+    overall: 93,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "Snapdragon 8 Elite Gen 5 แรงสุดในตลาด Android",
+    "จอ 2K LTPO 144Hz สว่างพีค 6000 nits",
+    "กล้องครบ 3 ตัว 50MP รวมเทเลโฟโต้ซูม 3x",
+    "แบต 7000mAh ชาร์จ 100W + ไร้สาย 40W",
+    "กันน้ำ IP68 + IP69",
+    "ราคาถูกกว่าเรือธงแบรนด์อื่นที่ใช้ชิปเดียวกันหลายพัน",
+  ],
+  cons: [
+    "กล้องยังสู้สาย ZEISS ของ vivo X ซีรีส์ไม่ได้",
+    "เครื่องใหญ่ จอ 6.85 นิ้ว ถือมือเดียวไม่สะดวก",
+    "OriginOS ยังมีแอปพรีโหลดเยอะ",
+    "ร้อนได้ถ้ารีดเฟรมเรตสูงต่อเนื่องนาน",
+  ],
+
+  official: "https://shop.vivo.com/th/product/2280",
+  shopee: "https://shopee.co.th/list/iQOO/15",
+}
+
+{
+  name: "vivo X300 Pro",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+
+  latestPrice: {
+    defaultPrice: 39999,
+    priceFrom: "vivo Thailand Online Store",
+  },
+
+  chip: "MediaTek Dimensity 9500 (3nm) + vivo VS1/V3+ Imaging Chip",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    telephoto: 200,
+    selfie: 50,
+    video: "8K@30fps",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 3.7,
+  },
+
+  storageRam: [
+    { ram: 16, storage: 512, price: 39999 },
+  ],
+
+  display: "LTPO AMOLED 6.78 นิ้ว 1260x2800 120Hz 4500 nits",
+  battery: 6510,
+  charge: {
+    wired: 90,
+    wireless: 40,
+  },
+
+  scores: {
+    performance: 95,
+    gaming: 90,
+    battery: 86,
+    display: 92,
+    camera: 98,
+    value: 72,
+    thermal: 84,
+    overall: 94,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "กล้องเทเลโฟโต้ ZEISS APO 200MP เซนเซอร์ใหญ่ 1/1.4 นิ้ว ซูมเทพสุดในตลาด",
+    "Dimensity 9500 แรงระดับท็อป พร้อมชิปประมวลผลภาพแยก",
+    "กล้องหน้า 50MP",
+    "แบต 6510mAh + ชาร์จ 90W และไร้สาย 40W",
+    "กันน้ำ IP68 + IP69",
+    "ต่อ Telephoto Extender/ชุดเลนส์เสริมได้",
+  ],
+  cons: [
+    "ราคาสูงสุดในลิสต์ 39,999 บาท",
+    "มีให้เลือกความจุเดียว (16+512GB)",
+    "จอ 120Hz ไม่สูงเท่าสายเกมมิ่ง 144Hz",
+    "เครื่องหนัก กล้องหลังนูนมาก",
+    "โมดูลกล้องทำให้วางราบกับโต๊ะไม่นิ่ง",
+  ],
+
+  official: "https://www.vivo.com/th/products/x300-pro",
+  shopee: "https://shopee.co.th/list/vivo/x300%20pro",
+}
+
+{
+  name: "vivo X200",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "discontinued",
+  priceTier: "flagship",
+
+  latestPrice: {
+    defaultPrice: 29999,
+    priceFrom: "ราคาเปิดตัวศูนย์ไทย (ปัจจุบันเคลียร์สต็อกราว 20,000)",
+  },
+
+  chip: "MediaTek Dimensity 9400 (3nm)",
+  speaker: "ลำโพงคู่สเตอริโอ",
+
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    telephoto: 50,
+    selfie: 32,
+    video: "4K@60fps",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 3,
+  },
+
+  storageRam: [
+    { ram: 12, storage: 256, price: 29999 },
+    { ram: 16, storage: 512, price: 32999 },
+  ],
+
+  display: "AMOLED 6.67 นิ้ว 1260x2800 120Hz 4500 nits",
+  battery: 5800,
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 88,
+    gaming: 85,
+    battery: 80,
+    display: 88,
+    camera: 90,
+    value: 78,
+    thermal: 80,
+    overall: 87,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: false,
+    entertainment: true,
+  },
+
+  pros: [
+    "กล้อง ZEISS 3 ตัว 50MP ครบ รวมเทเลโฟโต้ 3x",
+    "Dimensity 9400 ยังแรงพออีกหลายปี",
+    "ตัวเครื่องกะทัดรัด 6.67 นิ้ว ถือมือเดียวได้",
+    "กันน้ำ IP68 + IP69",
+    "ราคามือสอง/เคลียร์สต็อกคุ้มมาก",
+  ],
+  cons: [
+    "เลิกผลิตแล้ว หาเครื่องศูนย์ใหม่ยาก",
+    "ไม่มีชาร์จไร้สาย (มีเฉพาะรุ่น Pro)",
+    "แบต 5800mAh น้อยกว่ารุ่นใหม่ในปีนี้",
+    "จอ 120Hz ไม่ใช่ LTPO เต็มรูปแบบ",
+  ],
+
+  official: "https://www.vivo.com/th/products/x200",
+  shopee: "https://shopee.co.th/list/vivo/X200",
+}
+
+    
+
+
 ]

@@ -229,6 +229,73 @@ const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp
         </div>
         {CardProp != "null" && <Phonepage phoneDat={ResultphoneDat} PhoneProp={setCardProp} /> }
       </main>
+      <footer className="w-full bg-zinc-950 text-zinc-400 font-prompt border-t border-zinc-800">
+  <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-zinc-800/80">
+
+      <div className="space-y-3">
+        <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
+          เว็บไซต์รวบรวมและแนะนำสเปกสมาร์ทโฟนและแท็บเล็ต เพื่อช่วยให้คุณเลือกซื้อเครื่องที่คุ้มค่าและตอบโจทย์การใช้งานมากที่สุด
+        </p>
+      </div>
+
+      <div className="space-y-3">
+        <h3 className="font-trirong text-base font-semibold text-zinc-200">
+          ติดต่อเรา
+        </h3>
+
+        <div className="flex flex-col gap-3 text-sm">
+          <a
+            href="https://m.me/thongkamtheawpan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+            Messenger: Thongkam Theawpan
+          </a>
+
+          <a
+            href="https://line.me/ti/p/~thongkamtheawpan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+            LINE: thongkam theawpan
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="space-y-3 text-xs text-zinc-500 leading-relaxed mb-8">
+      <p>
+        <span className="font-medium text-zinc-400">
+          ข้อจำกัดความรับผิดชอบเรื่องราคา:
+        </span>{" "}
+        ราคาสินค้าที่แสดงบนเว็บไซต์เป็นราคากลางหรือราคาอ้างอิง ณ วันที่บันทึกข้อมูล ซึ่งอาจมีการเปลี่ยนแปลงตามโปรโมชันหรือส่วนลดของแต่ละแพลตฟอร์ม โปรดตรวจสอบราคาและเงื่อนไขล่าสุดบนหน้าเว็บของผู้ขายก่อนทำการสั่งซื้อทุกครั้ง
+      </p>
+
+      <p>
+        <span className="font-medium text-zinc-400">
+          การเปิดเผยลิงก์พันธมิตร:
+        </span>{" "}
+        เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada) โดยที่ผู้ซื้อไม่ได้เสียค่าใช้จ่ายเพิ่มเติมใดๆ ทั้งสิ้น
+      </p>
+
+      <p className="text-zinc-600">
+        ชื่อแบรนด์ โลโก้ และภาพผลิตภัณฑ์ทั้งหมดเป็นทรัพย์สินทางปัญญาและเครื่องหมายการค้าของบริษัทผู้ผลิตนั้นๆ
+      </p>
+    </div>
+
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600 pt-4 border-t border-zinc-900">
+      <p>&copy; 2026 PhoneView. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
     </div>
   );
                 }

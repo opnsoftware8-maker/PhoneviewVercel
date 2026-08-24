@@ -86,7 +86,7 @@ const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp
   const btnInactiveClass = "bg-white border-gray-300 text-gray-600 hover:bg-gray-50 hover:border-gray-400";
 
   return (
-    <div className="min-h-screen bg-zinc-100/70 font-prompt">
+    <div className="min-h-screen font-prompt">
       
       <header className="w-full bg-zinc-900 text-white rounded-none px-6 py-8 shadow-md">
         <div className="max-w-4xl mx-auto space-y-3">

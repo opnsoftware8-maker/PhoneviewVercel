@@ -247,7 +247,7 @@ const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp
 
         <div className="flex flex-col gap-3 text-sm">
           <a
-            href="https://m.me/ThongkamTheawpan"
+            href="https://m.me/Thongkam Theawpan"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"

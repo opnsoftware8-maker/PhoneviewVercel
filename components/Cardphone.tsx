@@ -23,8 +23,10 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
   };
 
   return (
-    <div className="w-full h-full min-h-[220px] flex flex-col justify-between overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
+    // เปลี่ยนมาใช้ h-full เพื่อให้ Card ยืดเต็มความสูงของกริด
+    <div className="w-full h-full flex flex-col justify-between border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
       
+      {/* บล็อกข้อมูลด้านบนทั้งหมด */}
       <div className="flex flex-col w-full">
         <div className="flex gap-2 items-center justify-between">           
           <p className="font-trirong font-extrabold text-xl line-clamp-1 text-zinc-900">{Device.name}</p>
@@ -35,11 +37,7 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
           )}
         </div>
       
-        {/* 
-          📱 ส่วนสเปก: 
-          - มือถือ (ค่าเริ่มต้น): เลื่อนซ้ายขวา (overflow-x-auto, whitespace-nowrap)
-          - คอมพิวเตอร์ (md ขึ้นไป): ยกเลิกการเลื่อน เปลี่ยนเป็นเรียงต่อกันแล้วปัดบรรทัดใหม่ (md:flex-wrap md:whitespace-normal)
-        */}
+        {/* ส่วนสเปก */}
         <div 
           ref={specRef}
           onWheel={handleWheelScroll}
@@ -65,11 +63,7 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
           {Device.speaker && <p className="flex-shrink-0">•ลำโพง: {Device.speaker}</p>}
         </div>
     
-        {/* 
-          🏷️ ส่วนแท็กป้ายกำกับ: 
-          - มือถือ: เลื่อนซ้ายขวา
-          - คอมพิวเตอร์ (md ขึ้นไป): เรียงต่อกันแล้วขึ้นบรรทัดใหม่อัตโนมัติ
-        */}
+        {/* ส่วนป้ายแท็กแนะนำ */}
         <div 
           ref={tagRef}
           onWheel={handleWheelScroll}
@@ -86,7 +80,8 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
         </div>
       </div>
       
-      <div className="w-full pt-3 mt-2 border-t border-zinc-100">
+      {/* ใช้ mt-auto เพื่อดันส่วนราคาและปุ่มให้มาชิดกับคอนเทนต์ด้านบนแบบพอดี ไม่ให้มีช่องว่างเหลือเยอะเกินไป */}
+      <div className="w-full pt-2 mt-2 border-t border-zinc-100">
         <div className="flex items-center justify-between gap-2">
           <p className="font-trirong font-bold text-lg text-black leading-none">
             {Device.latestPrice?.defaultPrice
@@ -105,4 +100,4 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
 
     </div>
   );
-}
+            }

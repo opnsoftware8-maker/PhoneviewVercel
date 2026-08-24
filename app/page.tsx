@@ -6,8 +6,8 @@ import Phonepage from './phonepage/Phonepages';
 
 // Constants สำหรับ className ที่ใช้บ่อย
 const STYLES = {
-  // Button styles
-  btnBase: "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 active:scale-95 border font-prompt",
+  // Button styles - ลด transition-all เป็นเฉพาะ properties ที่จำเป็น
+  btnBase: "px-4 py-2 rounded-full text-sm font-medium transition-[background-color,color,border-color,transform] duration-200 active:scale-95 border font-prompt will-change-transform",
   btnActive: "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-500/20",
   btnInactive: "bg-white border-gray-300 text-gray-600 hover:bg-gray-50 hover:border-gray-400",
   
@@ -22,29 +22,31 @@ const STYLES = {
   headerDescription: "text-base sm:text-lg text-neutral-400 font-medium leading-relaxed font-prompt",
   
   // Filter card
-  filterCard: "bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-200/80 mb-8 transition-all",
+  filterCard: "bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-200/80 mb-8",
   filterTopRow: "flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full",
   
   // Input
-  searchInput: "flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt",
+  searchInput: "flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-sm rounded-xl outline-none transition-[border-color,box-shadow,background-color] duration-200 bg-gray-50 focus:bg-white font-prompt",
   
   // Filter toggle button
-  filterToggleBtn: "whitespace-nowrap flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-sm font-prompt",
+  filterToggleBtn: "whitespace-nowrap flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-[background-color,color,transform] duration-200 active:scale-95 shadow-sm font-prompt will-change-transform",
   filterToggleActive: "bg-zinc-800 text-white hover:bg-zinc-900",
   filterToggleInactive: "bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200",
   
   // Search button
-  searchBtn: "whitespace-nowrap flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white py-3 px-7 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg font-prompt",
+  searchBtn: "whitespace-nowrap flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white py-3 px-7 rounded-xl text-sm font-bold transition-[background-color,transform,box-shadow] duration-200 active:scale-95 shadow-md hover:shadow-lg font-prompt will-change-transform",
   
-  // Icon
-  icon: "w-4 h-4 transition-transform duration-300",
+  // Icon - ใช้ transform แทน transition-all
+  icon: "w-4 h-4 transition-transform duration-300 will-change-transform",
   iconRotated: "rotate-180",
   iconNotRotated: "rotate-0",
   
-  // Filter dropdown
-  filterDropdown: "transition-all duration-500 ease-in-out overflow-hidden",
-  filterDropdownOpen: "max-h-[1000px] opacity-100 mt-5 pt-5 border-t border-gray-100",
-  filterDropdownClosed: "max-h-0 opacity-0 mt-0 pt-0 border-transparent",
+  // Filter dropdown - ใช้ grid + opacity แทน max-height
+  filterDropdownWrapper: "grid transition-[grid-template-rows,opacity] duration-300 ease-out",
+  filterDropdownOpen: "grid-rows-[1fr] opacity-100",
+  filterDropdownClosed: "grid-rows-[0fr] opacity-0",
+  filterDropdownInner: "overflow-hidden",
+  filterDropdownContent: "mt-5 pt-5 border-t border-gray-100",
   
   // Filter section
   filterSection: "space-y-6",
@@ -59,7 +61,7 @@ const STYLES = {
   emptyState: "col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300",
   emptyStateTitle: "text-gray-600 text-lg font-semibold font-trirong",
   emptyStateDescription: "text-gray-400 text-sm mt-1 font-prompt",
-  clearBtn: "mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors font-prompt",
+  clearBtn: "mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors duration-200 font-prompt",
   
   // Footer
   footer: "w-full bg-zinc-950 text-zinc-400 font-prompt border-t border-zinc-800",
@@ -69,7 +71,7 @@ const STYLES = {
   footerDescription: "text-sm text-zinc-400 leading-relaxed max-w-sm",
   footerTitle: "font-trirong text-base font-semibold text-zinc-200",
   footerLinks: "flex flex-col gap-3 text-sm",
-  footerLink: "inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors",
+  footerLink: "inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-200",
   footerDot: "w-1.5 h-1.5 rounded-full bg-zinc-500",
   footerDisclaimer: "space-y-3 text-xs text-zinc-500 leading-relaxed mb-8",
   footerDisclaimerHighlight: "font-medium text-zinc-400",
@@ -162,7 +164,7 @@ export default function App() {
     `${STYLES.filterToggleBtn} ${isOpen ? STYLES.filterToggleActive : STYLES.filterToggleInactive}`;
 
   const getFilterDropdownClass = (isOpen: boolean) => 
-    `${STYLES.filterDropdown} ${isOpen ? STYLES.filterDropdownOpen : STYLES.filterDropdownClosed}`;
+    `${STYLES.filterDropdownWrapper} ${isOpen ? STYLES.filterDropdownOpen : STYLES.filterDropdownClosed}`;
 
   const getIconClass = (isRotated: boolean) => 
     `${STYLES.icon} ${isRotated ? STYLES.iconRotated : STYLES.iconNotRotated}`;
@@ -217,61 +219,66 @@ export default function App() {
 
           </div>
 
+          {/* เปลี่ยนโครงสร้าง dropdown เป็น grid animation */}
           <div className={getFilterDropdownClass(filterbutton)}>
-            <div className={STYLES.filterSection}>
-              
-              <div>
-                <p className={STYLES.filterSectionTitle}>
-                  ประเภทอุปกรณ์
-                </p>
-                <div className={STYLES.filterButtonGroup}>
-                  <button onClick={() => setDeviceType("all")} className={getButtonClass(deviceType === "all")}>ทั้งหมด</button>
-                  <button onClick={() => setDeviceType("phone")} className={getButtonClass(deviceType === "phone")}>สมาร์ทโฟน</button>
-                  <button onClick={() => setDeviceType("tablet")} className={getButtonClass(deviceType === "tablet")}>แท็บเล็ต</button>
+            <div className={STYLES.filterDropdownInner}>
+              <div className={STYLES.filterDropdownContent}>
+                <div className={STYLES.filterSection}>
+                  
+                  <div>
+                    <p className={STYLES.filterSectionTitle}>
+                      ประเภทอุปกรณ์
+                    </p>
+                    <div className={STYLES.filterButtonGroup}>
+                      <button onClick={() => setDeviceType("all")} className={getButtonClass(deviceType === "all")}>ทั้งหมด</button>
+                      <button onClick={() => setDeviceType("phone")} className={getButtonClass(deviceType === "phone")}>สมาร์ทโฟน</button>
+                      <button onClick={() => setDeviceType("tablet")} className={getButtonClass(deviceType === "tablet")}>แท็บเล็ต</button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className={STYLES.filterSectionTitle}>
+                      ระดับราคา (Price Tier)
+                    </p>
+                    <div className={STYLES.filterButtonGroup}>
+                      <button onClick={() => setPriceTier("all")} className={getButtonClass(priceTier === "all")}>ทั้งหมด</button>
+                      {Object.entries(priceTierLabels).map(([key, label]) => (
+                        <button 
+                          key={key} 
+                          onClick={() => setPriceTier(key)} 
+                          className={getButtonClass(priceTier === key)}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className={STYLES.filterSectionTitle}>
+                      จุดเด่นที่คุณต้องการ
+                    </p>
+                    <div className={STYLES.filterButtonGroupWide}>
+                      {Object.keys(RecChoos).map((key) => {
+                        if (key === "activate") return null;
+                        const filterKey = key as keyof typeof RecChoos;
+                        if (!filterLabels[filterKey]) return null;
+
+                        return (
+                          <button 
+                            key={filterKey}
+                            onClick={() => SetRecChoos({ ...RecChoos, [filterKey]: !RecChoos[filterKey] })}
+                            className={getButtonClass(RecChoos[filterKey])}
+                          >
+                            {filterLabels[filterKey].text}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
                 </div>
               </div>
-
-              <div>
-                <p className={STYLES.filterSectionTitle}>
-                  ระดับราคา (Price Tier)
-                </p>
-                <div className={STYLES.filterButtonGroup}>
-                  <button onClick={() => setPriceTier("all")} className={getButtonClass(priceTier === "all")}>ทั้งหมด</button>
-                  {Object.entries(priceTierLabels).map(([key, label]) => (
-                    <button 
-                      key={key} 
-                      onClick={() => setPriceTier(key)} 
-                      className={getButtonClass(priceTier === key)}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className={STYLES.filterSectionTitle}>
-                  จุดเด่นที่คุณต้องการ
-                </p>
-                <div className={STYLES.filterButtonGroupWide}>
-                  {Object.keys(RecChoos).map((key) => {
-                    if (key === "activate") return null;
-                    const filterKey = key as keyof typeof RecChoos;
-                    if (!filterLabels[filterKey]) return null;
-
-                    return (
-                      <button 
-                        key={filterKey}
-                        onClick={() => SetRecChoos({ ...RecChoos, [filterKey]: !RecChoos[filterKey] })}
-                        className={getButtonClass(RecChoos[filterKey])}
-                      >
-                        {filterLabels[filterKey].text}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
             </div>
           </div>
         </div>

@@ -195,8 +195,8 @@ export default function App() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[500px] align-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
-              <Phonecard key={Data.id || Data.name || index} Device={Data} PropCard={setCardProp}/>
-            ))
+              <Phonecard key={Data.name || index} Device={Data} PropCard={setCardProp}/>
+                          ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300 h-fit">
               <p className="text-gray-600 text-lg font-semibold font-trirong">ไม่พบข้อมูลที่ตรงกับการค้นหา</p>

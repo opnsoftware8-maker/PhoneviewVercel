@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Allphone } from '../data/index';
 import { Phonecard } from '../components/Cardphone'; 
 import Phonepage  from './phonepage/Phonepages';
@@ -23,7 +23,7 @@ export default function App() {
       entertainment: false
   });
   const [CardProp, setCardProp] = useState<string>("null");
-const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp): null;
+  const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp): null;
   
   useEffect(() => {
       if (!Allphone) return;
@@ -60,6 +60,31 @@ const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp
       setPhoneArr(FilteredData);
       
   }, [getfindButton, deviceType, priceTier]); 
+
+  // ใช้ useMemo เพื่อจดจำการ์ดไว้ จะได้ไม่สร้างใหม่ตอนกดปุ่มเปิด/ปิดเมนูคัดกรอง
+  const RenderedPhoneCards = useMemo(() => {
+    return PhoneArr.length > 0 ? (
+      PhoneArr.map((Data, index) => (
+        <Phonecard key={Data.id || index} Device={Data} PropCard={setCardProp}/>
+      ))
+    ) : (
+      <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300">
+        <p className="text-gray-600 text-lg font-semibold font-trirong">ไม่พบข้อมูลที่ตรงกับการค้นหา</p>
+        <p className="text-gray-400 text-sm mt-1 font-prompt">ลองเปลี่ยนคำค้นหา หรือลดการตั้งค่าคัดกรองลง</p>
+        <button 
+          onClick={() => {
+            setSearchTerm("");
+            setDeviceType("all");
+            setPriceTier("all");
+            SetRecChoos({ activate: false, gaming: false, camera: false, durability: false, budget: false, performance: false, battery: false, entertainment: false });
+          }}
+          className="mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors font-prompt"
+        >
+          ล้างการตั้งค่าทั้งหมด
+        </button>
+      </div>
+    );
+  }, [PhoneArr]); // อัปเดตก็ต่อเมื่อข้อมูล PhoneArr มีการเปลี่ยนแปลงเท่านั้น
 
   const filterLabels: Record<string, {text: string}> = {
     gaming: { text: "การเล่นเกม" },
@@ -139,163 +164,145 @@ const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp
 
           </div>
 
+          {/* ปรับปรุงแอนิเมชันด้วยเทคนิค CSS Grid (ลื่นไหลและไม่เกิด Layout Thrashing) */}
           <div 
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            className={`grid transition-all duration-300 ease-in-out ${
               filterbutton 
-                ? 'max-h-[1000px] opacity-100 mt-5 pt-5 border-t border-gray-100' 
-                : 'max-h-0 opacity-0 mt-0 pt-0 border-transparent'
+                ? 'grid-rows-[1fr] opacity-100' 
+                : 'grid-rows-[0fr] opacity-0'
             }`}
           >
-            <div className="space-y-6">
-              
-              <div>
-                <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
-                  ประเภทอุปกรณ์
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <button onClick={() => setDeviceType("all")} className={`${btnBaseClass} ${deviceType === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
-                  <button onClick={() => setDeviceType("phone")} className={`${btnBaseClass} ${deviceType === "phone" ? btnActiveClass : btnInactiveClass}`}>สมาร์ทโฟน</button>
-                  <button onClick={() => setDeviceType("tablet")} className={`${btnBaseClass} ${deviceType === "tablet" ? btnActiveClass : btnInactiveClass}`}>แท็บเล็ต</button>
+            <div className="overflow-hidden">
+              <div className="mt-5 pt-5 border-t border-gray-100 space-y-6">
+                
+                <div>
+                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
+                    ประเภทอุปกรณ์
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <button onClick={() => setDeviceType("all")} className={`${btnBaseClass} ${deviceType === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
+                    <button onClick={() => setDeviceType("phone")} className={`${btnBaseClass} ${deviceType === "phone" ? btnActiveClass : btnInactiveClass}`}>สมาร์ทโฟน</button>
+                    <button onClick={() => setDeviceType("tablet")} className={`${btnBaseClass} ${deviceType === "tablet" ? btnActiveClass : btnInactiveClass}`}>แท็บเล็ต</button>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
-                  ระดับราคา (Price Tier)
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <button onClick={() => setPriceTier("all")} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
-                  {Object.entries(priceTierLabels).map(([key, label]) => (
-                    <button 
-                      key={key} 
-                      onClick={() => setPriceTier(key)} 
-                      className={`${btnBaseClass} ${priceTier === key ? btnActiveClass : btnInactiveClass}`}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
-                  จุดเด่นที่คุณต้องการ
-                </p>
-                <div className="flex flex-wrap gap-2.5">
-                  {Object.keys(RecChoos).map((key) => {
-                    if (key === "activate") return null;
-                    const filterKey = key as keyof typeof RecChoos;
-                    if (!filterLabels[filterKey]) return null;
-
-                    return (
+                <div>
+                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
+                    ระดับราคา (Price Tier)
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <button onClick={() => setPriceTier("all")} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
+                    {Object.entries(priceTierLabels).map(([key, label]) => (
                       <button 
-                        key={filterKey}
-                        onClick={() => SetRecChoos({ ...RecChoos, [filterKey]: !RecChoos[filterKey] })}
-                        className={`${btnBaseClass} ${RecChoos[filterKey] ? btnActiveClass : btnInactiveClass}`}
+                        key={key} 
+                        onClick={() => setPriceTier(key)} 
+                        className={`${btnBaseClass} ${priceTier === key ? btnActiveClass : btnInactiveClass}`}
                       >
-                        {filterLabels[filterKey].text}
+                        {label}
                       </button>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
+                <div>
+                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
+                    จุดเด่นที่คุณต้องการ
+                  </p>
+                  <div className="flex flex-wrap gap-2.5">
+                    {Object.keys(RecChoos).map((key) => {
+                      if (key === "activate") return null;
+                      const filterKey = key as keyof typeof RecChoos;
+                      if (!filterLabels[filterKey]) return null;
+
+                      return (
+                        <button 
+                          key={filterKey}
+                          onClick={() => SetRecChoos({ ...RecChoos, [filterKey]: !RecChoos[filterKey] })}
+                          className={`${btnBaseClass} ${RecChoos[filterKey] ? btnActiveClass : btnInactiveClass}`}
+                        >
+                          {filterLabels[filterKey].text}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
         
+        {/* นำตัวแปรที่เก็บค่าจากการใช้ useMemo มาแสดงผล */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {PhoneArr.length > 0 ? (
-            PhoneArr.map((Data, index) => (
-              <Phonecard key={Data.id || index} Device={Data} PropCard={setCardProp}/>
-            ))
-          ) : (
-            <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300">
-              <p className="text-gray-600 text-lg font-semibold font-trirong">ไม่พบข้อมูลที่ตรงกับการค้นหา</p>
-              <p className="text-gray-400 text-sm mt-1 font-prompt">ลองเปลี่ยนคำค้นหา หรือลดการตั้งค่าคัดกรองลง</p>
-              <button 
-                onClick={() => {
-                  setSearchTerm("");
-                  setDeviceType("all");
-                  setPriceTier("all");
-                  SetRecChoos({ activate: false, gaming: false, camera: false, durability: false, budget: false, performance: false, battery: false, entertainment: false });
-                }}
-                className="mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors font-prompt"
-              >
-                ล้างการตั้งค่าทั้งหมด
-              </button>
-            </div>
-          )}
+          {RenderedPhoneCards}
         </div>
+        
         {CardProp != "null" && <Phonepage phoneDat={ResultphoneDat} PhoneProp={setCardProp} /> }
       </main>
+      
       <footer className="w-full bg-zinc-950 text-zinc-400 font-prompt border-t border-zinc-800">
-  <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+        <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-zinc-800/80">
+            <div className="space-y-3">
+              <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
+                เว็บไซต์รวบรวมและแนะนำสเปกสมาร์ทโฟนและแท็บเล็ต เพื่อช่วยให้คุณเลือกซื้อเครื่องที่คุ้มค่าและตอบโจทย์การใช้งานมากที่สุด
+              </p>
+            </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-zinc-800/80">
+            <div className="space-y-3">
+              <h3 className="font-trirong text-base font-semibold text-zinc-200">
+                ติดต่อเรา
+              </h3>
 
-      <div className="space-y-3">
-        <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
-          เว็บไซต์รวบรวมและแนะนำสเปกสมาร์ทโฟนและแท็บเล็ต เพื่อช่วยให้คุณเลือกซื้อเครื่องที่คุ้มค่าและตอบโจทย์การใช้งานมากที่สุด
-        </p>
-      </div>
+              <div className="flex flex-col gap-3 text-sm">
+                <a
+                  href="https://www.facebook.com/share/1BW1m1aiFN/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+                  Messenger: Thongkam Theawpan
+                </a>
 
-      <div className="space-y-3">
-        <h3 className="font-trirong text-base font-semibold text-zinc-200">
-          ติดต่อเรา
-        </h3>
+                <a
+                  href="https://line.me/ti/p/~thongkam theawpan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+                  LINE: thongkam theawpan
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex flex-col gap-3 text-sm">
-          <a
-            href="https://www.facebook.com/share/1BW1m1aiFN/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
-            Messenger: Thongkam Theawpan
-          </a>
+          <div className="space-y-3 text-xs text-zinc-500 leading-relaxed mb-8">
+            <p>
+              <span className="font-medium text-zinc-400">
+                ข้อจำกัดความรับผิดชอบเรื่องราคา:
+              </span>{" "}
+              ราคาสินค้าที่แสดงบนเว็บไซต์เป็นราคากลางหรือราคาอ้างอิง ณ วันที่บันทึกข้อมูล ซึ่งอาจมีการเปลี่ยนแปลงตามโปรโมชันหรือส่วนลดของแต่ละแพลตฟอร์ม โปรดตรวจสอบราคาและเงื่อนไขล่าสุดบนหน้าเว็บของผู้ขายก่อนทำการสั่งซื้อทุกครั้ง
+            </p>
 
-          <a
-            href="https://line.me/ti/p/~thongkam theawpan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
-            LINE: thongkam theawpan
-          </a>
+            <p>
+              <span className="font-medium text-zinc-400">
+                การเปิดเผยลิงก์พันธมิตร:
+              </span>{" "}
+              เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada) โดยที่ผู้ซื้อไม่ได้เสียค่าใช้จ่ายเพิ่มเติมใดๆ ทั้งสิ้น
+            </p>
+
+            <p className="text-zinc-600">
+              ชื่อแบรนด์ โลโก้ และภาพผลิตภัณฑ์ทั้งหมดเป็นทรัพย์สินทางปัญญาและเครื่องหมายการค้าของบริษัทผู้ผลิตนั้นๆ
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600 pt-4 border-t border-zinc-900">
+            <p>&copy; 2026 PhoneView. All rights reserved.</p>
+          </div>
         </div>
-      </div>
-
-    </div>
-
-    <div className="space-y-3 text-xs text-zinc-500 leading-relaxed mb-8">
-      <p>
-        <span className="font-medium text-zinc-400">
-          ข้อจำกัดความรับผิดชอบเรื่องราคา:
-        </span>{" "}
-        ราคาสินค้าที่แสดงบนเว็บไซต์เป็นราคากลางหรือราคาอ้างอิง ณ วันที่บันทึกข้อมูล ซึ่งอาจมีการเปลี่ยนแปลงตามโปรโมชันหรือส่วนลดของแต่ละแพลตฟอร์ม โปรดตรวจสอบราคาและเงื่อนไขล่าสุดบนหน้าเว็บของผู้ขายก่อนทำการสั่งซื้อทุกครั้ง
-      </p>
-
-      <p>
-        <span className="font-medium text-zinc-400">
-          การเปิดเผยลิงก์พันธมิตร:
-        </span>{" "}
-        เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada) โดยที่ผู้ซื้อไม่ได้เสียค่าใช้จ่ายเพิ่มเติมใดๆ ทั้งสิ้น
-      </p>
-
-      <p className="text-zinc-600">
-        ชื่อแบรนด์ โลโก้ และภาพผลิตภัณฑ์ทั้งหมดเป็นทรัพย์สินทางปัญญาและเครื่องหมายการค้าของบริษัทผู้ผลิตนั้นๆ
-      </p>
-    </div>
-
-    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600 pt-4 border-t border-zinc-900">
-      <p>&copy; 2026 PhoneView. All rights reserved.</p>
-    </div>
-
-  </div>
-</footer>
+      </footer>
     </div>
   );
-                }
+                      }

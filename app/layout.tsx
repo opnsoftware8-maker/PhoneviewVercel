@@ -47,7 +47,7 @@ export default function RootLayout({
         />
       </head>
       <body 
-        className={`${trirong.variable} ${prompt.variable} font-prompt antialiased`}
+        className="{`${trirong.variable} ${prompt.variable} font-prompt antialiased`} bg-[#F4F3EE] "
       >
         {children}
       </body>

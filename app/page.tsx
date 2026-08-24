@@ -1,14 +1,13 @@
 "use client";
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Allphone } from '../data/index';
 import { Phonecard } from '../components/Cardphone'; 
-import Phonepage  from './phonepage/Phonepages';
+import Phonepage from './phonepage/Phonepages';
 
 export default function App() {
   const [filterbutton, setFilterbutton] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [getfindButton, SetfindButton] = useState(false);
-  const [PhoneArr, setPhoneArr] = useState<any[]>([]); 
 
   const [deviceType, setDeviceType] = useState<string>("all");
   const [priceTier, setPriceTier] = useState<string>("all");
@@ -22,69 +21,42 @@ export default function App() {
       battery: false,
       entertainment: false
   });
-  const [CardProp, setCardProp] = useState<string>("null");
-  const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp): null;
   
-  useEffect(() => {
-      if (!Allphone) return;
+  // ใช้ null แทน String "null" เพื่อป้องกัน Bug การตรวจเช็คค่า
+  const [CardProp, setCardProp] = useState<string | null>(null);
+  const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp) : null;
 
-      const FilteredData = Allphone.filter(phone => {
-          if (deviceType !== "all") {
-            const pType = phone.type?.toLowerCase() || "";
-            if (deviceType === "phone" && pType !== "phone" && pType !== "smartphone") return false;
-            if (deviceType === "tablet" && pType !== "tablet") return false;
-          }
+  // ✅ คำนวณการคัดกรองโดยตรง ไม่ต้องผ่าน useEffect ให้เสียเวลา Re-render
+  const PhoneArr = useMemo(() => {
+    if (!Allphone) return [];
 
-          if (priceTier !== "all") {
-            if (phone.priceTier !== priceTier) return false;
-          }
+    return Allphone.filter(phone => {
+      if (deviceType !== "all") {
+        const pType = phone.type?.toLowerCase() || "";
+        if (deviceType === "phone" && pType !== "phone" && pType !== "smartphone") return false;
+        if (deviceType === "tablet" && pType !== "tablet") return false;
+      }
 
-          if (searchTerm.trim() !== "") {
-              const searchWords = searchTerm.toLowerCase().trim().split(/\s+/);
-              const phoneName = phone.name?.toLowerCase() || "";
-              const matchName = searchWords.every(word => phoneName.includes(word));
-              if (!matchName) return false; 
-          }
+      if (priceTier !== "all" && phone.priceTier !== priceTier) return false;
 
-          for (const key in RecChoos) {
-              if (key === "activate") continue; 
-              const filterKey = key as keyof typeof RecChoos;
-              if (RecChoos[filterKey] === true && phone.recommended?.[filterKey] !== true) {
-                  return false; 
-              }
-          }
+      if (searchTerm.trim() !== "") {
+        const searchWords = searchTerm.toLowerCase().trim().split(/\s+/);
+        const phoneName = phone.name?.toLowerCase() || "";
+        const matchName = searchWords.every(word => phoneName.includes(word));
+        if (!matchName) return false; 
+      }
 
-          return true; 
-      });
-      
-      setPhoneArr(FilteredData);
-      
-  }, [getfindButton, deviceType, priceTier]); 
+      for (const key in RecChoos) {
+        if (key === "activate") continue; 
+        const filterKey = key as keyof typeof RecChoos;
+        if (RecChoos[filterKey] === true && phone.recommended?.[filterKey] !== true) {
+          return false; 
+        }
+      }
 
-  // ใช้ useMemo เพื่อจดจำการ์ดไว้ จะได้ไม่สร้างใหม่ตอนกดปุ่มเปิด/ปิดเมนูคัดกรอง
-  const RenderedPhoneCards = useMemo(() => {
-    return PhoneArr.length > 0 ? (
-      PhoneArr.map((Data, index) => (
-        <Phonecard key={Data.id || index} Device={Data} PropCard={setCardProp}/>
-      ))
-    ) : (
-      <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300">
-        <p className="text-gray-600 text-lg font-semibold font-trirong">ไม่พบข้อมูลที่ตรงกับการค้นหา</p>
-        <p className="text-gray-400 text-sm mt-1 font-prompt">ลองเปลี่ยนคำค้นหา หรือลดการตั้งค่าคัดกรองลง</p>
-        <button 
-          onClick={() => {
-            setSearchTerm("");
-            setDeviceType("all");
-            setPriceTier("all");
-            SetRecChoos({ activate: false, gaming: false, camera: false, durability: false, budget: false, performance: false, battery: false, entertainment: false });
-          }}
-          className="mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors font-prompt"
-        >
-          ล้างการตั้งค่าทั้งหมด
-        </button>
-      </div>
-    );
-  }, [PhoneArr]); // อัปเดตก็ต่อเมื่อข้อมูล PhoneArr มีการเปลี่ยนแปลงเท่านั้น
+      return true; 
+    });
+  }, [getfindButton, deviceType, priceTier, RecChoos]); 
 
   const filterLabels: Record<string, {text: string}> = {
     gaming: { text: "การเล่นเกม" },
@@ -112,7 +84,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F4F3EE] font-prompt">
-      
       <header className="w-full bg-zinc-900 text-white rounded-none px-6 py-8 shadow-md">
         <div className="max-w-4xl mx-auto space-y-3">
           <span className="block text-4xl sm:text-5xl font-black tracking-tight text-white font-trirong">
@@ -125,10 +96,8 @@ export default function App() {
       </header>
       
       <main className="p-4 sm:p-6 max-w-6xl mx-auto mt-4">
-        
         <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-200/80 mb-8 transition-all">
           <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full">
-            
             <input 
               placeholder="ค้นหารุ่นมือถือ... (เช่น Xiaomi 15)" 
               value={searchTerm} 
@@ -161,10 +130,8 @@ export default function App() {
             >
               <span>ค้นหาเลย</span>
             </button>
-
           </div>
 
-          {/* ปรับปรุงแอนิเมชันด้วยเทคนิค CSS Grid (ลื่นไหลและไม่เกิด Layout Thrashing) */}
           <div 
             className={`grid transition-all duration-300 ease-in-out ${
               filterbutton 
@@ -174,11 +141,8 @@ export default function App() {
           >
             <div className="overflow-hidden">
               <div className="mt-5 pt-5 border-t border-gray-100 space-y-6">
-                
                 <div>
-                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
-                    ประเภทอุปกรณ์
-                  </p>
+                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">ประเภทอุปกรณ์</p>
                   <div className="flex flex-wrap gap-2">
                     <button onClick={() => setDeviceType("all")} className={`${btnBaseClass} ${deviceType === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
                     <button onClick={() => setDeviceType("phone")} className={`${btnBaseClass} ${deviceType === "phone" ? btnActiveClass : btnInactiveClass}`}>สมาร์ทโฟน</button>
@@ -187,9 +151,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
-                    ระดับราคา (Price Tier)
-                  </p>
+                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">ระดับราคา (Price Tier)</p>
                   <div className="flex flex-wrap gap-2">
                     <button onClick={() => setPriceTier("all")} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
                     {Object.entries(priceTierLabels).map(([key, label]) => (
@@ -205,9 +167,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">
-                    จุดเด่นที่คุณต้องการ
-                  </p>
+                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">จุดเด่นที่คุณต้องการ</p>
                   <div className="flex flex-wrap gap-2.5">
                     {Object.keys(RecChoos).map((key) => {
                       if (key === "activate") return null;
@@ -226,18 +186,37 @@ export default function App() {
                     })}
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
         
-        {/* นำตัวแปรที่เก็บค่าจากการใช้ useMemo มาแสดงผล */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {RenderedPhoneCards}
+        {/* ✅ ล็อค min-h-[500px] ป้องกันพื้นที่วูบวาบเมื่อผลการค้นหาเปลี่ยน */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[500px] align-start">
+          {PhoneArr.length > 0 ? (
+            PhoneArr.map((Data, index) => (
+              <Phonecard key={Data.id || Data.name || index} Device={Data} PropCard={setCardProp}/>
+            ))
+          ) : (
+            <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300 h-fit">
+              <p className="text-gray-600 text-lg font-semibold font-trirong">ไม่พบข้อมูลที่ตรงกับการค้นหา</p>
+              <p className="text-gray-400 text-sm mt-1 font-prompt">ลองเปลี่ยนคำค้นหา หรือลดการตั้งค่าคัดกรองลง</p>
+              <button 
+                onClick={() => {
+                  setSearchTerm("");
+                  setDeviceType("all");
+                  setPriceTier("all");
+                  SetRecChoos({ activate: false, gaming: false, camera: false, durability: false, budget: false, performance: false, battery: false, entertainment: false });
+                }}
+                className="mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors font-prompt"
+              >
+                ล้างการตั้งค่าทั้งหมด
+              </button>
+            </div>
+          )}
         </div>
         
-        {CardProp != "null" && <Phonepage phoneDat={ResultphoneDat} PhoneProp={setCardProp} /> }
+        {CardProp && ResultphoneDat && <Phonepage phoneDat={ResultphoneDat} PhoneProp={() => setCardProp(null)} />}
       </main>
       
       <footer className="w-full bg-zinc-950 text-zinc-400 font-prompt border-t border-zinc-800">
@@ -250,27 +229,13 @@ export default function App() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-trirong text-base font-semibold text-zinc-200">
-                ติดต่อเรา
-              </h3>
-
+              <h3 className="font-trirong text-base font-semibold text-zinc-200">ติดต่อเรา</h3>
               <div className="flex flex-col gap-3 text-sm">
-                <a
-                  href="https://www.facebook.com/share/1BW1m1aiFN/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-                >
+                <a href="https://www.facebook.com/share/1BW1m1aiFN/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
                   Messenger: Thongkam Theawpan
                 </a>
-
-                <a
-                  href="https://line.me/ti/p/~thongkam theawpan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-                >
+                <a href="https://line.me/ti/p/~thongkam theawpan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
                   LINE: thongkam theawpan
                 </a>
@@ -279,23 +244,8 @@ export default function App() {
           </div>
 
           <div className="space-y-3 text-xs text-zinc-500 leading-relaxed mb-8">
-            <p>
-              <span className="font-medium text-zinc-400">
-                ข้อจำกัดความรับผิดชอบเรื่องราคา:
-              </span>{" "}
-              ราคาสินค้าที่แสดงบนเว็บไซต์เป็นราคากลางหรือราคาอ้างอิง ณ วันที่บันทึกข้อมูล ซึ่งอาจมีการเปลี่ยนแปลงตามโปรโมชันหรือส่วนลดของแต่ละแพลตฟอร์ม โปรดตรวจสอบราคาและเงื่อนไขล่าสุดบนหน้าเว็บของผู้ขายก่อนทำการสั่งซื้อทุกครั้ง
-            </p>
-
-            <p>
-              <span className="font-medium text-zinc-400">
-                การเปิดเผยลิงก์พันธมิตร:
-              </span>{" "}
-              เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada) โดยที่ผู้ซื้อไม่ได้เสียค่าใช้จ่ายเพิ่มเติมใดๆ ทั้งสิ้น
-            </p>
-
-            <p className="text-zinc-600">
-              ชื่อแบรนด์ โลโก้ และภาพผลิตภัณฑ์ทั้งหมดเป็นทรัพย์สินทางปัญญาและเครื่องหมายการค้าของบริษัทผู้ผลิตนั้นๆ
-            </p>
+            <p><span className="font-medium text-zinc-400">ข้อจำกัดความรับผิดชอบเรื่องราคา:</span> ราคาสินค้าที่แสดงบนเว็บไซต์เป็นราคากลางหรือราคาอ้างอิง ณ วันที่บันทึกข้อมูล ซึ่งอาจมีการเปลี่ยนแปลงตามโปรโมชันหรือส่วนลดของแต่ละแพลตฟอร์ม</p>
+            <p><span className="font-medium text-zinc-400">การเปิดเผยลิงก์พันธมิตร:</span> เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada)</p>
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600 pt-4 border-t border-zinc-900">
@@ -305,4 +255,4 @@ export default function App() {
       </footer>
     </div>
   );
-                      }
+}

@@ -23,7 +23,6 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
   };
 
   return (
-    // ✅ เปลี่ยน h-[200px] เป็น min-h-[220px] h-full เพื่อให้โครงสร้างพอดีกับหน้าจอมือถือทุกขนาด
     <div className="w-full h-full min-h-[220px] flex flex-col justify-between overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
       
       <div className="flex flex-col w-full">
@@ -36,11 +35,15 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
           )}
         </div>
       
-        {/* ซ่อน Scrollbar แต่อนุญาตให้ใช้นิ้วปัดบนมือถือได้ลื่นไหล */}
+        {/* 
+          📱 ส่วนสเปก: 
+          - มือถือ (ค่าเริ่มต้น): เลื่อนซ้ายขวา (overflow-x-auto, whitespace-nowrap)
+          - คอมพิวเตอร์ (md ขึ้นไป): ยกเลิกการเลื่อน เปลี่ยนเป็นเรียงต่อกันแล้วปัดบรรทัดใหม่ (md:flex-wrap md:whitespace-normal)
+        */}
         <div 
           ref={specRef}
           onWheel={handleWheelScroll}
-          className="overflow-x-auto flex gap-3 whitespace-nowrap w-full py-1 mt-2 text-xs font-prompt text-zinc-600 no-scrollbar" 
+          className="overflow-x-auto flex gap-x-3 gap-y-1 whitespace-nowrap md:flex-wrap md:whitespace-normal w-full py-1 mt-2 text-xs font-prompt text-zinc-600 no-scrollbar" 
           style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
         >
           <p className="flex-shrink-0">•ประเภท: {getDeviceTypeTH(Device.type)}</p>
@@ -62,10 +65,15 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
           {Device.speaker && <p className="flex-shrink-0">•ลำโพง: {Device.speaker}</p>}
         </div>
     
+        {/* 
+          🏷️ ส่วนแท็กป้ายกำกับ: 
+          - มือถือ: เลื่อนซ้ายขวา
+          - คอมพิวเตอร์ (md ขึ้นไป): เรียงต่อกันแล้วขึ้นบรรทัดใหม่อัตโนมัติ
+        */}
         <div 
           ref={tagRef}
           onWheel={handleWheelScroll}
-          className="flex gap-1.5 overflow-x-auto whitespace-nowrap w-full py-1 mt-1 font-prompt no-scrollbar" 
+          className="flex gap-1.5 overflow-x-auto whitespace-nowrap md:flex-wrap md:whitespace-normal w-full py-1 mt-1 font-prompt no-scrollbar" 
           style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
         >
           {Device.recommended?.gaming && <p className="text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">เกมส์มิ่ง</p>} 

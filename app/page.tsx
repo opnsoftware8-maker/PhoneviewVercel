@@ -196,7 +196,7 @@ export default function App() {
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
               <Phonecard key={Data.name || index} Device={Data} PropCard={setCardProp}/>
-                          ))
+            ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300 h-fit">
               <p className="text-gray-600 text-lg font-semibold font-trirong">ไม่พบข้อมูลที่ตรงกับการค้นหา</p>

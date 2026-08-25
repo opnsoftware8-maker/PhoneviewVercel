@@ -440,4 +440,331 @@ export const samsungphone: Phone[] = [
     shopee: "https://shopee.co.th/samsung_thailand",
     lazada: "https://www.lazada.co.th/shop/samsung",
   },
+    {
+  name: "Samsung Galaxy Tab S9 FE",
+  brand: "Samsung",
+  type: "tablet",
+  saleStatus: "available",
+  priceTier: "midrange",
+
+  latestPrice: {
+    defaultPrice: 15900,
+    priceFrom:
+      "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s9-fe-wifi-gray-128gb-sm-x510nzaathl/buy/",
+  },
+
+  chip: "Exynos 1380",
+  speaker: "ลำโพงคู่สเตอริโอ รองรับ Dolby Atmos",
+
+  camera: {
+    main: 8,
+    selfie: 12,
+    video: "4K30",
+    ois: false,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 6, storage: 128, price: 15900 },
+    { ram: 8, storage: 256, price: 17900 },
+  ],
+
+  display: '10.9" TFT, 90Hz, 2304 x 1440 (WUXGA+)',
+  battery: 8000,
+
+  charge: {
+    wired: 45,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 72,
+    gaming: CalcuGame(72, 88, 78, 82),
+    battery: 88,
+    display: 78,
+    camera: 70,
+    value: 86,
+    thermal: 82,
+    overall: 80,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "รองรับ S Pen เหมาะกับการจดโน้ตและเรียนออนไลน์",
+    "ชิป Exynos 1380 เพียงพอสำหรับการเรียน งานทั่วไป และเกมส่วนใหญ่",
+    "กันน้ำกันฝุ่นมาตรฐาน IP68",
+    "หน้าจอ 90Hz และแบตเตอรี่ 8,000 mAh",
+    "รองรับ microSD สูงสุด 1TB",
+  ],
+
+  cons: [
+    "หน้าจอเป็น TFT ไม่ใช่ AMOLED",
+    "ไม่มีระบบชาร์จไร้สาย",
+    "ไม่เหมาะกับเกมกราฟิกสูงที่ปรับสุดเป็นเวลานาน",
+    "กล้องหลังไม่มี Ultrawide และไม่มี OIS",
+  ],
+
+  official:
+    "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s9-fe-wifi-gray-128gb-sm-x510nzaathl/",
+  shopee: "https://shopee.co.th/samsung_thailand",
+  lazada: "https://www.lazada.co.th/shop/samsung/",
+},
+
+{
+  name: "Samsung Galaxy Tab S9 FE+",
+  brand: "Samsung",
+  type: "tablet",
+  saleStatus: "available",
+  priceTier: "upper-midrange",
+
+  latestPrice: {
+    defaultPrice: 19900,
+    priceFrom:
+      "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s9-fe-plus-wifi-gray-128gb-sm-x610nzaathl/",
+  },
+
+  chip: "Exynos 1380",
+  speaker: "ลำโพงคู่สเตอริโอ รองรับ Dolby Atmos",
+
+  camera: {
+    main: 8,
+    ultrawide: 8,
+    selfie: 12,
+    video: "4K30",
+    ois: false,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 8, storage: 128, price: 19900 },
+    { ram: 12, storage: 256, price: 22900 },
+  ],
+
+  display: '12.4" TFT, 90Hz, 2560 x 1600 (WQXGA)',
+  battery: 10090,
+
+  charge: {
+    wired: 45,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 73,
+    gaming: CalcuGame(73, 93, 80, 82),
+    battery: 93,
+    display: 80,
+    camera: 74,
+    value: 85,
+    thermal: 82,
+    overall: 83,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: false,
+    performance: false,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "หน้าจอใหญ่ 12.4 นิ้ว เหมาะกับการเรียน ดูหนัง และแบ่งหน้าจอ",
+    "รองรับ S Pen และมีพื้นที่ทำงานมากกว่า Tab S9 FE",
+    "แบตเตอรี่ 10,090 mAh ใช้งานต่อเนื่องได้นาน",
+    "กันน้ำกันฝุ่นมาตรฐาน IP68",
+    "กล้องหลังมี Ultrawide 8MP",
+    "รองรับ microSD สูงสุด 1TB",
+  ],
+
+  cons: [
+    "หน้าจอเป็น TFT และรีเฟรชเรตสูงสุด 90Hz",
+    "ชิป Exynos 1380 ไม่เหมาะกับการเล่นเกมระดับเรือธง",
+    "ไม่มีชาร์จไร้สายและไม่มี OIS",
+    "ตัวเครื่องใหญ่และหนักกว่า Tab S9 FE",
+  ],
+
+  official:
+    "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s9-fe-plus-wifi-gray-128gb-sm-x610nzaathl/",
+  shopee: "https://shopee.co.th/samsung_thailand",
+  lazada: "https://www.lazada.co.th/shop/samsung/",
+},
+
+{
+  name: "Samsung Galaxy Tab S10+",
+  brand: "Samsung",
+  type: "tablet",
+  saleStatus: "available",
+  priceTier: "high-end",
+
+  latestPrice: {
+    defaultPrice: 36900,
+    priceFrom:
+      "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s10-plus-gray-256gb-sm-x820nzaathl/",
+  },
+
+  chip: "MediaTek Dimensity 9300+",
+  speaker: "ลำโพง 4 ตัวสเตอริโอ รองรับ Dolby Atmos",
+
+  camera: {
+    main: 13,
+    ultrawide: 8,
+    selfie: 12,
+    video: "4K30",
+    ois: false,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 12, storage: 256, price: 36900 },
+    { ram: 12, storage: 512, price: 41900 },
+  ],
+
+  display:
+    '12.4" Dynamic AMOLED 2X, 120Hz, 2800 x 1752 (WQXGA+), HDR10+',
+  battery: 10090,
+
+  charge: {
+    wired: 45,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 95,
+    gaming: CalcuGame(95, 92, 97, 88),
+    battery: 92,
+    display: 97,
+    camera: 82,
+    value: 82,
+    thermal: 88,
+    overall: 91,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "แรงมากด้วยชิป MediaTek Dimensity 9300+",
+    "หน้าจอ Dynamic AMOLED 2X 120Hz สีสวยและคอนทราสต์สูง",
+    "รองรับ S Pen และฟีเจอร์ Galaxy AI",
+    "กันน้ำกันฝุ่นมาตรฐาน IP68",
+    "ลำโพง 4 ตัวเหมาะกับการดูหนังและเล่นเกม",
+    "รองรับ microSD และความจุสูงสุด 512GB",
+  ],
+
+  cons: [
+    "ไม่มีชาร์จไร้สาย",
+    "กล้องไม่มี OIS และคุณภาพไม่เท่ามือถือเรือธง",
+    "ราคาสูงและอุปกรณ์เสริมบางรายการจำหน่ายแยก",
+    "เครื่องอาจอุ่นเมื่อเล่นเกมต่อเนื่อง",
+  ],
+
+  official:
+    "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s10-plus-gray-256gb-sm-x820nzaathl/",
+  shopee: "https://shopee.co.th/samsung_thailand",
+  lazada: "https://www.lazada.co.th/shop/samsung/",
+},
+
+{
+  name: "Samsung Galaxy Tab S10 Ultra",
+  brand: "Samsung",
+  type: "tablet",
+  saleStatus: "available",
+  priceTier: "flagship",
+
+  latestPrice: {
+    defaultPrice: 52900,
+    priceFrom:
+      "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s10-ultra-gray-512gb-sm-x926bzaethl/",
+  },
+
+  chip: "MediaTek Dimensity 9300+",
+  speaker: "ลำโพง 4 ตัวสเตอริโอ รองรับ Dolby Atmos",
+
+  camera: {
+    main: 13,
+    ultrawide: 8,
+    selfie: 12,
+    video: "4K30",
+    ois: false,
+    digitalZoom: 10,
+  },
+
+  storageRam: [
+    { ram: 12, storage: 512, price: 52900 },
+  ],
+
+  display:
+    '14.6" Dynamic AMOLED 2X, 120Hz, 2960 x 1848 (WQXGA+), HDR10+',
+  battery: 11200,
+
+  charge: {
+    wired: 45,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 96,
+    gaming: CalcuGame(96, 94, 99, 89),
+    battery: 94,
+    display: 99,
+    camera: 83,
+    value: 80,
+    thermal: 89,
+    overall: 93,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "หน้าจอ Dynamic AMOLED 2X ขนาดใหญ่ 14.6 นิ้ว",
+    "แรงระดับเรือธงด้วยชิป MediaTek Dimensity 9300+",
+    "รองรับ S Pen และฟีเจอร์ Galaxy AI",
+    "กันน้ำกันฝุ่นมาตรฐาน IP68",
+    "แบตเตอรี่ขนาดใหญ่ 11,200 mAh",
+    "ลำโพง 4 ตัวและจอ 120Hz เหมาะกับความบันเทิง",
+    "รองรับ microSD สูงสุด 1.5TB",
+    "เหมาะกับการทำงานหลายหน้าต่างและใช้งานแทนโน้ตบุ๊กบางประเภท",
+  ],
+
+  cons: [
+    "ขนาดใหญ่และน้ำหนักมาก ไม่เหมาะกับการถือใช้งานมือเดียว",
+    "ราคาสูงมาก โดยเฉพาะเมื่อรวมคีย์บอร์ดหรืออุปกรณ์เสริม",
+    "ไม่มีชาร์จไร้สาย",
+    "กล้องไม่มี OIS และไม่เหมาะใช้แทนกล้องมือถือเรือธง",
+    "จอขนาดใหญ่ทำให้พกพายากกว่า Tab S10+",
+    "ชิปแรงมากแต่การเล่นเกมต่อเนื่องอาจทำให้ตัวเครื่องอุ่น",
+  ],
+
+  official:
+    "https://www.samsung.com/th/tablets/galaxy-tab-s/galaxy-tab-s10-ultra-gray-512gb-sm-x926bzaethl/",
+  shopee: "https://shopee.co.th/samsung_thailand",
+  lazada: "https://www.lazada.co.th/shop/samsung/",
+    }
+    
 ];

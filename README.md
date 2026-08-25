@@ -1,6 +1,6 @@
 # 📱 PhoneView - เว็บเปรียบเทียบสเปกมือถือ
 
-เว็บแอปพลิเคชันสำหรับค้นหาและเปรียบเทียบสเปกสมาร์ทโฟน/แท็บเล็ต คัดกรองตามงบประมาณและฟีเจอร์การใช้งาน 
+เว็บแอปพลิเคชันสำหรับค้นหาและแนะนำสเปกสมาร์ทโฟน/แท็บเล็ต คัดกรองตามงบประมาณและฟีเจอร์การใช้งาน 
 
 🌐 **ทดลองใช้งานจริง (Live Demo):** 
 [https://phoneview-vercel-git-main-opnsoftware8-makers-projects.vercel.app](https://phoneview-vercel-git-main-opnsoftware8-makers-projects.vercel.app)

@@ -24,7 +24,7 @@ export function Phonecard({ Device, PropCard }: { Device: any, PropCard: (name: 
 
   return (
     // เปลี่ยนมาใช้ h-full เพื่อให้ Card ยืดเต็มความสูงของกริด
-    <div className="w-full h-200 flex flex-col justify-between border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
+    <div className="w-full h-fit flex flex-col justify-between border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
       
       {/* บล็อกข้อมูลด้านบนทั้งหมด */}
       <div className="flex flex-col w-full">

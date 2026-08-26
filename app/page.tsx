@@ -192,7 +192,7 @@ export default function App() {
         </div>
         
         {/* ✅ ล็อค min-h-[500px] ป้องกันพื้นที่วูบวาบเมื่อผลการค้นหาเปลี่ยน */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[500px] align-start">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[500px] items-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
               <Phonecard key={Data.name || index} Device={Data} PropCard={setCardProp}/>

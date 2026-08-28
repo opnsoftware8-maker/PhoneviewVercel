@@ -27,7 +27,7 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
   };
 
   return (
-    <div className="w-full h-full max-h-[430px] min-h-[330px] flex flex-col justify-between overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
+    <div className="w-full h-full max-h-[200px] min-h-[330px] flex flex-col justify-between overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
       {/* ข้อมูลด้านบน */}
       <div className="flex flex-col w-full min-h-0">
         {/* ชื่อและระดับราคา */}

@@ -11,6 +11,9 @@ export default function App() {
 
   const [deviceType, setDeviceType] = useState<string>("all");
   const [priceTier, setPriceTier] = useState<string>("all");
+  const [minPrice, setMinPrice] = useState<string>("");
+  const [maxPrice, setMaxPrice] = useState<string>("");
+
   const [RecChoos, SetRecChoos] = useState({
       activate: false,
       gaming: false,
@@ -22,11 +25,9 @@ export default function App() {
       entertainment: false
   });
   
-  // ใช้ null แทน String "null" เพื่อป้องกัน Bug การตรวจเช็คค่า
   const [CardProp, setCardProp] = useState<string | null>(null);
   const ResultphoneDat = CardProp ? Allphone.find(phone => phone.name === CardProp) : null;
 
-  // ✅ คำนวณการคัดกรองโดยตรง ไม่ต้องผ่าน useEffect ให้เสียเวลา Re-render
   const PhoneArr = useMemo(() => {
     if (!Allphone) return [];
 
@@ -38,6 +39,13 @@ export default function App() {
       }
 
       if (priceTier !== "all" && phone.priceTier !== priceTier) return false;
+
+      if (minPrice !== "" || maxPrice !== "") {
+        const price = phone.latestPrice?.defaultPrice || 0;
+        const min = minPrice !== "" ? Number(minPrice) : 0;
+        const max = maxPrice !== "" ? Number(maxPrice) : Infinity;
+        if (price < min || price > max) return false;
+      }
 
       if (searchTerm.trim() !== "") {
         const searchWords = searchTerm.toLowerCase().trim().split(/\s+/);
@@ -56,7 +64,7 @@ export default function App() {
 
       return true; 
     });
-  }, [getfindButton, deviceType, priceTier, RecChoos]); 
+  }, [getfindButton, deviceType, priceTier, RecChoos, minPrice, maxPrice]); 
 
   const filterLabels: Record<string, {text: string}> = {
     gaming: { text: "การเล่นเกม" },
@@ -153,16 +161,54 @@ export default function App() {
                 <div>
                   <p className="text-base font-bold text-gray-800 mb-3 font-trirong">ระดับราคา (Price Tier)</p>
                   <div className="flex flex-wrap gap-2">
-                    <button onClick={() => setPriceTier("all")} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
+                    <button onClick={() => {
+                        setPriceTier("all");
+                        setMinPrice("");
+                        setMaxPrice("");
+                    }} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
                     {Object.entries(priceTierLabels).map(([key, label]) => (
                       <button 
                         key={key} 
-                        onClick={() => setPriceTier(key)} 
+                        onClick={() => {
+                            setPriceTier(key);
+                            setMinPrice("");
+                            setMaxPrice("");
+                        }} 
                         className={`${btnBaseClass} ${priceTier === key ? btnActiveClass : btnInactiveClass}`}
                       >
                         {label}
                       </button>
                     ))}
+                  </div>
+                  
+                  <div className="flex items-center gap-3 mt-4">
+                    <input 
+                      type="number"
+                      placeholder="ราคาต่ำสุด"
+                      value={minPrice}
+                      onChange={(e) => {
+                        setMinPrice(e.target.value);
+                        if (e.target.value !== "") setPriceTier("all");
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') e.currentTarget.blur();
+                      }}
+                      className="border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt w-36"
+                    />
+                    <span className="text-gray-400 font-medium">-</span>
+                    <input 
+                      type="number"
+                      placeholder="ราคาสูงสุด"
+                      value={maxPrice}
+                      onChange={(e) => {
+                        setMaxPrice(e.target.value);
+                        if (e.target.value !== "") setPriceTier("all");
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') e.currentTarget.blur();
+                      }}
+                      className="border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt w-36"
+                    />
                   </div>
                 </div>
 
@@ -191,7 +237,6 @@ export default function App() {
           </div>
         </div>
         
-        {/* ✅ ล็อค min-h-[500px] ป้องกันพื้นที่วูบวาบเมื่อผลการค้นหาเปลี่ยน */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[500px] items-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
@@ -206,6 +251,8 @@ export default function App() {
                   setSearchTerm("");
                   setDeviceType("all");
                   setPriceTier("all");
+                  setMinPrice("");
+                  setMaxPrice("");
                   SetRecChoos({ activate: false, gaming: false, camera: false, durability: false, budget: false, performance: false, battery: false, entertainment: false });
                 }}
                 className="mt-4 px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors font-prompt"
@@ -255,4 +302,4 @@ export default function App() {
       </footer>
     </div>
   );
-}
+                        }

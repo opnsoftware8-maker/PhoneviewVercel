@@ -27,10 +27,8 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
   };
 
   return (
-    <div className="w-full h-full max-h-[230px] min-h-[330px] flex flex-col justify-between overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
-      {/* ข้อมูลด้านบน */}
-      <div className="flex flex-col w-full min-h-0">
-        {/* ชื่อและระดับราคา */}
+    <div className="w-full h-[250px] flex flex-col overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
+      <div className="flex flex-col w-full min-h-0 flex-1">
         <div className="flex gap-2 items-center justify-between shrink-0">
           <p className="font-trirong font-extrabold text-xl line-clamp-1 text-zinc-900">
             {Device.name}
@@ -43,10 +41,9 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
           )}
         </div>
 
-        {/* ส่วนสเปก */}
         <div
           onWheel={handleWheelScroll}
-          className="w-full py-1 mt-2 text-xs font-prompt text-zinc-600 no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-x-3 md:gap-y-1 md:max-h-28 md:overflow-y-auto"
+          className="w-full py-1 mt-2 text-xs font-prompt text-zinc-600 no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-x-3 md:gap-y-1 md:max-h-[76px] md:overflow-y-auto"
           style={{
             scrollbarWidth: "none",
             WebkitOverflowScrolling: "touch",
@@ -64,7 +61,7 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
 
           {Device.display && (
             <p className="inline-block mr-3 md:mr-0">
-              •หน้าจอ: {Device.display}
+            •หน้าจอ: {Device.display}
             </p>
           )}
 
@@ -114,10 +111,9 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
           )}
         </div>
 
-        {/* ส่วน recommended */}
         <div
           onWheel={handleWheelScroll}
-          className="w-full py-1 mt-1 font-prompt no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-1.5 md:max-h-16 md:overflow-y-auto"
+          className="w-full py-1 mt-1 font-prompt no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-1.5 md:max-h-[42px] md:overflow-y-auto"
           style={{
             scrollbarWidth: "none",
             WebkitOverflowScrolling: "touch",
@@ -167,7 +163,6 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
         </div>
       </div>
 
-      {/* ราคาและปุ่ม */}
       <div className="w-full pt-2 mt-auto border-t border-zinc-100 shrink-0">
         <div className="flex items-center justify-between gap-2">
           <p className="font-trirong font-bold text-lg text-black leading-none">

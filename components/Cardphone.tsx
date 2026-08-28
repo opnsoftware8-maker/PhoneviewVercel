@@ -27,7 +27,7 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
   };
 
   return (
-    <div className="w-full h-[180px] flex flex-col overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
+    <div className="w-full sm:h-[180px] md:h-[210]flex flex-col overflow-hidden border-2 border-zinc-200 rounded-2xl p-4 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-zinc-400">
   
   <div className="flex gap-2 items-center justify-between shrink-0">
     <p className="font-trirong font-extrabold text-xl line-clamp-1 text-zinc-900">

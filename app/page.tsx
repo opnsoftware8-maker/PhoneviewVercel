@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Allphone } from '../data/index';
 import { Phonecard } from '../components/Cardphone'; 
 import Phonepage from './phonepage/Phonepages';
@@ -11,8 +11,24 @@ export default function App() {
 
   const [deviceType, setDeviceType] = useState<string>("all");
   const [priceTier, setPriceTier] = useState<string>("all");
+  
+  // ตัวแปรสำหรับคัดกรองจริง
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
+
+  // ✅ ตัวแปรใหม่: สำหรับเก็บค่าตอนกำลังพิมพ์ เพื่อไม่ให้หน้าจอกระตุกรัวๆ
+  const [inputMinPrice, setInputMinPrice] = useState<string>("");
+  const [inputMaxPrice, setInputMaxPrice] = useState<string>("");
+
+  // ✅ ระบบหน่วงเวลา: รอให้หยุดพิมพ์ 0.6 วินาที ค่อยเอาตัวเลขไปกรอง
+  useEffect(() => {
+    const delayFilter = setTimeout(() => {
+      setMinPrice(inputMinPrice);
+      setMaxPrice(inputMaxPrice);
+    }, 600); 
+
+    return () => clearTimeout(delayFilter);
+  }, [inputMinPrice, inputMaxPrice]);
 
   const [RecChoos, SetRecChoos] = useState({
       activate: false,
@@ -163,16 +179,16 @@ export default function App() {
                   <div className="flex flex-wrap gap-2">
                     <button onClick={() => {
                         setPriceTier("all");
-                        setMinPrice("");
-                        setMaxPrice("");
+                        setInputMinPrice("");
+                        setInputMaxPrice("");
                     }} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
                     {Object.entries(priceTierLabels).map(([key, label]) => (
                       <button 
                         key={key} 
                         onClick={() => {
                             setPriceTier(key);
-                            setMinPrice("");
-                            setMaxPrice("");
+                            setInputMinPrice("");
+                            setInputMaxPrice("");
                         }} 
                         className={`${btnBaseClass} ${priceTier === key ? btnActiveClass : btnInactiveClass}`}
                       >
@@ -185,13 +201,16 @@ export default function App() {
                     <input 
                       type="number"
                       placeholder="ราคาต่ำสุด"
-                      value={minPrice}
+                      value={inputMinPrice}
                       onChange={(e) => {
-                        setMinPrice(e.target.value);
+                        setInputMinPrice(e.target.value);
                         if (e.target.value !== "") setPriceTier("all");
                       }}
                       onKeyDown={(e) => {
-                        if (e.key === 'Enter') e.currentTarget.blur();
+                        if (e.key === 'Enter') {
+                          setMinPrice(inputMinPrice);
+                          e.currentTarget.blur();
+                        }
                       }}
                       className="border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt w-36"
                     />
@@ -199,13 +218,16 @@ export default function App() {
                     <input 
                       type="number"
                       placeholder="ราคาสูงสุด"
-                      value={maxPrice}
+                      value={inputMaxPrice}
                       onChange={(e) => {
-                        setMaxPrice(e.target.value);
+                        setInputMaxPrice(e.target.value);
                         if (e.target.value !== "") setPriceTier("all");
                       }}
                       onKeyDown={(e) => {
-                        if (e.key === 'Enter') e.currentTarget.blur();
+                        if (e.key === 'Enter') {
+                          setMaxPrice(inputMaxPrice);
+                          e.currentTarget.blur();
+                        }
                       }}
                       className="border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt w-36"
                     />
@@ -237,7 +259,8 @@ export default function App() {
           </div>
         </div>
         
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[500px] items-start">
+        {/* ✅ เพิ่ม min-h-[700px] เพื่อล็อคพื้นที่ด้านล่าง ป้องกันหน้าจอหดตัวแรงๆ */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[700px] items-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
               <Phonecard key={Data.name || index} Device={Data} PropCard={setCardProp}/>
@@ -251,6 +274,8 @@ export default function App() {
                   setSearchTerm("");
                   setDeviceType("all");
                   setPriceTier("all");
+                  setInputMinPrice("");
+                  setInputMaxPrice("");
                   setMinPrice("");
                   setMaxPrice("");
                   SetRecChoos({ activate: false, gaming: false, camera: false, durability: false, budget: false, performance: false, battery: false, entertainment: false });
@@ -302,4 +327,5 @@ export default function App() {
       </footer>
     </div>
   );
-                        }
+}
+

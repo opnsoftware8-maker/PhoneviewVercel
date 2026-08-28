@@ -12,15 +12,12 @@ export default function App() {
   const [deviceType, setDeviceType] = useState<string>("all");
   const [priceTier, setPriceTier] = useState<string>("all");
   
-  // ตัวแปรสำหรับคัดกรองจริง
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
 
-  // ✅ ตัวแปรใหม่: สำหรับเก็บค่าตอนกำลังพิมพ์ เพื่อไม่ให้หน้าจอกระตุกรัวๆ
   const [inputMinPrice, setInputMinPrice] = useState<string>("");
   const [inputMaxPrice, setInputMaxPrice] = useState<string>("");
 
-  // ✅ ระบบหน่วงเวลา: รอให้หยุดพิมพ์ 0.6 วินาที ค่อยเอาตัวเลขไปกรอง
   useEffect(() => {
     const delayFilter = setTimeout(() => {
       setMinPrice(inputMinPrice);
@@ -106,8 +103,14 @@ export default function App() {
   const btnActiveClass = "bg-blue-600 border-blue-600 text-white shadow-md shadow-blue-500/20";
   const btnInactiveClass = "bg-white border-gray-300 text-gray-600 hover:bg-gray-50 hover:border-gray-400";
 
+  const handleResetScroll = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ left: 0 });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#F4F3EE] font-prompt">
+    <div className="min-h-screen bg-[#F4F3EE] font-prompt overflow-x-hidden w-full max-w-full">
       <header className="w-full bg-zinc-900 text-white rounded-none px-6 py-8 shadow-md">
         <div className="max-w-4xl mx-auto space-y-3">
           <span className="block text-4xl sm:text-5xl font-black tracking-tight text-white font-trirong">
@@ -119,14 +122,14 @@ export default function App() {
         </div>
       </header>
       
-      <main className="p-4 sm:p-6 max-w-6xl mx-auto mt-4">
+      <main className="p-4 sm:p-6 max-w-6xl mx-auto mt-4 w-full overflow-x-hidden">
         <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-200/80 mb-8 transition-all">
           <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full">
             <input 
               placeholder="ค้นหารุ่นมือถือ... (เช่น Xiaomi 15)" 
               value={searchTerm} 
               onChange={(e) => setSearchTerm(e.target.value)} 
-              className="flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
+              className="flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
             />
             
             <button 
@@ -197,7 +200,7 @@ export default function App() {
                     ))}
                   </div>
                   
-                  <div className="flex items-center gap-3 mt-4">
+                  <div className="flex items-center gap-2 sm:gap-3 mt-4 w-full max-w-full">
                     <input 
                       type="number"
                       placeholder="ราคาต่ำสุด"
@@ -208,13 +211,16 @@ export default function App() {
                       }}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter') {
+                          e.preventDefault();
                           setMinPrice(inputMinPrice);
                           e.currentTarget.blur();
+                          handleResetScroll();
                         }
                       }}
-                      className="border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt w-36"
+                      onBlur={handleResetScroll}
+                      className="flex-1 min-w-0 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
                     />
-                    <span className="text-gray-400 font-medium">-</span>
+                    <span className="text-gray-400 font-medium shrink-0">-</span>
                     <input 
                       type="number"
                       placeholder="ราคาสูงสุด"
@@ -225,11 +231,14 @@ export default function App() {
                       }}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter') {
+                          e.preventDefault();
                           setMaxPrice(inputMaxPrice);
                           e.currentTarget.blur();
+                          handleResetScroll();
                         }
                       }}
-                      className="border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt w-36"
+                      onBlur={handleResetScroll}
+                      className="flex-1 min-w-0 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
                     />
                   </div>
                 </div>
@@ -259,7 +268,6 @@ export default function App() {
           </div>
         </div>
         
-        {/* ✅ เพิ่ม min-h-[700px] เพื่อล็อคพื้นที่ด้านล่าง ป้องกันหน้าจอหดตัวแรงๆ */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[700px] items-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
@@ -327,5 +335,5 @@ export default function App() {
       </footer>
     </div>
   );
-}
+          }
 

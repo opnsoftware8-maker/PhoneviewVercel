@@ -217,18 +217,7 @@ export default function Phonepage({
                   <p className="text-xs text-zinc-400 mb-4">อ้างอิงจาก {phoneDat.latestPrice?.priceFrom}</p>
                 )}
 
-                <div className="space-y-2.5">
-                  {Boolean(phoneDat.lazada) && (
-                    <a href={phoneDat.lazada} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-blue-600 hover:bg-blue-500 transition py-2 rounded-xl font-bold text-sm">
-                      สั่งซื้อบน Lazada
-                    </a>
-                  )}
-
-                  {Boolean(phoneDat.shopee) && (
-                    <a href={phoneDat.shopee} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-orange-600 hover:bg-orange-500 transition py-2 rounded-xl font-bold text-sm">
-                      สั่งซื้อบน Shopee
-                    </a>
-                  )}
+                <div className="space-y-2.5">                  
 
                   {Boolean(phoneDat.official) && (
                     <a href={phoneDat.official} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition py-2 rounded-xl font-bold text-sm text-zinc-300">

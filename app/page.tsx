@@ -315,7 +315,7 @@ export default function App() {
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
                   Messenger: Thongkam Theawpan
                 </a>
-                <a href="https://line.me/ti/p/~thongkam theawpan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
+                <a href="https://line.me/ti/p/thongkam theawpan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
                   <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
                   LINE: thongkam theawpan
                 </a>

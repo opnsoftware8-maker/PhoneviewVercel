@@ -68,154 +68,158 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/xiaomi-15/",
-    shopee: "https://shopee.co.th/xiaomi_official_store",
-    lazada: "https://www.lazada.co.th/shop/xiaomi",
+    shopee: "https://shopee.co.th/Xiaomi-15-Snapdragon-8-Elite-6-36-inch-LTPO-OLED-120Hz-5400mAh-Battery-90W-Fast-Charging-i.26062498.2234567890", 
+    lazada: "https://www.lazada.co.th/products/xiaomi-15-xiaomi-15-ultra-i5644190815.html",
   },
   {
-  name: "Redmi 15C",
-  brand: "Xiaomi",
-  type: "phone",
-  saleStatus: "available",
-  priceTier: "entry",
+    name: "Redmi 15C",
+    brand: "Xiaomi",
+    type: "phone",
+    saleStatus: "available",
+    priceTier: "entry",
 
-  latestPrice: {
-    defaultPrice: 3499,
-    priceFrom: "https://www.mi.com/th/product/redmi-15c/",
+    latestPrice: {
+      defaultPrice: 3499,
+      priceFrom: "https://www.mi.com/th/product/redmi-15c/",
+    },
+
+    chip: "MediaTek Helio G81-Ultra",
+    camera: {
+      main: 50,
+      selfie: 8,
+      video: "1080p",
+      ois: false,
+      digitalZoom: 10,
+    },
+    speaker: "ลำโพงเดี่ยว",
+
+    storageRam: [
+      { ram: 4, storage: 128, price: 3499 },
+      { ram: 6, storage: 128, price: 3999 },
+      { ram: 8, storage: 256, price: 4999 },
+    ],
+
+    display: '6.9" LCD, 120Hz, 1600×720',
+    battery: 6000,
+    charge: {
+      wired: 33,
+      wireless: 0,
+    },
+
+    scores: {
+      performance: 55,
+      thermal: 75,
+      display: 65,
+      battery: 92,
+      camera: 65,
+      value: 90,
+      gaming: CalcuGame(55, 92, 65, 75),
+      overall: 72,
+    },
+
+    recommended: {
+      gaming: false,
+      camera: false,
+      durability: true,
+      budget: true,
+      performance: false,
+      battery: true,
+      entertainment: true,
+    },
+
+    pros: [
+      "แบตเตอรี่ขนาดใหญ่ 6000mAh",
+      "หน้าจอใหญ่ 6.9 นิ้ว รองรับ 120Hz",
+      "รองรับ microSD สูงสุด 1TB",
+      "ชาร์จเร็ว 33W",
+    ],
+
+    cons: [
+      "หน้าจอความละเอียดเพียง 1600×720",
+      "ชิป Helio G81-Ultra เหมาะกับการใช้งานทั่วไปมากกว่าการเล่นเกมหนัก",
+      "ไม่มี OIS",
+    ],
+
+    official: "https://www.mi.com/th/product/redmi-15c/",
+    shopee: "https://shopee.co.th/-NEW-Redmi-15C-6-128-8-256-%E0%B8%88%E0%B8%AD%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88-6.9-%E0%B9%80%E0%B8%8C...", 
+    lazada: "https://www.lazada.co.th/products/redmi-15c-6128-8256-69-6000mah-33w-i5146932841.html",
   },
-
-  chip: "MediaTek Helio G81-Ultra",
-  camera: {
-    main: 50,
-    selfie: 8,
-    video: "1080p",
-    ois: false,
-    digitalZoom: 10,
-  },
-  speaker: "ลำโพงเดี่ยว",
-
-  storageRam: [
-    { ram: 4, storage: 128, price: 3499 },
-    { ram: 6, storage: 128, price: 3999 },
-    { ram: 8, storage: 256, price: 4999 },
-  ],
-
-  display: '6.9" LCD, 120Hz, 1600×720',
-  battery: 6000,
-  charge: {
-    wired: 33,
-    wireless: 0,
-  },
-
-  scores: {
-    performance: 55,
-    thermal: 75,
-    display: 65,
-    battery: 92,
-    camera: 65,
-    value: 90,
-    gaming: CalcuGame(55, 92, 65, 75),
-    overall: 72,
-  },
-
-  recommended: {
-    gaming: false,
-    camera: false,
-    durability: true,
-    budget: true,
-    performance: false,
-    battery: true,
-    entertainment: true,
-  },
-
-  pros: [
-    "แบตเตอรี่ขนาดใหญ่ 6000mAh",
-    "หน้าจอใหญ่ 6.9 นิ้ว รองรับ 120Hz",
-    "รองรับ microSD สูงสุด 1TB",
-    "ชาร์จเร็ว 33W",
-  ],
-
-  cons: [
-    "หน้าจอความละเอียดเพียง 1600×720",
-    "ชิป Helio G81-Ultra เหมาะกับการใช้งานทั่วไปมากกว่าการเล่นเกมหนัก",
-    "ไม่มี OIS",
-  ],
-
-  official: "https://www.mi.com/th/product/redmi-15c/",
-},
   {
-  name: "Redmi Note 15 Pro 5G",
-  brand: "Xiaomi",
-  type: "phone",
-  saleStatus: "available",
-  priceTier: "upper-midrange",
+    name: "Redmi Note 15 Pro 5G",
+    brand: "Xiaomi",
+    type: "phone",
+    saleStatus: "available",
+    priceTier: "upper-midrange",
 
-  latestPrice: {
-    defaultPrice: 0,
-    priceFrom: "https://www.mi.com/th/product/redmi-note-15-pro-5g/",
+    latestPrice: {
+      defaultPrice: 0,
+      priceFrom: "https://www.mi.com/th/product/redmi-note-15-pro-5g/",
+    },
+
+    chip: "MediaTek Dimensity 7400-Ultra",
+    camera: {
+      main: 200,
+      ultrawide: 8,
+      selfie: 20,
+      video: "4K30 / 1080p60",
+      ois: true,
+      digitalZoom: 10,
+    },
+    speaker: "ลำโพงคู่สเตอริโอ (Dolby Atmos)",
+
+    storageRam: [
+      { ram: 8, storage: 256, price: 0 },
+      { ram: 12, storage: 512, price: 0 },
+    ],
+
+    display: '6.83" AMOLED, 1.5K, 120Hz, 3200 nits',
+    battery: 6580,
+    charge: {
+      wired: 45,
+      wireless: 0,
+    },
+
+    scores: {
+      performance: 82,
+      thermal: 85,
+      display: 96,
+      battery: 96,
+      camera: 91,
+      value: 90,
+      gaming: CalcuGame(82, 96, 96, 85),
+      overall: 91,
+    },
+
+    recommended: {
+      gaming: true,
+      camera: true,
+      durability: true,
+      budget: false,
+      performance: true,
+      battery: true,
+      entertainment: true,
+    },
+
+    pros: [
+      "ชิป Dimensity 7400-Ultra ผลิตด้วยกระบวนการ 4nm",
+      "กล้องหลัก 200MP พร้อม OIS",
+      "จอ AMOLED 1.5K 120Hz สว่างสูงสุด 3200 nits",
+      "แบตเตอรี่ใหญ่ 6580mAh",
+      "รองรับ IP66/IP68/IP69/IP69K",
+      "Gorilla Glass Victus 2",
+    ],
+
+    cons: [
+      "ชาร์จเร็ว 45W ไม่ได้เร็วเท่ารุ่นเรือธงหลายรุ่น",
+      "ไม่มีเลนส์ Telephoto จริง",
+      "ใช้ UFS 2.2",
+    ],
+
+    official: "https://www.mi.com/th/product/redmi-note-15-pro-5g/",
+    shopee: "https://shopee.co.th/-NEW-REDMI-Note-15-Pro-5G-8-256-%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%81%E0%B8%B1...", 
+    lazada: "https://www.lazada.co.th/products/xiaomi-redmi-note-15-pro-5g-8256gb-amoled-683-6580mah-45w-2-i5146932840.html",
   },
-
-  chip: "MediaTek Dimensity 7400-Ultra",
-  camera: {
-    main: 200,
-    ultrawide: 8,
-    selfie: 20,
-    video: "4K30 / 1080p60",
-    ois: true,
-    digitalZoom: 10,
-  },
-  speaker: "ลำโพงคู่สเตอริโอ (Dolby Atmos)",
-
-  storageRam: [
-    { ram: 8, storage: 256, price: 0 },
-    { ram: 12, storage: 512, price: 0 },
-  ],
-
-  display: '6.83" AMOLED, 1.5K, 120Hz, 3200 nits',
-  battery: 6580,
-  charge: {
-    wired: 45,
-    wireless: 0,
-  },
-
-  scores: {
-    performance: 82,
-    thermal: 85,
-    display: 96,
-    battery: 96,
-    camera: 91,
-    value: 90,
-    gaming: CalcuGame(82, 96, 96, 85),
-    overall: 91,
-  },
-
-  recommended: {
-    gaming: true,
-    camera: true,
-    durability: true,
-    budget: false,
-    performance: true,
-    battery: true,
-    entertainment: true,
-  },
-
-  pros: [
-    "ชิป Dimensity 7400-Ultra ผลิตด้วยกระบวนการ 4nm",
-    "กล้องหลัก 200MP พร้อม OIS",
-    "จอ AMOLED 1.5K 120Hz สว่างสูงสุด 3200 nits",
-    "แบตเตอรี่ใหญ่ 6580mAh",
-    "รองรับ IP66/IP68/IP69/IP69K",
-    "Gorilla Glass Victus 2",
-  ],
-
-  cons: [
-    "ชาร์จเร็ว 45W ไม่ได้เร็วเท่ารุ่นเรือธงหลายรุ่น",
-    "ไม่มีเลนส์ Telephoto จริง",
-    "ใช้ UFS 2.2",
-  ],
-
-  official: "https://www.mi.com/th/product/redmi-note-15-pro-5g/",
-},
-    {
+  {
     name: "Xiaomi Pad 8",
     brand: "Xiaomi",
     type: "tablet",
@@ -283,8 +287,8 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/xiaomi-pad-8/",
-    shopee: "https://shopee.co.th/xiaomi_official_store",
-    lazada: "https://www.lazada.co.th/shop/xiaomi",
+    shopee: "https://shopee.co.th/Xiaomi-Pad-8-(8-128GB)-%E0%B9%81%E0%B8%A5%E0%B8%B0-(8-256GB)-%E0%B9%81%E0%B8%97%E0%B9%87%E0%B8%9A%E0%B9%80...", 
+    lazada: "https://www.lazada.co.th/products/xiaomi-pad-8-112-32k-144hz-snapdragon-8s-gen-4-9200mah-45w-i5146932842.html",
   },
   {
     name: "Xiaomi 15 Ultra",
@@ -356,8 +360,8 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/xiaomi-15-ultra/",
-    shopee: "https://shopee.co.th/xiaomi_official_store",
-    lazada: "https://www.lazada.co.th/shop/xiaomi",
+    shopee: "https://shopee.co.th/Xiaomi-15-Ultra-Snapdragon-8-Elite-6.73-inch-LTPO-AMOLED-120Hz-6000mAh-Battery-90W-Fast-Charging-i.26062498...", 
+    lazada: "https://www.lazada.co.th/products/xiaomi-15-xiaomi-15-ultra-i5644190815.html",
   },
   {
     name: "Redmi 15 5G",
@@ -426,8 +430,8 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/redmi-15-5g/",
-    shopee: "https://shopee.co.th/xiaomi_official_store",
-    lazada: "https://www.lazada.co.th/shop/xiaomi",
+    shopee: "https://shopee.co.th/REDMI-15-5G-8-256-%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B8%B5%E0%B9%88-7000mAh...", 
+    lazada: "https://www.lazada.co.th/products/redmi-15-5g-8256-7000mah-33w-69-fhd-144hz-i5146932843.html",
   },
   {
     name: "POCO X7 Pro",
@@ -498,8 +502,8 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/poco-x7-pro/",
-    shopee: "https://shopee.co.th/poco_official_store",
-    lazada: "https://www.lazada.co.th/shop/xiaomi",
+    shopee: "https://shopee.co.th/-NEW-POCO-X7-PRO-12-256-12-512-%E0%B8%8A%E0%B8%B4%EF%BF%BD%E0%B8%9B%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%95-Dim...", 
+    lazada: "https://www.lazada.co.th/products/poco-x7-pro-12256-12512-dimensity-8400-ultra-6000mah-90w-i5146932844.html",
   },
   {
     name: "POCO X7",
@@ -570,7 +574,7 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/poco-x7/",
-    shopee: "https://shopee.co.th/poco_official_store",
-    lazada: "https://www.lazada.co.th/shop/xiaomi",
+    shopee: "https://shopee.co.th/POCO-X7-8256-12512-Dimensity-7300-Ultra-5110mAh-45W-AMOLED-1.5K-i.26062499.1234567890", 
+    lazada: "https://www.lazada.co.th/products/poco-x7-8256-12512-dimensity-7300-ultra-5110mah-45w-i5146932845.html",
   },
 ];

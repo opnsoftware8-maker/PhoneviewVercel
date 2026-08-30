@@ -1007,6 +1007,197 @@ export const vivophone: Phone[] = [
   official: "https://www.vivo.com/th/products/x200",
   shopee: "https://shopee.co.th/list/vivo/X200",
 },    
+    {
+    name: "vivo Y21d",
+    brand: "vivo",
+    type: "phone",
+    saleStatus: "available",
+    priceTier: "budget",
+
+    latestPrice: {
+      defaultPrice: 6999,
+      priceFrom: "เริ่มต้นประมาณ 6,999 บาท",
+    },
+
+    chip: "Unisoc T7225",
+    speaker: "Dual Stereo Speaker, สูงสุด 400%",
+
+    camera: {
+      main: 50,
+      ultrawide: undefined,
+      telephoto: undefined,
+      selfie: 5,
+      video: "1080p",
+      ois: false,
+      digitalZoom: 10,
+      opticalZoom: undefined,
+    },
+
+    storageRam: [
+      {
+        ram: 4,
+        storage: 128,
+        price: 0,
+      },
+      {
+        ram: 6,
+        storage: 128,
+        price: 0,
+      },
+      {
+        ram: 6,
+        storage: 256,
+        price: 0,
+      },
+    ],
+
+    display: "6.68-inch LCD, 1608×720, 90Hz, 1000 nits",
+    battery: 6500,
+
+    charge: {
+      wired: 44,
+      wireless: 0,
+    },
+
+    scores: {
+      performance: 42,
+      gaming: 40,
+      battery: 92,
+      display: 62,
+      camera: 55,
+      value: 84,
+      thermal: 82,
+      overall: 68,
+    },
+
+    recommended: {
+      gaming: false,
+      camera: false,
+      durability: true,
+      budget: true,
+      performance: false,
+      battery: true,
+      entertainment: true,
+    },
+
+    pros: [
+      "ถนัดสายแบตเตอรี่และใช้งานทั่วไปมาก",
+      "ถนัดสายความทนทาน มีมาตรฐาน IP68 และ IP69",
+      "ถนัดสายดูวิดีโอและฟังเพลง เพราะมีลำโพงสเตอริโอคู่เสียงดังสูงสุด 400%",
+      "แบตเตอรี่ 6500mAh พร้อมชาร์จไว 44W",
+      "รองรับ microSD สูงสุด 2TB",
+      "หน้าจอ 90Hz ใช้งานทั่วไปได้ลื่นกว่าจอ 60Hz",
+      "กล้องหลัก 50MP เพียงพอสำหรับการถ่ายภาพทั่วไป",
+    ],
+
+    cons: [
+      "ไม่ถนัดสายเกมหนัก เพราะ Unisoc T7225 มีประสิทธิภาพระดับเริ่มต้น",
+      "ไม่ถนัดสายกล้องจริงจัง เพราะไม่มีกล้อง Ultra-wide และ Telephoto",
+      "ไม่ถนัดสายหน้าจอ เพราะเป็น LCD ความละเอียดเพียง HD+",
+      "กล้องหน้า 5MP ค่อนข้างธรรมดา",
+      "ไม่มี 5G",
+      "ไม่มี NFC",
+      "พอร์ต USB เป็น USB 2.0",
+      "ไม่มีชาร์จไร้สาย",
+    ],
+
+    official: "https://www.vivo.com/th/products/y21d",
+    shopee: "https://th.shp.ee/xBacyqSk",
+  },
+
+  {
+    name: "vivo Y31d",
+    brand: "vivo",
+    type: "phone",
+    saleStatus: "available",
+    priceTier: "budget",
+
+    latestPrice: {
+      defaultPrice: 7999,
+      priceFrom: "เริ่มต้นประมาณ 7,999 บาท",
+    },
+
+    chip: "Qualcomm Snapdragon 6s Gen 2 4G",
+    speaker: "Dual Stereo Speaker, สูงสุด 400%",
+
+    camera: {
+      main: 50,
+      ultrawide: undefined,
+      telephoto: undefined,
+      selfie: 8,
+      video: "1080p",
+      ois: false,
+      digitalZoom: 10,
+      opticalZoom: undefined,
+    },
+
+    storageRam: [
+      {
+        ram: 6,
+        storage: 128,
+        price: 0,
+      },
+      {
+        ram: 6,
+        storage: 256,
+        price: 0,
+      },
+    ],
+
+    display: "6.75-inch LCD, 1570×720, 120Hz, 1250 nits",
+    battery: 7200,
+
+    charge: {
+      wired: 44,
+      wireless: 0,
+    },
+
+    scores: {
+      performance: 58,
+      gaming: 56,
+      battery: 98,
+      display: 72,
+      camera: 58,
+      value: 88,
+      thermal: 86,
+      overall: 76,
+    },
+
+    recommended: {
+      gaming: true,
+      camera: false,
+      durability: true,
+      budget: true,
+      performance: false,
+      battery: true,
+      entertainment: true,
+    },
+
+    pros: [
+      "ถนัดสายแบตเตอรี่มาก จุดเด่นหลักคือแบต 7200mAh",
+      "ถนัดสายใช้งานหนักต่อเนื่องและเดินทาง เพราะแบตอึดมาก",
+      "ถนัดสายเกมระดับเบาถึงกลางมากกว่า Y21d ด้วย Snapdragon 6s Gen 2",
+      "ถนัดสายความทนทาน มีมาตรฐาน IP68 และ IP69",
+      "ถนัดสายความบันเทิงด้วยจอ 120Hz และลำโพงสเตอริโอคู่ 400%",
+      "หน้าจอสว่างสูงสุด 1250 nits",
+      "ชาร์จไว 44W",
+      "มีแบตเตอรี่ BlueVolt ที่ออกแบบมาให้มีอายุการใช้งานยาวนาน",
+    ],
+
+    cons: [
+      "ไม่ถนัดสายกล้องจริงจัง เพราะไม่มีกล้อง Ultra-wide และ Telephoto",
+      "ไม่ถนัดสายเกมหนัก เพราะ Snapdragon 6s Gen 2 4G ยังไม่ใช่ชิปสำหรับเกมระดับสูง",
+      "ไม่ถนัดสายหน้าจอคุณภาพสูง เพราะเป็น LCD และความละเอียดเพียง 1570×720",
+      "ไม่มี 5G",
+      "ไม่มี NFC",
+      "พอร์ต USB เป็น USB 2.0",
+      "ไม่มีชาร์จไร้สาย",
+      "ตัวเครื่องค่อนข้างใหญ่และหนักประมาณ 219 กรัม",
+    ],
+
+    official: "https://www.vivo.com/th/products/y31d",
+    shopee: "https://th.shp.ee/K1CApqbv",
+  },
 
 
 ]

@@ -1385,5 +1385,175 @@ export const vivophone: Phone[] = [
   official: "https://www.vivo.com/th/products/v60",
   shopee: "https://th.shp.ee/PkX8TcqK",
 },
+{
+  name: "vivo X300",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
 
+  latestPrice: {
+    defaultPrice: 29999,
+    priceFrom: "เริ่มต้นประมาณ 29,999 บาท",
+  },
+
+  chip: "MediaTek Dimensity 9500",
+  speaker: "Dual Stereo Speaker",
+
+  camera: {
+    main: 200,
+    ultrawide: 50,
+    telephoto: 50,
+    selfie: 50,
+    video: "4K",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 3,
+  },
+
+  storageRam: [
+    {
+      ram: 12,
+      storage: 256,
+      price: 0,
+    },
+    {
+      ram: 16,
+      storage: 512,
+      price: 0,
+    },
+  ],
+
+  display: "6.31-inch AMOLED, 2640×1216, 120Hz",
+  battery: 6040,
+
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 98,
+    gaming: 96,
+    battery: 90,
+    display: 94,
+    camera: 98,
+    value: 86,
+    thermal: 90,
+    overall: 95,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "ถนัดสายประสิทธิภาพและเกมหนักมาก",
+    "ถนัดสายกล้อง โดยเฉพาะการถ่ายภาพและซูม",
+    "ถนัดสายหน้าจอ AMOLED 120Hz",
+    "ถนัดสายแบตเตอรี่และชาร์จเร็ว",
+    "ถนัดสายถ่ายวิดีโอและคอนเทนต์",
+    "ประสิทธิภาพสูงมากจาก Dimensity 9500",
+  ],
+
+  cons: [
+    "ไม่ถนัดสายราคาประหยัด เพราะเป็นมือถือระดับเรือธง",
+    "ไม่ถนัดสายจอใหญ่ เพราะหน้าจอมีขนาด 6.31 นิ้ว",
+    "ไม่รองรับ microSD",
+    "ไม่มีชาร์จไร้สาย",
+  ],
+
+  official: "https://www.vivo.com/th/products/x300",
+  shopee: "https://th.shp.ee/F4rqRVG7",
+},
+
+{
+  name: "vivo X300 Pro",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+
+  latestPrice: {
+    defaultPrice: 39999,
+    priceFrom: "เริ่มต้นประมาณ 39,999 บาท",
+  },
+
+  chip: "MediaTek Dimensity 9500",
+  speaker: "Dual Stereo Speaker",
+
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    telephoto: 200,
+    selfie: 50,
+    video: "8K / 4K",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 3.7,
+  },
+
+  storageRam: [
+    {
+      ram: 16,
+      storage: 512,
+      price: 0,
+    },
+  ],
+
+  display: "6.78-inch AMOLED, 2800×1260, 120Hz",
+  battery: 6510,
+
+  charge: {
+    wired: 90,
+    wireless: 40,
+  },
+
+  scores: {
+    performance: 100,
+    gaming: 98,
+    battery: 94,
+    display: 96,
+    camera: 100,
+    value: 82,
+    thermal: 92,
+    overall: 97,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "ถนัดสายกล้องระดับจริงจัง โดยเฉพาะการซูมด้วย Telephoto 200MP",
+    "ถนัดสายเกมหนักและประสิทธิภาพสูงมาก",
+    "ถนัดสายถ่ายวิดีโอ รองรับสูงสุด 8K",
+    "ถนัดสายหน้าจอ AMOLED 120Hz ขนาดใหญ่",
+    "ถนัดสายแบตเตอรี่ ด้วยแบต 6510mAh",
+    "ถนัดสายชาร์จเร็วทั้งแบบสาย 90W และไร้สาย 40W",
+    "ถนัดสายความทนทานด้วยมาตรฐาน IP68/IP69",
+  ],
+
+  cons: [
+    "ไม่ถนัดสายประหยัด เพราะเป็นเรือธงราคาสูง",
+    "ไม่ถนัดสายเครื่องเล็ก เพราะตัวเครื่องมีขนาดใหญ่",
+    "ไม่รองรับ microSD",
+    "กล้อง Ultra-wide มีความละเอียด 50MP แต่ไม่เด่นเท่า Telephoto 200MP",
+  ],
+
+  official: "https://www.vivo.com/th/products/x300-Ultra",
+  shopee: "https://th.shp.ee/TRW8Hash",
+},
 ]

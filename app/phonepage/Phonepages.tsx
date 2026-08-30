@@ -223,7 +223,7 @@ export default function Phonepage({
     href={phoneDat.shopee}
     target="_blank"
     rel="noopener noreferrer"
-    className="block w-full text-center bg-orange-500 hover:bg-orange-700 border border-orange-800 transition py-2 rounded-xl font-bold text-sm text-zinc-100"
+    className="block w-full text-center bg-orange-500 hover:bg-orange-400/70 border border-orange-800 transition py-2 rounded-xl font-bold text-sm text-zinc-100"
   >
     สั่งซื้อผ่าน Shopee (ร้านค้าทางการ)
   </a>

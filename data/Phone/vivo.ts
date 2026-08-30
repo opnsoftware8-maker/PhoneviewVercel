@@ -1472,24 +1472,23 @@ export const vivophone: Phone[] = [
   official: "https://www.vivo.com/th/products/x300",
   shopee: "https://th.shp.ee/F4rqRVG7",
 },
-
 {
-  name: "vivo X300 Pro",
+  name: "vivo X300 Ultra",
   brand: "vivo",
   type: "phone",
   saleStatus: "available",
   priceTier: "flagship",
 
   latestPrice: {
-    defaultPrice: 39999,
-    priceFrom: "เริ่มต้นประมาณ 39,999 บาท",
+    defaultPrice: 0,
+    priceFrom: "",
   },
 
-  chip: "MediaTek Dimensity 9500",
+  chip: "Qualcomm Snapdragon 8 Elite Gen 5",
   speaker: "Dual Stereo Speaker",
 
   camera: {
-    main: 50,
+    main: 200,
     ultrawide: 50,
     telephoto: 200,
     selfie: 50,
@@ -1501,28 +1500,33 @@ export const vivophone: Phone[] = [
 
   storageRam: [
     {
+      ram: 12,
+      storage: 256,
+      price: 0,
+    },
+    {
       ram: 16,
       storage: 512,
       price: 0,
     },
   ],
 
-  display: "6.78-inch AMOLED, 2800×1260, 120Hz",
-  battery: 6510,
+  display: "6.82-inch AMOLED, 3168×1440, 120Hz",
+  battery: 7000,
 
   charge: {
-    wired: 90,
+    wired: 100,
     wireless: 40,
   },
 
   scores: {
     performance: 100,
-    gaming: 98,
-    battery: 94,
-    display: 96,
+    gaming: 100,
+    battery: 98,
+    display: 99,
     camera: 100,
-    value: 82,
-    thermal: 92,
+    value: 80,
+    thermal: 94,
     overall: 97,
   },
 
@@ -1537,23 +1541,25 @@ export const vivophone: Phone[] = [
   },
 
   pros: [
-    "ถนัดสายกล้องระดับจริงจัง โดยเฉพาะการซูมด้วย Telephoto 200MP",
-    "ถนัดสายเกมหนักและประสิทธิภาพสูงมาก",
-    "ถนัดสายถ่ายวิดีโอ รองรับสูงสุด 8K",
-    "ถนัดสายหน้าจอ AMOLED 120Hz ขนาดใหญ่",
-    "ถนัดสายแบตเตอรี่ ด้วยแบต 6510mAh",
-    "ถนัดสายชาร์จเร็วทั้งแบบสาย 90W และไร้สาย 40W",
-    "ถนัดสายความทนทานด้วยมาตรฐาน IP68/IP69",
+    "ถนัดสายกล้องระดับสูงมาก โดยเฉพาะการถ่ายภาพและการซูม",
+    "ถนัดสายเกมหนักและประสิทธิภาพสูงสุด",
+    "ถนัดสายถ่ายวิดีโอระดับสูง รองรับวิดีโอความละเอียดสูง",
+    "ถนัดสายหน้าจอขนาดใหญ่ ความละเอียดสูง และ 120Hz",
+    "ถนัดสายแบตเตอรี่ ด้วยแบตเตอรี่ขนาดใหญ่ 7000mAh",
+    "ถนัดสายชาร์จเร็ว รองรับชาร์จสาย 100W และไร้สาย 40W",
+    "ถนัดสายความทนทานและการใช้งานระยะยาว",
   ],
 
   cons: [
-    "ไม่ถนัดสายประหยัด เพราะเป็นเรือธงราคาสูง",
-    "ไม่ถนัดสายเครื่องเล็ก เพราะตัวเครื่องมีขนาดใหญ่",
-    "ไม่รองรับ microSD",
-    "กล้อง Ultra-wide มีความละเอียด 50MP แต่ไม่เด่นเท่า Telephoto 200MP",
+    "ไม่ถนัดสายประหยัด เพราะเป็นมือถือระดับเรือธงราคาสูง",
+    "ไม่ถนัดสายมือถือขนาดเล็ก เพราะตัวเครื่องมีขนาดใหญ่",
+    "ไม่ถนัดสายพกพา เพราะน้ำหนักและขนาดมากกว่ามือถือทั่วไป",
+    "ไม่มี microSD",
+    "ฟีเจอร์ระดับสูงหลายอย่างอาจเกินความจำเป็นสำหรับการใช้งานทั่วไป",
   ],
 
   official: "https://www.vivo.com/th/products/x300-Ultra",
   shopee: "https://th.shp.ee/TRW8Hash",
 },
+
 ]

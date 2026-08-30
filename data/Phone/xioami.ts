@@ -577,4 +577,457 @@ export const xiaomiphone: Phone[] = [
     shopee: "https://shopee.co.th/POCO-X7-8256-12512-Dimensity-7300-Ultra-5110mAh-45W-AMOLED-1.5K-i.26062499.1234567890", 
     lazada: "https://www.lazada.co.th/products/poco-x7-8256-12512-dimensity-7300-ultra-5110mah-45w-i5146932845.html",
   },
+    {
+    name: "Xiaomi Pad 7 Pro",
+    brand: "Xiaomi",
+    type: "tablet",
+    saleStatus: "available",
+    priceTier: "high-end",
+
+    latestPrice: {
+      defaultPrice: 11891,
+      priceFrom: "Shopee"
+    },
+
+    chip: "Snapdragon 8s Gen 3",
+    speaker: "Quad speakers, Dolby Atmos",
+
+    camera: {
+      main: 50,
+      selfie: 32,
+      video: "4K 30/60fps, 1080p 30/60fps",
+      ois: false,
+      digitalZoom: 0
+    },
+
+    storageRam: [
+      { ram: 8, storage: 128, price: 11891 },
+      { ram: 8, storage: 256, price: 11891 },
+      { ram: 12, storage: 512, price: 11891 }
+    ],
+
+    display: "11.2-inch 3.2K 144Hz, 3200×2136, 800 nits, 3:2, Dolby Vision",
+    battery: 8850,
+    charge: {
+      wired: 67,
+      wireless: 0
+    },
+
+    scores: {
+      performance: 96,
+      gaming: 95,
+      battery: 91,
+      display: 96,
+      camera: 78,
+      value: 94,
+      thermal: 90,
+      overall: 93
+    },
+
+    recommended: {
+      gaming: true,
+      camera: false,
+      durability: true,
+      budget: false,
+      performance: true,
+      battery: true,
+      entertainment: true
+    },
+
+    pros: [
+      "ถนัดเล่นเกมหนักและงานกราฟิก",
+      "ถนัดตัดต่อวิดีโอและงานสร้างสรรค์",
+      "ถนัดทำงานหลายแอปพร้อมกัน",
+      "ถนัดดูหนังและคอนเทนต์ด้วยจอ 3.2K 144Hz",
+      "ถนัดงานที่ต้องใช้ประสิทธิภาพสูง"
+    ],
+
+    cons: [
+      "ไม่ถนัดงานที่เน้นถ่ายภาพเป็นหลัก",
+      "ไม่ถนัดงานที่ต้องการพกพาแบบเครื่องเล็ก",
+      "ไม่ถนัดผู้ใช้ที่ต้องการเครื่องราคาประหยัด"
+    ],
+
+    official: "https://www.mi.com/th/product/xiaomi-pad-7-pro/",
+    shopee: "https://th.shp.ee/pXXt5uD7"
+  },
+
+  {
+    name: "Xiaomi Pad 7",
+    brand: "Xiaomi",
+    type: "tablet",
+    saleStatus: "available",
+    priceTier: "upper-midrange",
+
+    latestPrice: {
+      defaultPrice: 12589,
+      priceFrom: "Shopee"
+    },
+
+    chip: "Snapdragon 7+ Gen 3",
+    speaker: "Quad speakers, Dolby Atmos",
+
+    camera: {
+      main: 13,
+      selfie: 8,
+      video: "4K 30fps, 1080p 30/60fps",
+      ois: false,
+      digitalZoom: 0
+    },
+
+    storageRam: [
+      { ram: 8, storage: 128, price: 12589 },
+      { ram: 8, storage: 256, price: 12589 },
+      { ram: 12, storage: 256, price: 12589 }
+    ],
+
+    display: "11.2-inch 3.2K 144Hz, 3200×2136, 800 nits, 3:2, Dolby Vision",
+    battery: 8850,
+    charge: {
+      wired: 45,
+      wireless: 0
+    },
+
+    scores: {
+      performance: 91,
+      gaming: 91,
+      battery: 91,
+      display: 96,
+      camera: 62,
+      value: 88,
+      thermal: 89,
+      overall: 90
+    },
+
+    recommended: {
+      gaming: true,
+      camera: false,
+      durability: true,
+      budget: false,
+      performance: true,
+      battery: true,
+      entertainment: true
+    },
+
+    pros: [
+      "ถนัดเล่นเกมระดับหนัก",
+      "ถนัดเรียนและทำงานหลายหน้าต่าง",
+      "ถนัดดูหนังและคอนเทนต์",
+      "ถนัดงานกราฟิกและตัดต่อระดับกลางถึงสูง",
+      "ถนัดใช้งานระยะยาวด้วยจอคุณภาพสูง"
+    ],
+
+    cons: [
+      "ไม่ถนัดงานถ่ายภาพจริงจัง",
+      "ไม่ถนัดงานที่ต้องการกล้องคุณภาพสูง",
+      "ไม่ถนัดผู้ใช้ที่ต้องการแท็บเล็ตขนาดเล็ก"
+    ],
+
+    official: "https://www.mi.com/th/product/xiaomi-pad-7/",
+    shopee: "https://th.shp.ee/2Po76tpD"
+  },
+
+  {
+    name: "Xiaomi Pad Mini",
+    brand: "Xiaomi",
+    type: "tablet",
+    saleStatus: "available",
+    priceTier: "flagship",
+
+    latestPrice: {
+      defaultPrice: 18990,
+      priceFrom: "Shopee"
+    },
+
+    chip: "Dimensity 9400+",
+    speaker: "",
+
+    camera: {
+      main: 13,
+      selfie: 8,
+      video: "4K 30fps, 1080p 30/60fps",
+      ois: false,
+      digitalZoom: 0
+    },
+
+    storageRam: [
+      { ram: 8, storage: 256, price: 18990 },
+      { ram: 12, storage: 512, price: 18990 }
+    ],
+
+    display: "8.8-inch 3K 165Hz, 3008×1880, 403 ppi, 700 nits, Dolby Vision",
+    battery: 7500,
+    charge: {
+      wired: 67,
+      wireless: 0
+    },
+
+    scores: {
+      performance: 99,
+      gaming: 98,
+      battery: 88,
+      display: 98,
+      camera: 62,
+      value: 79,
+      thermal: 91,
+      overall: 93
+    },
+
+    recommended: {
+      gaming: true,
+      camera: false,
+      durability: true,
+      budget: false,
+      performance: true,
+      battery: true,
+      entertainment: true
+    },
+
+    pros: [
+      "ถนัดเล่นเกมหนักมาก",
+      "ถนัดเกมที่ต้องการเฟรมเรตสูง",
+      "ถนัดพกพาและใช้งานด้วยมือเดียว",
+      "ถนัดดูคอนเทนต์ด้วยจอ 3K 165Hz",
+      "ถนัดงานประสิทธิภาพสูงในขนาดกะทัดรัด"
+    ],
+
+    cons: [
+      "ไม่ถนัดงานที่ต้องการพื้นที่หน้าจอขนาดใหญ่",
+      "ไม่ถนัดงานเอกสารหรือ Multitasking แบบจอใหญ่",
+      "ไม่ถนัดงานถ่ายภาพจริงจัง",
+      "ไม่ถนัดคนที่ต้องการความคุ้มค่าด้านราคา"
+    ],
+
+    official: "https://www.mi.com/th/product/xiaomi-pad-mini/",
+    shopee: "https://th.shp.ee/Neksnnf7"
+  },
+
+  {
+    name: "Redmi Pad 2 Pro",
+    brand: "Redmi",
+    type: "tablet",
+    saleStatus: "available",
+    priceTier: "midrange",
+
+    latestPrice: {
+      defaultPrice: 8999,
+      priceFrom: "Shopee"
+    },
+
+    chip: "Snapdragon 7s Gen 4",
+    speaker: "",
+
+    camera: {
+      main: 8,
+      selfie: 8,
+      video: "1080p 30fps",
+      ois: false,
+      digitalZoom: 0
+    },
+
+    storageRam: [
+      { ram: 6, storage: 128, price: 8999 },
+      { ram: 8, storage: 256, price: 8999 }
+    ],
+
+    display: "12.1-inch 2.5K 120Hz, 2560×1600, 500 nits, Dolby Vision",
+    battery: 12000,
+    charge: {
+      wired: 33,
+      wireless: 0
+    },
+
+    scores: {
+      performance: 84,
+      gaming: 83,
+      battery: 97,
+      display: 91,
+      camera: 55,
+      value: 94,
+      thermal: 87,
+      overall: 87
+    },
+
+    recommended: {
+      gaming: true,
+      camera: false,
+      durability: true,
+      budget: true,
+      performance: true,
+      battery: true,
+      entertainment: true
+    },
+
+    pros: [
+      "ถนัดดูหนังและคอนเทนต์บนจอใหญ่",
+      "ถนัดเรียนและทำงานเอกสาร",
+      "ถนัดใช้งานแบตเตอรี่ยาวนาน",
+      "ถนัดเล่นเกมระดับกลางถึงสูง",
+      "ถนัดใช้งานทั่วไปและ Multitasking"
+    ],
+
+    cons: [
+      "ไม่ถนัดถ่ายภาพจริงจัง",
+      "ไม่ถนัดเกมระดับหนักสุดเท่ารุ่นเรือธง",
+      "ไม่ถนัดงานที่ต้องการ USB ความเร็วสูง",
+      "ไม่ถนัดการพกพาเนื่องจากตัวเครื่องค่อนข้างใหญ่"
+    ],
+
+    official: "https://www.mi.com/th/product/redmi-pad-2-pro/",
+    shopee: "https://th.shp.ee/GxUj6JPQ"
+  },
+
+  {
+    name: "Redmi Pad 2 (9.7)",
+    brand: "Redmi",
+    type: "tablet",
+    saleStatus: "available",
+    priceTier: "entry",
+
+    latestPrice: {
+      defaultPrice: 5499,
+      priceFrom: "Shopee"
+    },
+
+    chip: "Snapdragon 6s 4G Gen 2",
+    speaker: "Stereo speakers",
+
+    camera: {
+      main: 8,
+      selfie: 5,
+      video: "1080p 30fps",
+      ois: false,
+      digitalZoom: 0
+    },
+
+    storageRam: [
+      { ram: 4, storage: 64, price: 5499 },
+      { ram: 4, storage: 128, price: 5499 }
+    ],
+
+    display: "9.7-inch 2K 120Hz, 2048×1280, 500 nits",
+    battery: 7600,
+    charge: {
+      wired: 18,
+      wireless: 0
+    },
+
+    scores: {
+      performance: 59,
+      gaming: 55,
+      battery: 87,
+      display: 86,
+      camera: 45,
+      value: 91,
+      thermal: 78,
+      overall: 68
+    },
+
+    recommended: {
+      gaming: false,
+      camera: false,
+      durability: true,
+      budget: true,
+      performance: false,
+      battery: true,
+      entertainment: true
+    },
+
+    pros: [
+      "ถนัดเรียนออนไลน์",
+      "ถนัดอ่านหนังสือและเอกสาร",
+      "ถนัดดู YouTube และสตรีมมิง",
+      "ถนัดงานทั่วไปที่ไม่หนัก",
+      "ถนัดใช้งานในงบประหยัด"
+    ],
+
+    cons: [
+      "ไม่ถนัดเล่นเกมหนัก",
+      "ไม่ถนัดตัดต่อวิดีโอหนัก",
+      "ไม่ถนัด Multitasking จำนวนมาก",
+      "ไม่ถนัดงานที่ต้องการประสิทธิภาพสูง",
+      "ไม่ถนัดถ่ายภาพจริงจัง"
+    ],
+
+    official: "https://www.mi.com/th/product/redmi-pad-2-9-7-inch/",
+    shopee: "https://th.shp.ee/kTJBUQHA"
+  },
+
+  {
+    name: "Redmi Pad 2 (11)",
+    brand: "Redmi",
+    type: "tablet",
+    saleStatus: "available",
+    priceTier: "entry-midrange",
+
+    latestPrice: {
+      defaultPrice: 6999,
+      priceFrom: "Shopee"
+    },
+
+    chip: "Helio G100-Ultra",
+    speaker: "Quad speakers",
+
+    camera: {
+      main: 8,
+      selfie: 5,
+      video: "1080p 30fps",
+      ois: false,
+      digitalZoom: 0
+    },
+
+    storageRam: [
+      { ram: 4, storage: 128, price: 6999 },
+      { ram: 6, storage: 128, price: 6999 },
+      { ram: 8, storage: 256, price: 6999 }
+    ],
+
+    display: "11-inch 2.5K 90Hz, 2560×1600, 500 nits",
+    battery: 9000,
+    charge: {
+      wired: 18,
+      wireless: 0
+    },
+
+    scores: {
+      performance: 63,
+      gaming: 61,
+      battery: 93,
+      display: 87,
+      camera: 45,
+      value: 93,
+      thermal: 80,
+      overall: 73
+    },
+
+    recommended: {
+      gaming: false,
+      camera: false,
+      durability: true,
+      budget: true,
+      performance: false,
+      battery: true,
+      entertainment: true
+    },
+
+    pros: [
+      "ถนัดดูหนังและความบันเทิง",
+      "ถนัดเรียนออนไลน์",
+      "ถนัดอ่านเอกสารและหนังสือ",
+      "ถนัดใช้งานทั่วไป",
+      "ถนัดใช้งานแบตเตอรี่ยาวนาน",
+      "ถนัดงานที่ต้องการจอใหญ่ในงบจำกัด"
+    ],
+
+    cons: [
+      "ไม่ถนัดเล่นเกมหนัก",
+      "ไม่ถนัดตัดต่อวิดีโอหนัก",
+      "ไม่ถนัดงานประสิทธิภาพสูง",
+      "ไม่ถนัดถ่ายภาพจริงจัง",
+      "ไม่ถนัดงาน Multitasking หนักเท่ารุ่นระดับสูง"
+    ],
+
+    official: "https://www.mi.com/th/product/redmi-pad-2/",
+    shopee: "https://th.shp.ee/AcYaVpea"
+  },
 ];

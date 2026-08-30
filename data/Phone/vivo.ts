@@ -1480,7 +1480,7 @@ export const vivophone: Phone[] = [
   priceTier: "flagship",
 
   latestPrice: {
-    defaultPrice: 0,
+    defaultPrice: 78999,
     priceFrom: "",
   },
 
@@ -1567,7 +1567,7 @@ export const vivophone: Phone[] = [
     saleStatus: "available",
     priceTier: "entry-midrange",
     latestPrice: {
-      defaultPrice: 0,
+      defaultPrice: 14900,
       priceFrom: "shopee",
     },
     chip: "MediaTek Dimensity 7400-Turbo 5G",

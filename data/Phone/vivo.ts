@@ -1198,6 +1198,192 @@ export const vivophone: Phone[] = [
     official: "https://www.vivo.com/th/products/y31d",
     shopee: "https://th.shp.ee/K1CApqbv",
   },
+{
+  name: "vivo V70 FE",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "upper-midrange",
 
+  latestPrice: {
+    defaultPrice: 14999,
+    priceFrom: "เริ่มต้นประมาณ 14,999 บาท",
+  },
+
+  chip: "MediaTek Dimensity 7360-Turbo",
+  speaker: "Dual Stereo Speaker",
+
+  camera: {
+    main: 200,
+    ultrawide: 8,
+    telephoto: undefined,
+    selfie: 32,
+    video: "4K / 1080p / 720p",
+    ois: true,
+    digitalZoom: 9,
+    opticalZoom: undefined,
+  },
+
+  storageRam: [
+    {
+      ram: 8,
+      storage: 256,
+      price: 0,
+    },
+    {
+      ram: 12,
+      storage: 256,
+      price: 0,
+    },
+  ],
+
+  display: "6.83-inch AMOLED Q10+, 2800×1260, 120Hz, 5000 nits",
+  battery: 7000,
+
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 76,
+    gaming: 75,
+    battery: 96,
+    display: 94,
+    camera: 90,
+    value: 88,
+    thermal: 82,
+    overall: 86,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "ถนัดสายกล้องและถ่ายภาพ เพราะมีกล้องหลัก 200MP พร้อม OIS",
+    "ถนัดสายแบตเตอรี่ ด้วยแบต 7000mAh และชาร์จไว 90W",
+    "ถนัดสายเกมระดับกลางถึงค่อนข้างหนัก ด้วย Dimensity 7360-Turbo",
+    "ถนัดสายหน้าจอ AMOLED ความละเอียด 1.5K และ 120Hz",
+    "ถนัดสายความทนทานด้วยมาตรฐาน IP68 และ IP69",
+    "กล้องหน้า 32MP",
+    "ลำโพงสเตอริโอคู่",
+    "RAM LPDDR5 และ UFS 3.1",
+  ],
+
+  cons: [
+    "ไม่ถนัดสายกล้องซูมจริงจัง เพราะไม่มีกล้อง Telephoto",
+    "ไม่ถนัดสายเกมระดับเรือธง เพราะ Dimensity 7360-Turbo ยังอยู่ระดับกลาง",
+    "ไม่ถนัดสายเพิ่มพื้นที่ เพราะไม่รองรับ microSD",
+    "USB 2.0",
+    "ไม่มีชาร์จไร้สาย",
+    "ไม่มี NFC",
+  ],
+
+  official: "https://www.vivo.com/th/products/V70-fe?fromSuggestion=V70+Fe",
+  shopee: "https://th.shp.ee/Dm8LxPZ4",
+},
+
+{
+  name: "vivo V60",
+  brand: "vivo",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "upper-midrange",
+
+  latestPrice: {
+    defaultPrice: 14999,
+    priceFrom: "เริ่มต้นประมาณ 14,999 บาท",
+  },
+
+  chip: "Qualcomm Snapdragon 7 Gen 4",
+  speaker: "Dual Stereo Speaker",
+
+  camera: {
+    main: 50,
+    ultrawide: 8,
+    telephoto: 50,
+    selfie: 50,
+    video: "4K / 1080p / 720p",
+    ois: true,
+    digitalZoom: 10,
+    opticalZoom: 3,
+  },
+
+  storageRam: [
+    {
+      ram: 8,
+      storage: 256,
+      price: 0,
+    },
+    {
+      ram: 12,
+      storage: 256,
+      price: 0,
+    },
+    {
+      ram: 12,
+      storage: 512,
+      price: 0,
+    },
+  ],
+
+  display: "6.77-inch AMOLED, 2392×1080, 120Hz, 5000 nits",
+  battery: 6500,
+
+  charge: {
+    wired: 90,
+    wireless: 0,
+  },
+
+  scores: {
+    performance: 84,
+    gaming: 82,
+    battery: 94,
+    display: 92,
+    camera: 96,
+    value: 90,
+    thermal: 86,
+    overall: 90,
+  },
+
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true,
+  },
+
+  pros: [
+    "ถนัดสายกล้องมาก โดยเฉพาะ Portrait และการซูม ด้วยกล้อง Telephoto ZEISS 50MP",
+    "ถนัดสายเกมระดับกลางถึงสูง ด้วย Snapdragon 7 Gen 4",
+    "ถนัดสายแบตเตอรี่ ด้วยแบต 6500mAh และชาร์จไว 90W",
+    "ถนัดสายหน้าจอ AMOLED 120Hz",
+    "ถนัดสายถ่ายวิดีโอ เพราะรองรับวิดีโอ 4K",
+    "ถนัดสายความทนทานด้วย IP68 และ IP69",
+    "กล้องหน้า 50MP",
+    "รองรับ NFC",
+  ],
+
+  cons: [
+    "ไม่ถนัดสายเพิ่มพื้นที่ เพราะไม่รองรับ microSD",
+    "ไม่ถนัดสายชาร์จไร้สาย เพราะไม่รองรับ",
+    "USB 2.0",
+    "กล้อง Ultra-wide 8MP ความละเอียดน้อยกว่ากล้องหลักและ Telephoto",
+    "ไม่ใช่มือถือสำหรับเกมระดับเรือธงโดยตรง",
+  ],
+
+  official: "https://www.vivo.com/th/products/v60",
+  shopee: "https://th.shp.ee/PkX8TcqK",
+},
 
 ]

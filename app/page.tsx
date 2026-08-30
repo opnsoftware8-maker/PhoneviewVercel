@@ -300,39 +300,44 @@ export default function App() {
       </main>
       
       <footer className="w-full bg-zinc-950 text-zinc-400 font-prompt border-t border-zinc-800">
-        <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-zinc-800/80">
-            <div className="space-y-3">
-              <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
-                เว็บไซต์รวบรวมและแนะนำสเปกสมาร์ทโฟนและแท็บเล็ต เพื่อช่วยให้คุณเลือกซื้อเครื่องที่คุ้มค่าและตอบโจทย์การใช้งานมากที่สุด
-              </p>
-            </div>
+  <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 pb-8 border-b border-zinc-800/80">
+      <div className="space-y-3">
+        <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
+          เว็บไซต์รวบรวมและแนะนำสเปกสมาร์ทโฟนและแท็บเล็ต เพื่อช่วยให้คุณเลือกซื้อเครื่องที่คุ้มค่าและตอบโจทย์การใช้งานมากที่สุด
+        </p>
+      </div>
 
-            <div className="space-y-3">
-              <h3 className="font-trirong text-base font-semibold text-zinc-200">ติดต่อเรา</h3>
-              <div className="flex flex-col gap-3 text-sm">
-                <a href="https://www.facebook.com/share/1BW1m1aiFN/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
-                  Messenger: Thongkam Theawpan
-                </a>
-                <a href="https://line.me/ti/p/~thongkam theawpan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
-                  LINE: thongkam theawpan
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-3 text-xs text-zinc-500 leading-relaxed mb-8">
-            <p><span className="font-medium text-zinc-400">ข้อจำกัดความรับผิดชอบเรื่องราคา:</span> ราคาสินค้าที่แสดงบนเว็บไซต์เป็นราคากลางหรือราคาอ้างอิง ณ วันที่บันทึกข้อมูล ซึ่งอาจมีการเปลี่ยนแปลงตามโปรโมชันหรือส่วนลดของแต่ละแพลตฟอร์ม</p>
-            <p><span className="font-medium text-zinc-400">การเปิดเผยลิงก์พันธมิตร:</span> เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada)</p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600 pt-4 border-t border-zinc-900">
-            <p>&copy; 2026 PhoneView. All rights reserved.</p>
-          </div>
+      <div className="space-y-3">
+        <h3 className="font-trirong text-base font-semibold text-zinc-200">ติดต่อเรา</h3>
+        <div className="flex flex-col gap-3 text-sm">
+          <a href="https://www.facebook.com/share/1BW1m1aiFN/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+            Messenger: Thongkam Theawpan
+          </a>
+          <a href="https://line.me/ti/p/~thongkam theawpan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+            LINE: thongkam theawpan
+          </a>
         </div>
-      </footer>
+      </div>
+    </div>
+
+    <div className="space-y-3 text-xs leading-relaxed mb-8">
+      <p className="text-zinc-200 bg-zinc-900/60 p-3 rounded-lg border border-zinc-800">
+        <span className="font-semibold text-white">คำชี้แจงเรื่องราคาสินค้า:</span> ราคาสินค้าแต่ละรุ่นอาจมีความแตกต่างกันขึ้นอยู่กับร้านค้าผู้จำหน่าย ทั้งนี้ ราคาที่แสดงบนเว็บไซต์เป็นราคาอ้างอิงที่คำนวณจากโปรโมชันและส่วนลดของร้านค้าหรือแพลตฟอร์มแล้ว แต่<span className="text-white font-medium underline decoration-zinc-500 underline-offset-4">ยังไม่รวมโค้ดส่วนลดส่วนบุคคลของผู้ใช้งาน</span>
+      </p>
+      <p className="text-zinc-500 px-1">
+        <span className="font-medium text-zinc-400">การเปิดเผยลิงก์พันธมิตร:</span> เว็บไซต์นี้อาจได้รับค่าตอบแทนจากการสั่งซื้อสินค้าผ่านลิงก์พันธมิตร (Shopee / Lazada)
+      </p>
+    </div>
+
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600 pt-4 border-t border-zinc-900">
+      <p>&copy; 2026 PhoneView. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+      
     </div>
   );
 }

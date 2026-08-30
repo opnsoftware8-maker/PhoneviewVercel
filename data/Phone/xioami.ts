@@ -152,7 +152,7 @@ export const xiaomiphone: Phone[] = [
     priceTier: "upper-midrange",
 
     latestPrice: {
-      defaultPrice: 0,
+      defaultPrice: 9990,
       priceFrom: "https://www.mi.com/th/product/redmi-note-15-pro-5g/",
     },
 

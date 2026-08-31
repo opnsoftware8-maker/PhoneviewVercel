@@ -1627,5 +1627,4 @@ export const xiaomiphone: Phone[] = [
   official: "https://www.mi.com/th/product/xiaomi-17-ultra/specs/",
   shopee: "https://th.shp.ee/d7aFkJBr"
 }
-```0
 ];

@@ -1075,15 +1075,15 @@ export const xiaomiphone: Phone[] = [
     entertainment: true
   },
   pros: [
-    "7500mAh battery",
-    "45W fast charging",
-    "120Hz display",
-    "Stereo speakers",
-    "IP64"
+    "แบตเตอรี่ความจุ 7500mAh อึกมาก",
+    "การชาร์จแบบสาย 45W fast charging",
+    "หน้ายอ120Hz ลื่นไหลมาก",
+    "ลำโพง เสตอรีโอ(Stereo)",
+    "มาตรฐานกันนำ่กันฝุ่น IP64(ป้องกันนำ้ฝนได้สบาย แต่ไม่สามารถแช่นำ้ได้)"
   ],
   cons: [
-    "HD+ resolution",
-    "Entry-level chipset"
+    "ความคมชัดเพียง HD+ (เพียงพอสำหรับการใช้ทั่วไป)",
+    "ชิปมีประสิทธิภาพ ระดับเริ่มต้น สำหรับงานทั่วไป(โซเชียลหรือเกมเบาๆ(กลางตํ่าได้)"
   ],
   official: "https://www.mi.com/th/product/redmi-17/specs/",
   shopee: "https://th.shp.ee/7ZtYYjLJ"
@@ -1145,9 +1145,9 @@ export const xiaomiphone: Phone[] = [
     "microSD support"
   ],
   cons: [
-    "13MP main camera",
-    "15W charging",
-    "Entry-level chipset"
+    "13MP กล้องหลัก ใช้ทั่วไปได้แน่นอนแต่ไม่เหมาะงานถ่ายภาพ",
+    "15W ชาร์จแบบสาย ช้า-ทั่วไป",
+    "ชิปประมวลผล ประสิทธิภาพระดับเริ่มต้น"
   ],
   official: "https://www.mi.com/th/product/redmi-a7-pro/specs/",
   shopee: "https://th.shp.ee/vQtXyHxw"

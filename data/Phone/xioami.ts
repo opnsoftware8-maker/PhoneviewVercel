@@ -71,79 +71,7 @@ export const xiaomiphone: Phone[] = [
     shopee: "https://shopee.co.th/Xiaomi-15-Snapdragon-8-Elite-6-36-inch-LTPO-OLED-120Hz-5400mAh-Battery-90W-Fast-Charging-i.26062498.2234567890", 
     lazada: "https://www.lazada.co.th/products/xiaomi-15-xiaomi-15-ultra-i5644190815.html",
   },
-  {
-    name: "Redmi 15C",
-    brand: "Xiaomi",
-    type: "phone",
-    saleStatus: "available",
-    priceTier: "entry",
 
-    latestPrice: {
-      defaultPrice: 3499,
-      priceFrom: "https://www.mi.com/th/product/redmi-15c/",
-    },
-
-    chip: "MediaTek Helio G81-Ultra",
-    camera: {
-      main: 50,
-      selfie: 8,
-      video: "1080p",
-      ois: false,
-      digitalZoom: 10,
-    },
-    speaker: "ลำโพงเดี่ยว",
-
-    storageRam: [
-      { ram: 4, storage: 128, price: 3499 },
-      { ram: 6, storage: 128, price: 3999 },
-      { ram: 8, storage: 256, price: 4999 },
-    ],
-
-    display: '6.9" LCD, 120Hz, 1600×720',
-    battery: 6000,
-    charge: {
-      wired: 33,
-      wireless: 0,
-    },
-
-    scores: {
-      performance: 55,
-      thermal: 75,
-      display: 65,
-      battery: 92,
-      camera: 65,
-      value: 90,
-      gaming: CalcuGame(55, 92, 65, 75),
-      overall: 72,
-    },
-
-    recommended: {
-      gaming: false,
-      camera: false,
-      durability: true,
-      budget: true,
-      performance: false,
-      battery: true,
-      entertainment: true,
-    },
-
-    pros: [
-      "แบตเตอรี่ขนาดใหญ่ 6000mAh",
-      "หน้าจอใหญ่ 6.9 นิ้ว รองรับ 120Hz",
-      "รองรับ microSD สูงสุด 1TB",
-      "ชาร์จเร็ว 33W",
-    ],
-
-    cons: [
-      "หน้าจอความละเอียดเพียง 1600×720",
-      "ชิป Helio G81-Ultra เหมาะกับการใช้งานทั่วไปมากกว่าการเล่นเกมหนัก",
-      "ไม่มี OIS",
-    ],
-
-    official: "https://www.mi.com/th/product/redmi-15c/",
-    shopee: "https://shopee.co.th/-NEW-Redmi-15C-6-128-8-256-%E0%B8%88%E0%B8%AD%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88-6.9-%E0%B9%80%E0%B8%8C...", 
-    lazada: "https://www.lazada.co.th/products/redmi-15c-6128-8256-69-6000mah-33w-i5146932841.html",
-  },
   {
     name: "Redmi Note 15 Pro 5G",
     brand: "Xiaomi",
@@ -1030,4 +958,328 @@ export const xiaomiphone: Phone[] = [
     official: "https://www.mi.com/th/product/redmi-pad-2/",
     shopee: "https://th.shp.ee/AcYaVpea"
   },
+  {
+  name: "Redmi 17 5G",
+  brand: "Redmi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "entry-midrange",
+  latestPrice: {
+    defaultPrice: 6224,
+    priceFrom: "Shopee"
+  },
+  chip: "Qualcomm Snapdragon 4 Gen 5",
+  speaker: "Stereo speakers",
+  camera: {
+    main: 50,
+    selfie: 8,
+    video: "1080p@30fps",
+    ois: false,
+    digitalZoom: 10
+  },
+  storageRam: [
+    {
+      ram: 4,
+      storage: 128,
+      price: 6224
+    }
+  ],
+  display: "6.9-inch IPS LCD, 1600×720, 120Hz",
+  battery: 7500,
+  charge: {
+    wired: 45,
+    wireless: 0
+  },
+  scores: {
+    performance: 62,
+    gaming: 60,
+    battery: 95,
+    display: 72,
+    camera: 58,
+    value: 88,
+    thermal: 78,
+    overall: 72
+  },
+  recommended: {
+    gaming: true,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: true,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "7500mAh battery",
+    "45W fast charging",
+    "120Hz display",
+    "Stereo speakers",
+    "IP64"
+  ],
+  cons: [
+    "HD+ resolution",
+    "No OIS"
+  ],
+  official: "https://www.mi.com/th/product/redmi-17-5g/specs/",
+  shopee: "https://th.shp.ee/mUHiZcXz"
+},
+{
+  name: "Redmi 17",
+  brand: "Redmi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "budget",
+  latestPrice: {
+    defaultPrice: 5394,
+    priceFrom: "Shopee"
+  },
+  chip: "MediaTek Helio G91-Ultra",
+  speaker: "Stereo speakers",
+  camera: {
+    main: 50,
+    selfie: 8,
+    video: "1080p@30fps",
+    ois: false,
+    digitalZoom: 10
+  },
+  storageRam: [
+    {
+      ram: 4,
+      storage: 128,
+      price: 5394
+    }
+  ],
+  display: "6.9-inch IPS LCD, 1600×720, 120Hz",
+  battery: 7500,
+  charge: {
+    wired: 45,
+    wireless: 0
+  },
+  scores: {
+    performance: 42,
+    gaming: 40,
+    battery: 95,
+    display: 72,
+    camera: 58,
+    value: 90,
+    thermal: 82,
+    overall: 65
+  },
+  recommended: {
+    gaming: false,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "7500mAh battery",
+    "45W fast charging",
+    "120Hz display",
+    "Stereo speakers",
+    "IP64"
+  ],
+  cons: [
+    "HD+ resolution",
+    "Entry-level chipset"
+  ],
+  official: "https://www.mi.com/th/product/redmi-17/specs/",
+  shopee: "https://th.shp.ee/7ZtYYjLJ"
+},
+{
+  name: "Redmi A7 Pro",
+  brand: "Redmi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "entry",
+  latestPrice: {
+    defaultPrice: 4599,
+    priceFrom: "Shopee"
+  },
+  chip: "Unisoc T7250",
+  speaker: "Mono speaker",
+  camera: {
+    main: 13,
+    selfie: 8,
+    video: "1080p@30fps",
+    ois: false,
+    digitalZoom: 10
+  },
+  storageRam: [
+    {
+      ram: 4,
+      storage: 64,
+      price: 4599
+    }
+  ],
+  display: "6.9-inch IPS LCD, 1600×720, 120Hz",
+  battery: 6000,
+  charge: {
+    wired: 15,
+    wireless: 0
+  },
+  scores: {
+    performance: 25,
+    gaming: 23,
+    battery: 84,
+    display: 68,
+    camera: 35,
+    value: 78,
+    thermal: 86,
+    overall: 52
+  },
+  recommended: {
+    gaming: false,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "6000mAh battery",
+    "120Hz display",
+    "microSD support"
+  ],
+  cons: [
+    "13MP main camera",
+    "15W charging",
+    "Entry-level chipset"
+  ],
+  official: "https://www.mi.com/th/product/redmi-a7-pro/specs/",
+  shopee: "https://th.shp.ee/vQtXyHxw"
+},
+{
+  name: "Redmi A7",
+  brand: "Redmi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "entry",
+  latestPrice: {
+    defaultPrice: 3817,
+    priceFrom: "Shopee"
+  },
+  chip: "Unisoc T7250",
+  speaker: "Mono speaker",
+  camera: {
+    main: 13,
+    selfie: 8,
+    video: "1080p@30fps",
+    ois: false,
+    digitalZoom: 10
+  },
+  storageRam: [
+    {
+      ram: 4,
+      storage: 64,
+      price: 3817
+    }
+  ],
+  display: "6.88-inch IPS LCD, 1640×720, 120Hz",
+  battery: 5200,
+  charge: {
+    wired: 15,
+    wireless: 0
+  },
+  scores: {
+    performance: 23,
+    gaming: 21,
+    battery: 72,
+    display: 66,
+    camera: 35,
+    value: 90,
+    thermal: 87,
+    overall: 50
+  },
+  recommended: {
+    gaming: false,
+    camera: false,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "120Hz display",
+    "5200mAh battery",
+    "microSD support"
+  ],
+  cons: [
+    "13MP main camera",
+    "15W charging",
+    "Entry-level chipset"
+  ],
+  official: "https://www.mi.com/th/product/redmi-a7/specs/",
+  shopee: "https://th.shp.ee/KgbVorYD"
+},
+{
+  name: "Redmi 15C",
+  brand: "Redmi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "entry",
+  latestPrice: {
+    defaultPrice: 4979,
+    priceFrom: "Shopee"
+  },
+  chip: "MediaTek Helio G81-Ultra",
+  speaker: "Mono speaker",
+  camera: {
+    main: 50,
+    selfie: 8,
+    video: "1080p@30fps",
+    ois: false,
+    digitalZoom: 10
+  },
+  storageRam: [
+    {
+      ram: 4,
+      storage: 128,
+      price: 4979
+    }
+  ],
+  display: "6.9-inch IPS LCD, 1600×720, 120Hz",
+  battery: 6000,
+  charge: {
+    wired: 33,
+    wireless: 0
+  },
+  scores: {
+    performance: 31,
+    gaming: 30,
+    battery: 88,
+    display: 70,
+    camera: 58,
+    value: 86,
+    thermal: 82,
+    overall: 60
+  },
+  recommended: {
+    gaming: false,
+    camera: true,
+    durability: true,
+    budget: true,
+    performance: false,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "6000mAh battery",
+    "33W fast charging",
+    "120Hz display",
+    "50MP main camera",
+    "microSD support"
+  ],
+  cons: [
+    "HD+ resolution",
+    "Entry-level chipset",
+    "No OIS"
+  ],
+  official: "https://www.mi.com/th/product/redmi-15c/specs/",
+  shopee: "https://th.shp.ee/gK7Uzm7V"
+}
 ];

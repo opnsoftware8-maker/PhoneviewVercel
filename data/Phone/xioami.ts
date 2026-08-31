@@ -1281,5 +1281,351 @@ export const xiaomiphone: Phone[] = [
   ],
   official: "https://www.mi.com/th/product/redmi-15c/specs/",
   shopee: "https://th.shp.ee/gK7Uzm7V"
+},
+  {
+  name: "Xiaomi 17T Pro",
+  brand: "Xiaomi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+  latestPrice: {
+    defaultPrice: 20334,
+    priceFrom: "Shopee"
+  },
+  chip: "MediaTek Dimensity 9500",
+  speaker: "Stereo speakers, Dolby Atmos",
+  camera: {
+    main: 50,
+    ultrawide: 12,
+    telephoto: 50,
+    selfie: 32,
+    video: "8K@30fps, 4K@120fps",
+    ois: true,
+    digitalZoom: 120,
+    opticalZoom: 5
+  },
+  storageRam: [
+    {
+      ram: 12,
+      storage: 256,
+      price: 20334
+    }
+  ],
+  display: "6.83-inch AMOLED, 2772×1280, 144Hz, 3500 nits",
+  battery: 7000,
+  charge: {
+    wired: 100,
+    wireless: 50
+  },
+  scores: {
+    performance: 98,
+    gaming: 98,
+    battery: 94,
+    display: 96,
+    camera: 94,
+    value: 90,
+    thermal: 95,
+    overall: 96
+  },
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "Dimensity 9500",
+    "144Hz AMOLED display",
+    "Leica triple camera",
+    "7000mAh battery",
+    "100W wired charging",
+    "50W wireless charging",
+    "IP68"
+  ],
+  cons: [
+    "Large and heavy",
+    "Expensive"
+  ],
+  official: "https://www.mi.com/th/product/xiaomi-17t-pro/specs/",
+  shopee: "https://th.shp.ee/q3fryJ8a"
+},
+{
+  name: "Xiaomi 17T",
+  brand: "Xiaomi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "upper-midrange",
+  latestPrice: {
+    defaultPrice: 15354,
+    priceFrom: "Shopee"
+  },
+  chip: "MediaTek Dimensity 8500-Ultra",
+  speaker: "Stereo speakers, Dolby Atmos",
+  camera: {
+    main: 50,
+    ultrawide: 12,
+    telephoto: 50,
+    selfie: 32,
+    video: "4K@60fps",
+    ois: true,
+    digitalZoom: 120,
+    opticalZoom: 5
+  },
+  storageRam: [
+    {
+      ram: 12,
+      storage: 256,
+      price: 15354
+    }
+  ],
+  display: "6.59-inch AMOLED, 2756×1268, 120Hz, 3500 nits",
+  battery: 6500,
+  charge: {
+    wired: 67,
+    wireless: 0
+  },
+  scores: {
+    performance: 90,
+    gaming: 90,
+    battery: 94,
+    display: 94,
+    camera: 92,
+    value: 94,
+    thermal: 93,
+    overall: 92
+  },
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "Dimensity 8500-Ultra",
+    "120Hz 1.5K AMOLED",
+    "Leica triple camera",
+    "6500mAh battery",
+    "IP68"
+  ],
+  cons: [
+    "No wireless charging"
+  ],
+  official: "https://www.mi.com/th/product/xiaomi-17t/specs/",
+  shopee: "https://th.shp.ee/5dLjxjYJ"
+},
+{
+  name: "Xiaomi 15T Pro",
+  brand: "Xiaomi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+  latestPrice: {
+    defaultPrice: 18251,
+    priceFrom: "Shopee"
+  },
+  chip: "MediaTek Dimensity 9400+",
+  speaker: "Stereo speakers, Dolby Atmos",
+  camera: {
+    main: 50,
+    ultrawide: 12,
+    telephoto: 50,
+    selfie: 32,
+    video: "8K@30fps, 4K@120fps",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 5
+  },
+  storageRam: [
+    {
+      ram: 12,
+      storage: 512,
+      price: 18251
+    }
+  ],
+  display: "6.83-inch AMOLED, 2772×1280, 144Hz, 3200 nits",
+  battery: 5500,
+  charge: {
+    wired: 90,
+    wireless: 50
+  },
+  scores: {
+    performance: 96,
+    gaming: 96,
+    battery: 88,
+    display: 96,
+    camera: 94,
+    value: 94,
+    thermal: 94,
+    overall: 94
+  },
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "Dimensity 9400+",
+    "144Hz AMOLED display",
+    "Leica cameras",
+    "90W wired charging",
+    "50W wireless charging",
+    "IP68"
+  ],
+  cons: [
+    "Large and heavy"
+  ],
+  official: "https://www.mi.com/th/product/xiaomi-15t-pro/specs/",
+  shopee: "https://th.shp.ee/sEbzTB3Q"
+},
+{
+  name: "Xiaomi 17",
+  brand: "Xiaomi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+  latestPrice: {
+    defaultPrice: 23990,
+    priceFrom: "Shopee"
+  },
+  chip: "Qualcomm Snapdragon 8 Elite Gen 5",
+  speaker: "Stereo speakers, Dolby Atmos",
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    telephoto: 50,
+    selfie: 50,
+    video: "8K@30fps, 4K@120fps",
+    ois: true,
+    digitalZoom: 100,
+    opticalZoom: 2.6
+  },
+  storageRam: [
+    {
+      ram: 12,
+      storage: 512,
+      price: 23990
+    }
+  ],
+  display: "6.3-inch CrystalRes OLED, 2656×1220, 1-120Hz, 3500 nits",
+  battery: 6330,
+  charge: {
+    wired: 100,
+    wireless: 50
+  },
+  scores: {
+    performance: 99,
+    gaming: 98,
+    battery: 94,
+    display: 97,
+    camera: 96,
+    value: 91,
+    thermal: 94,
+    overall: 96
+  },
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "Snapdragon 8 Elite Gen 5",
+    "Compact 6.3-inch OLED",
+    "Leica triple 50MP cameras",
+    "6330mAh battery",
+    "100W wired charging",
+    "50W wireless charging",
+    "IP68"
+  ],
+  cons: [
+    "Small display for some users",
+    "Expensive"
+  ],
+  official: "https://www.mi.com/th/product/xiaomi-17/specs/",
+  shopee: "https://th.shp.ee/GZBXwmkZ"
+},
+{
+  name: "Xiaomi 17 Ultra",
+  brand: "Xiaomi",
+  type: "phone",
+  saleStatus: "available",
+  priceTier: "flagship",
+  latestPrice: {
+    defaultPrice: 39329,
+    priceFrom: "Shopee"
+  },
+  chip: "Qualcomm Snapdragon 8 Elite Gen 5",
+  speaker: "Stereo speakers, Dolby Atmos",
+  camera: {
+    main: 50,
+    ultrawide: 50,
+    telephoto: 200,
+    selfie: 50,
+    video: "8K@30fps, 4K@120fps",
+    ois: true,
+    digitalZoom: 120,
+    opticalZoom: 4.3
+  },
+  storageRam: [
+    {
+      ram: 16,
+      storage: 512,
+      price: 39329
+    }
+  ],
+  display: "6.9-inch Xiaomi HyperRGB OLED, 2608×1200, 1-120Hz, 3500 nits",
+  battery: 6000,
+  charge: {
+    wired: 100,
+    wireless: 50
+  },
+  scores: {
+    performance: 100,
+    gaming: 99,
+    battery: 95,
+    display: 99,
+    camera: 100,
+    value: 86,
+    thermal: 96,
+    overall: 98
+  },
+  recommended: {
+    gaming: true,
+    camera: true,
+    durability: true,
+    budget: false,
+    performance: true,
+    battery: true,
+    entertainment: true
+  },
+  pros: [
+    "Snapdragon 8 Elite Gen 5",
+    "200MP periscope telephoto",
+    "Leica camera system",
+    "HyperRGB OLED display",
+    "100W wired charging",
+    "50W wireless charging",
+    "IP68"
+  ],
+  cons: [
+    "Very expensive",
+    "Large and heavy"
+  ],
+  official: "https://www.mi.com/th/product/xiaomi-17-ultra/specs/",
+  shopee: "https://th.shp.ee/d7aFkJBr"
 }
+```0
 ];

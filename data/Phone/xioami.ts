@@ -1204,14 +1204,14 @@ export const xiaomiphone: Phone[] = [
     entertainment: true
   },
   pros: [
-    "120Hz display",
-    "5200mAh battery",
-    "microSD support"
+    "หน้าจอ120Hz ลื่นไหลเป็นอย่างมาก",
+    "แบตเตอรี่ความจุ 5200mAh",
+    "รองรับmicroSDการ์ด"
   ],
   cons: [
-    "13MP main camera",
-    "15W charging",
-    "Entry-level chipset"
+    "กล้องหลักเพียง 13MP ",
+    "15W สำหรับการขาร์จสาย ค่อนข้างช้า-ทั่วไป",
+    "ชิปประมวลผล ระดับเริ่มต้น"
   ],
   official: "https://www.mi.com/th/product/redmi-a7/specs/",
   shopee: "https://th.shp.ee/KgbVorYD"
@@ -1268,16 +1268,16 @@ export const xiaomiphone: Phone[] = [
     entertainment: true
   },
   pros: [
-    "6000mAh battery",
+    "ความจุแบตเตอรี่6000mAh ",
     "33W fast charging",
-    "120Hz display",
-    "50MP main camera",
-    "microSD support"
+    "หน้าจอ 120Hz ลื่นไหลเป็นอย่างมาก",
+    "50MP สำหรับกล้องหลัก",
+    "รองรับmicroSD การ์ด"
   ],
   cons: [
-    "HD+ resolution",
-    "Entry-level chipset",
-    "No OIS"
+    "ความคมชัดเพียง HD+",
+    "ชิปประมวลผลเริ่มต้น",
+    "ไม่รองรับการกันสั่น ทางฮาร์ดแวร์"
   ],
   official: "https://www.mi.com/th/product/redmi-15c/specs/",
   shopee: "https://th.shp.ee/gK7Uzm7V"
@@ -1337,17 +1337,17 @@ export const xiaomiphone: Phone[] = [
     entertainment: true
   },
   pros: [
-    "Dimensity 9500",
-    "144Hz AMOLED display",
-    "Leica triple camera",
-    "7000mAh battery",
-    "100W wired charging",
-    "50W wireless charging",
-    "IP68"
+    "ชิปประมวลผล Dimensity 9500 ประสิทธิภาพสูง",
+    "หน้าจอ144Hz AMOLED display",
+    "กล้องLeica แบบสามเลนส์",
+    "7000mAh ความจุแบตเตอรี่",
+    "100W สำหรับชาร?จสายไวเป็นอย่างมาก",
+    "50W สำหรับชาร์จไร้สาย ค่อนข้างไว",
+    "มาตรฐานกันนำ้กันฝุ่น IP68"
   ],
   cons: [
-    "Large and heavy",
-    "Expensive"
+    "กว้าง และ หนัก",
+    "ราคาสูงมทก"
   ],
   official: "https://www.mi.com/th/product/xiaomi-17t-pro/specs/",
   shopee: "https://th.shp.ee/q3fryJ8a"
@@ -1475,14 +1475,14 @@ export const xiaomiphone: Phone[] = [
   },
   pros: [
     "Dimensity 9400+",
-    "144Hz AMOLED display",
-    "Leica cameras",
-    "90W wired charging",
-    "50W wireless charging",
-    "IP68"
+    "หน้าจอแบบ 144Hz AMOLED display",
+    "Leica camera ทางฮาร์ดแวร์",
+    "90W ชาร์จแบบสายไวเป็นอย่างมาก",
+    "50W ชาร์จไร้สาย, ค่อนข้างเร็ว",
+    "มาตรฐานกันนำ้กันฝุ่น IP68"
   ],
   cons: [
-    "Large and heavy"
+    "ตัวเครื่อง กว้างและหนา"
   ],
   official: "https://www.mi.com/th/product/xiaomi-15t-pro/specs/",
   shopee: "https://th.shp.ee/sEbzTB3Q"
@@ -1612,17 +1612,17 @@ export const xiaomiphone: Phone[] = [
     entertainment: true
   },
   pros: [
-    "Snapdragon 8 Elite Gen 5",
-    "200MP periscope telephoto",
-    "Leica camera system",
-    "HyperRGB OLED display",
-    "100W wired charging",
-    "50W wireless charging",
+    "ชิปประมวลผล Snapdragon 8 Elite Gen 5 ระดับเรือธง ประสิทธืภาพสูงเป็นอย่างมาก",
+    "200MP periscop เทเลโฟโต้",
+    "Leica camera ทางฮาร์ดแวร์",
+    "หน้าจอแบบ HyperRGB OLED",
+    "100W ชาร์จด้วยสายไวมาก",
+    "50W ชาร์จไร้สายค่อนข้างไว",
     "IP68"
   ],
   cons: [
-    "Very expensive",
-    "Large and heavy"
+    "ราคาสูงเป็นอย่างมาก(ตามราคามือถือเรือธง)",
+    "ค่อนข้างกว้างและหนัก"
   ],
   official: "https://www.mi.com/th/product/xiaomi-17-ultra/specs/",
   shopee: "https://th.shp.ee/d7aFkJBr"

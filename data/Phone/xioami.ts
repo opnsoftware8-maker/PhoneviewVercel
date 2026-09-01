@@ -288,7 +288,7 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/xiaomi-15-ultra/",
-    shopee: "https://shopee.co.th/Xiaomi-15-Ultra-Snapdragon-8-Elite-6.73-inch-LTPO-AMOLED-120Hz-6000mAh-Battery-90W-Fast-Charging-i.26062498...", 
+    shopee: "https://shp.ee/Pp3wKhsK", 
     lazada: "https://www.lazada.co.th/products/xiaomi-15-xiaomi-15-ultra-i5644190815.html",
   },
   {

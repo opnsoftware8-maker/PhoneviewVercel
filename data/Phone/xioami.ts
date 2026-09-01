@@ -68,7 +68,7 @@ export const xiaomiphone: Phone[] = [
     ],
 
     official: "https://www.mi.com/th/product/xiaomi-15/",
-    shopee: "https://shopee.co.th/Xiaomi-15-Snapdragon-8-Elite-6-36-inch-LTPO-OLED-120Hz-5400mAh-Battery-90W-Fast-Charging-i.26062498.2234567890", 
+    shopee: "https://th.shp.ee/HwwkmJ43", 
     lazada: "https://www.lazada.co.th/products/xiaomi-15-xiaomi-15-ultra-i5644190815.html",
   },
 

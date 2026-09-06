@@ -13,7 +13,7 @@ export const huaweiphone: Phone[] = [
       priceFrom: "Shopee",
     },
 
-    chip: "Snapdragon 680",
+    chip: "Kirin 710A",
     speaker: "ลำโพงคู่",
 
     camera: {
@@ -44,7 +44,7 @@ export const huaweiphone: Phone[] = [
       camera: 45,
       value: 85,
       thermal: 65,
-      overall: 60,
+      overall: CalcuGame(55, 70, 60, 65),
     },
 
     recommended: {
@@ -85,7 +85,7 @@ export const huaweiphone: Phone[] = [
       priceFrom: "Shopee",
     },
 
-    chip: "Snapdragon 680",
+    chip: "Kirin 710A",
     speaker: "ลำโพงคู่",
 
     camera: {
@@ -116,7 +116,7 @@ export const huaweiphone: Phone[] = [
       camera: 45,
       value: 80,
       thermal: 65,
-      overall: 60,
+      overall: CalcuGame(55, 70, 60, 65),
     },
 
     recommended: {
@@ -187,7 +187,7 @@ export const huaweiphone: Phone[] = [
       camera: 60,
       value: 90,
       thermal: 70,
-      overall: 72,
+      overall: CalcuGame(70, 75, 75, 70),
     },
 
     recommended: {
@@ -259,7 +259,7 @@ export const huaweiphone: Phone[] = [
       camera: 60,
       value: 85,
       thermal: 70,
-      overall: 75,
+      overall: CalcuGame(70, 75, 85, 70),
     },
 
     recommended: {
@@ -301,7 +301,7 @@ export const huaweiphone: Phone[] = [
       priceFrom: "Shopee",
     },
 
-    chip: "Snapdragon 8+ Gen 1",
+    chip: "Kirin 9000W",
     speaker: "ลำโพง 6 ตัว",
 
     camera: {
@@ -319,7 +319,7 @@ export const huaweiphone: Phone[] = [
     display: "11.5 นิ้ว PaperMatte, 2880x1840, 144Hz",
     battery: 10100,
     charge: {
-      wired: 66,
+      wired: 22.5,
       wireless: 0,
     },
 
@@ -331,7 +331,7 @@ export const huaweiphone: Phone[] = [
       camera: 75,
       value: 80,
       thermal: 85,
-      overall: 88,
+      overall: CalcuGame(90, 90, 95, 85),
     },
 
     recommended: {
@@ -348,12 +348,11 @@ export const huaweiphone: Phone[] = [
       "ประสิทธิภาพสูงสุดในตระกูล MatePad 11.5 เล่นเกมและตัดต่อวิดีโอได้ลื่น",
       "หน้าจอ 144Hz ความละเอียดสูง สีแม่นยำ เหมาะสำหรับงานกราฟิก",
       "แบตเตอรี่ 10100mAh ใช้งานได้นานกว่า 10 ชั่วโมง",
-      "ชาร์จเร็ว 66W เต็มเร็วใน 1.5 ชั่วโมง",
       "ได้ Smart Keyboard และ M-Pencil แถมครบชุด",
     ],
 
     cons: [
-      "ราคาสูง接近 17,000 บาท",
+      "ราคาสูงเกือบ 17,000 บาท",
       "น้ำหนักมากจากแบตเตอรี่ใหญ่",
       "อาจเกินความจำเป็นสำหรับผู้ใช้ทั่วไป",
     ],
@@ -404,7 +403,7 @@ export const huaweiphone: Phone[] = [
       camera: 65,
       value: 75,
       thermal: 75,
-      overall: 73,
+      overall: CalcuGame(75, 65, 80, 75),
     },
 
     recommended: {
@@ -477,7 +476,7 @@ export const huaweiphone: Phone[] = [
       camera: 75,
       value: 65,
       thermal: 80,
-      overall: 82,
+      overall: CalcuGame(85, 80, 90, 80),
     },
 
     recommended: {
@@ -507,7 +506,8 @@ export const huaweiphone: Phone[] = [
     official: "https://consumer.huawei.com/th/tablets/matepad-air/",
     shopee: "https://th.shp.ee/NgTw2PbF",
   },
-    {
+
+  {
     name: "Huawei Nova 14 Pro",
     brand: "Huawei",
     type: "phone",
@@ -536,7 +536,7 @@ export const huaweiphone: Phone[] = [
         price: 15990,
       },
     ],
-    display: "6.78" AMOLED, 2776x1224, 120Hz",
+    display: "6.78\" AMOLED, 2776x1224, 120Hz",
     battery: 5100,
     charge: {
       wired: 100,
@@ -577,6 +577,7 @@ export const huaweiphone: Phone[] = [
     official: "https://consumer.huawei.com/th/phones/nova14-pro/",
     shopee: "https://th.shp.ee/KTERXD9W",
   },
+
   {
     name: "Huawei Nova 14",
     brand: "Huawei",
@@ -605,7 +606,7 @@ export const huaweiphone: Phone[] = [
         price: 10990,
       },
     ],
-    display: "6.7" OLED, 2412x1080, 120Hz",
+    display: "6.7\" OLED, 2412x1080, 120Hz",
     battery: 5500,
     charge: {
       wired: 100,
@@ -646,6 +647,7 @@ export const huaweiphone: Phone[] = [
     official: "https://consumer.huawei.com/th/phones/nova14/",
     shopee: "https://th.shp.ee/KTERXD9W",
   },
+
   {
     name: "Huawei Nova Y74",
     brand: "Huawei",
@@ -679,7 +681,7 @@ export const huaweiphone: Phone[] = [
         price: 6490,
       },
     ],
-    display: "6.67" IPS LCD, 1604x720, 90Hz",
+    display: "6.67\" IPS LCD, 1604x720, 90Hz",
     battery: 6620,
     charge: {
       wired: 40,
@@ -721,6 +723,7 @@ export const huaweiphone: Phone[] = [
     official: "https://consumer.huawei.com/th/phones/nova-y74/",
     shopee: "https://th.shp.ee/PqasdtKh",
   },
+
   {
     name: "Huawei Pura 90s Pro Max",
     brand: "Huawei",
@@ -750,7 +753,7 @@ export const huaweiphone: Phone[] = [
         price: 49990,
       },
     ],
-    display: "6.9" LTPO OLED, 2880x1308, 1-120Hz",
+    display: "6.9\" LTPO OLED, 2880x1308, 1-120Hz",
     battery: 6000,
     charge: {
       wired: 100,
@@ -792,6 +795,7 @@ export const huaweiphone: Phone[] = [
     official: "https://consumer.huawei.com/th/phones/pura90s-pro-max/",
     shopee: "https://th.shp.ee/oYCSUmq2",
   },
+
   {
     name: "Huawei Pura 90s Pro",
     brand: "Huawei",
@@ -826,7 +830,7 @@ export const huaweiphone: Phone[] = [
         price: 38990,
       },
     ],
-    display: "6.8" LTPO OLED, 2848x1312, 1-120Hz",
+    display: "6.8\" LTPO OLED, 2848x1312, 1-120Hz",
     battery: 6000,
     charge: {
       wired: 66,
@@ -868,5 +872,5 @@ export const huaweiphone: Phone[] = [
     official: "https://consumer.huawei.com/th/phones/pura90s-pro/",
     shopee: "https://th.shp.ee/oYCSUmq2",
   },
-]
-
+];
+      

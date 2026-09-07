@@ -102,7 +102,7 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
       </p>
 
       <button
-        className="font-prompt whitespace-nowrap bg-zinc-900 font-bold h-9 text-xs text-white px-3.5 rounded-xl flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-sm hover:bg-black"
+        className="font-prompt whitespace-nowrap bg-zinc-800 font-semibold h-9 text-xs text-white px-3.5 rounded-[12px] flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-sm hover:bg-black"
         onClick={() => PropCard(Device.name)}
       >
         สำรวจสเปค

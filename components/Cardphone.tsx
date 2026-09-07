@@ -44,51 +44,148 @@ export function Phonecard({ Device, PropCard }: PhoneCardProps) {
     
     <div
       onWheel={handleWheelScroll}
-      className="w-full py-1 text-xs font-prompt text-zinc-600 no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-x-3 md:gap-y-1"
+      className="group relative w-full py-1 text-xs font-prompt text-zinc-600 no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-x-3 md:gap-y-1"
       style={{
         scrollbarWidth: "none",
         WebkitOverflowScrolling: "touch",
       }}
     >
-      <p className="inline-block mr-3 md:mr-0">•ประเภท: {getDeviceTypeTH(Device.type)}</p>
-      {Device.chip && <p className="inline-block mr-3 md:mr-0">•ชิป: {Device.chip}</p>}
-      {Device.display && <p className="inline-block mr-3 md:mr-0">•หน้าจอ: {Device.display}</p>}
-      {Device.camera?.main && (
-        <p className="inline-block mr-3 md:mr-0">
-          •กล้อง: {Device.camera.main}MP
-          {Device.camera?.video ? `, วิดีโอ: ${Device.camera.video}` : ""}
-        </p>
-      )}
-      {Device.storageRam && Device.storageRam.length > 0 && (
-        <>
+      <div className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full group-hover:translate-x-0 transition-transform duration-200 z-10 gap-1">
+        <button
+          type="button"
+          className="p-1 bg-white/90 hover:bg-white text-zinc-700 rounded-md shadow border border-zinc-200"
+          onClick={(e) => {
+            const container = (e.currentTarget as HTMLElement).closest(".group");
+            if (container) {
+              const scrollable = container.querySelector(".spec-scroll") as HTMLDivElement;
+              if (scrollable) scrollable.scrollBy({ left: -120, behavior: "smooth" });
+            }
+          }}
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          className="p-1 bg-white/90 hover:bg-white text-zinc-700 rounded-md shadow border border-zinc-200"
+          onClick={(e) => {
+            const container = (e.currentTarget as HTMLElement).closest(".group") as HTMLDivElement;
+            if (container) {
+              const scrollable = container.querySelector(".spec-scroll") as HTMLDivElement;
+              if (scrollable) scrollable.scrollBy({ left: 120, behavior: "smooth" });
+            }
+          }}
+        >
+          ›
+        </button>
+      </div>
+
+      <div className="spec-scroll inline-flex md:hidden gap-x-3">
+        <p className="inline-block mr-3 md:mr-0">•ประเภท: {getDeviceTypeTH(Device.type)}</p>
+        {Device.chip && <p className="inline-block mr-3 md:mr-0">•ชิป: {Device.chip}</p>}
+        {Device.display && <p className="inline-block mr-3 md:mr-0">•หน้าจอ: {Device.display}</p>}
+        {Device.camera?.main && (
           <p className="inline-block mr-3 md:mr-0">
-            •RAM: {Device.storageRam.map((item: any) => `${item.ram}GB`).join(", ")}
+            •กล้อง: {Device.camera.main}MP
+            {Device.camera?.video ? `, วิดีโอ: ${Device.camera.video}` : ""}
           </p>
-          <p className="inline-block mr-3 md:mr-0">
-            •ROM: {Device.storageRam.map((item: any) => `${item.storage}GB`).join(", ")}
+        )}
+        {Device.storageRam && Device.storageRam.length > 0 && (
+          <>
+            <p className="inline-block mr-3 md:mr-0">
+              •RAM: {Device.storageRam.map((item: any) => `${item.ram}GB`).join(", ")}
+            </p>
+            <p className="inline-block mr-3 md:mr-0">
+              •ROM: {Device.storageRam.map((item: any) => `${item.storage}GB`).join(", ")}
+            </p>
+          </>
+        )}
+        {Device.battery && <p className="inline-block mr-3 md:mr-0">•แบต: {Device.battery} mAh</p>}
+        {Device.charge?.wired && <p className="inline-block mr-3 md:mr-0">•ชาร์จไว: {Device.charge.wired}W</p>}
+        {Device.speaker && <p className="inline-block mr-3 md:mr-0">•ลำโพง: {Device.speaker}</p>}
+      </div>
+
+      <div className="hidden md:flex flex-wrap gap-x-3 gap-y-1">
+        <p className="inline-block">•ประเภท: {getDeviceTypeTH(Device.type)}</p>
+        {Device.chip && <p className="inline-block">•ชิป: {Device.chip}</p>}
+        {Device.display && <p className="inline-block">•หน้าจอ: {Device.display}</p>}
+        {Device.camera?.main && (
+          <p className="inline-block">
+            •กล้อง: {Device.camera.main}MP
+            {Device.camera?.video ? `, วิดีโอ: ${Device.camera.video}` : ""}
           </p>
-        </>
-      )}
-      {Device.battery && <p className="inline-block mr-3 md:mr-0">•แบต: {Device.battery} mAh</p>}
-      {Device.charge?.wired && <p className="inline-block mr-3 md:mr-0">•ชาร์จไว: {Device.charge.wired}W</p>}
-      {Device.speaker && <p className="inline-block mr-3 md:mr-0">•ลำโพง: {Device.speaker}</p>}
+        )}
+        {Device.storageRam && Device.storageRam.length > 0 && (
+          <>
+            <p className="inline-block">
+              •RAM: {Device.storageRam.map((item: any) => `${item.ram}GB`).join(", ")}
+            </p>
+            <p className="inline-block">
+              •ROM: {Device.storageRam.map((item: any) => `${item.storage}GB`).join(", ")}
+            </p>
+          </>
+        )}
+        {Device.battery && <p className="inline-block">•แบต: {Device.battery} mAh</p>}
+        {Device.charge?.wired && <p className="inline-block">•ชาร์จไว: {Device.charge.wired}W</p>}
+        {Device.speaker && <p className="inline-block">•ลำโพง: {Device.speaker}</p>}
+      </div>
     </div>
 
     <div
       onWheel={handleWheelScroll}
-      className="w-full py-1 mt-1 font-prompt no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-1.5"
+      className="group relative w-full py-1 mt-1 font-prompt no-scrollbar overflow-x-auto whitespace-nowrap md:whitespace-normal md:flex md:flex-wrap md:gap-1.5"
       style={{
         scrollbarWidth: "none",
         WebkitOverflowScrolling: "touch",
       }}
     >
-      {Device.recommended?.gaming && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">เกมส์มิ่ง</p>}
-      {Device.recommended?.camera && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">การถ่ายภาพ</p>}
-      {Device.recommended?.durability && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ทนทาน</p>}
-      {Device.recommended?.budget && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">งบประหยัด</p>}
-      {Device.recommended?.performance && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ประสิทธิภาพ</p>}
-      {Device.recommended?.battery && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">แบตเตอรี่อึด</p>}
-      {Device.recommended?.entertainment && <p className="inline-block mr-1.5 md:mr-0 text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ความบันเทิง</p>}
+      <div className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full group-hover:translate-x-0 transition-transform duration-200 z-10 gap-1">
+        <button
+          type="button"
+          className="p-1 bg-white/90 hover:bg-white text-zinc-700 rounded-md shadow border border-zinc-200"
+          onClick={(e) => {
+            const container = (e.currentTarget as HTMLElement).closest(".group") as HTMLDivElement;
+            if (container) {
+              const scrollable = container.querySelector(".tags-scroll") as HTMLDivElement;
+              if (scrollable) scrollable.scrollBy({ left: -100, behavior: "smooth" });
+            }
+          }}
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          className="p-1 bg-white/90 hover:bg-white text-zinc-700 rounded-md shadow border border-zinc-200"
+          onClick={(e) => {
+            const container = (e.currentTarget as HTMLElement).closest(".group") as HTMLDivElement;
+            if (container) {
+              const scrollable = container.querySelector(".tags-scroll") as HTMLDivElement;
+              if (scrollable) scrollable.scrollBy({ left: 100, behavior: "smooth" });
+            }
+          }}
+        >
+          ›
+        </button>
+      </div>
+
+      <div className="tags-scroll inline-flex md:hidden gap-1.5">
+        {Device.recommended?.gaming && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">เกมส์มิ่ง</p>}
+        {Device.recommended?.camera && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">การถ่ายภาพ</p>}
+        {Device.recommended?.durability && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ทนทาน</p>}
+        {Device.recommended?.budget && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">งบประหยัด</p>}
+        {Device.recommended?.performance && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ประสิทธิภาพ</p>}
+        {Device.recommended?.battery && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">แบตเตอรี่อึด</p>}
+        {Device.recommended?.entertainment && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ความบันเทิง</p>}
+      </div>
+
+      <div className="hidden md:flex flex-wrap gap-1.5">
+        {Device.recommended?.gaming && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">เกมส์มิ่ง</p>}
+        {Device.recommended?.camera && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">การถ่ายภาพ</p>}
+        {Device.recommended?.durability && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ทนทาน</p>}
+        {Device.recommended?.budget && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">งบประหยัด</p>}
+        {Device.recommended?.performance && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ประสิทธิภาพ</p>}
+        {Device.recommended?.battery && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">แบตเตอรี่อึด</p>}
+        {Device.recommended?.entertainment && <p className="inline-block text-[11px] px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md">ความบันเทิง</p>}
+      </div>
     </div>
     
   </div>

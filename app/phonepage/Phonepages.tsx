@@ -219,11 +219,12 @@ export default function Phonepage({
 
                 <div className="space-y-2.5">                  
                   {Boolean(phoneDat.shopee) && (
+                /** ไม่เป็นระเบียบ **/
   <a
     href={phoneDat.shopee}
     target="_blank"
     rel="noopener noreferrer"
-    className="block w-full text-center bg-orange-500 hover:bg-orange-400/70 border border-orange-800 transition py-2 rounded-xl font-bold text-sm text-zinc-100"
+    className="font-trirong block w-full text-center bg-orange-500 hover:bg-orange-400/70 border border-orange-800 transition py-2 rounded-[18px] font-semibold text-sm text-zinc-100"
   >
     สั่งซื้อผ่าน Shopee (ร้านค้าทางการ)
   </a>
@@ -234,7 +235,7 @@ export default function Phonepage({
     href={phoneDat.official}
     target="_blank"
     rel="noopener noreferrer"
-    className="block w-full text-center bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition py-2 rounded-xl font-bold text-sm text-zinc-300"
+    className="font-trirong block w-full text-center bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition py-2 rounded-[18px] font-semibold text-sm text-zinc-300"
   >
     สเปคเต็ม (เว็บทางการ)
   </a>

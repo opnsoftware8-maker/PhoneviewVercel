@@ -3,6 +3,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Allphone } from '../data/index';
 import { Phonecard } from '../components/Cardphone'; 
 import Phonepage from './phonepage/Phonepages';
+import GeminiChat, { ExploredPhoneInfo } from '../components/GeminiChat';
 
 export default function App() {
   const [filterbutton, setFilterbutton] = useState(false);
@@ -17,6 +18,33 @@ export default function App() {
 
   const [inputMinPrice, setInputMinPrice] = useState<string>("");
   const [inputMaxPrice, setInputMaxPrice] = useState<string>("");
+
+  const [lastExploredPhone, setLastExploredPhone] = useState<ExploredPhoneInfo | null>(null);
+  const [openChatSignal, setOpenChatSignal] = useState<number>(0);
+
+  const handleExplorePhone = (phoneName: string) => {
+    setCardProp(phoneName);
+    const found = Allphone.find((p) => p.name === phoneName);
+    if (found) {
+      setLastExploredPhone({
+        name: found.name,
+        brand: found.brand,
+        price: found.latestPrice?.defaultPrice,
+      });
+    }
+  };
+
+  const handleAskGeminiDirectly = (phoneName: string) => {
+    const found = Allphone.find((p) => p.name === phoneName);
+    if (found) {
+      setLastExploredPhone({
+        name: found.name,
+        brand: found.brand,
+        price: found.latestPrice?.defaultPrice,
+      });
+    }
+    setOpenChatSignal((prev) => prev + 1);
+  };
 
   useEffect(() => {
     const delayFilter = setTimeout(() => {
@@ -77,7 +105,7 @@ export default function App() {
 
       return true; 
     });
-  }, [getfindButton, deviceType, priceTier, RecChoos, minPrice, maxPrice]); 
+  }, [getfindButton, deviceType, priceTier, RecChoos, minPrice, maxPrice, searchTerm]); 
 
   const filterLabels: Record<string, {text: string}> = {
     gaming: { text: "การเล่นเกม" },
@@ -271,7 +299,7 @@ export default function App() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[700px] content-start items-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
-              <Phonecard key={Data.name || index} Device={Data} PropCard={setCardProp}/>
+              <Phonecard key={Data.name || index} Device={Data} PropCard={handleExplorePhone}/>
             ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-dashed border-gray-300 h-fit">
@@ -296,7 +324,13 @@ export default function App() {
           )}
         </div>
         
-        {CardProp && ResultphoneDat && <Phonepage phoneDat={ResultphoneDat} PhoneProp={() => setCardProp(null)} />}
+        {CardProp && ResultphoneDat && (
+          <Phonepage
+            phoneDat={ResultphoneDat}
+            PhoneProp={() => setCardProp(null)}
+            onAskAI={handleAskGeminiDirectly}
+          />
+        )}
       </main>
       
       <footer className="w-full bg-zinc-950 text-zinc-400 font-prompt border-t border-zinc-800">
@@ -341,6 +375,11 @@ export default function App() {
   </div>
 </footer>
       
+      <GeminiChat
+        lastExploredPhone={lastExploredPhone}
+        onClearExploredPhone={() => setLastExploredPhone(null)}
+        openSignal={openChatSignal}
+      />
     </div>
   );
 }

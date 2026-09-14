@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { Phone } from '../../data/Type';
+import { GeminiLogoIcon } from '../../components/GeminiChat';
 
 interface PhonePageProps {
   phoneDat: Phone;
   PhoneProp?: (value: string | null) => void;
+  onAskAI?: (phoneName: string) => void;
 }
 
 export default function Phonepage({
   phoneDat,
-  PhoneProp
+  PhoneProp,
+  onAskAI
 }: PhonePageProps) {
   
   useEffect(() => {
@@ -27,13 +30,29 @@ export default function Phonepage({
         itemType="https://schema.org/Product"
         className="relative w-full max-w-6xl max-h-[88vh] overflow-y-auto bg-white rounded-2xl px-5 py-5 md:px-7 md:py-6 font-prompt text-zinc-800 shadow-2xl"
       >
-        <button
-          type="button"
-          className="absolute top-4 right-4 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-medium px-3 py-1.5 rounded-lg text-sm transition"
-          onClick={() => PhoneProp?.(null)}
-        >
-          ปิด
-        </button>
+        <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+          {onAskAI && (
+            <button
+              type="button"
+              id="ask-gemini-modal-button"
+              className="flex items-center gap-1.5 bg-zinc-900 hover:bg-black text-white font-medium px-3 py-1.5 rounded-lg text-sm transition shadow-sm active:scale-95"
+              onClick={() => {
+                onAskAI(phoneDat.name);
+                PhoneProp?.(null);
+              }}
+            >
+              <GeminiLogoIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">ถาม Gemini</span>
+            </button>
+          )}
+          <button
+            type="button"
+            className="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-medium px-3 py-1.5 rounded-lg text-sm transition"
+            onClick={() => PhoneProp?.(null)}
+          >
+            ปิด
+          </button>
+        </div>
 
         <header className="mb-6 border-b-2 border-zinc-100 pb-5 pr-12">
           <h1

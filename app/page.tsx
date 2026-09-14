@@ -9,6 +9,7 @@ export default function App() {
   const [filterbutton, setFilterbutton] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [getfindButton, SetfindButton] = useState(false);
+  const [randomSeed, setRandomSeed] = useState(1);
 
   const [deviceType, setDeviceType] = useState<string>("all");
   const [priceTier, setPriceTier] = useState<string>("all");
@@ -72,7 +73,7 @@ export default function App() {
   const PhoneArr = useMemo(() => {
     if (!Allphone) return [];
 
-    return Allphone.filter(phone => {
+    const filtered = Allphone.filter(phone => {
       if (deviceType !== "all") {
         const pType = phone.type?.toLowerCase() || "";
         if (deviceType === "phone" && pType !== "phone" && pType !== "smartphone") return false;
@@ -105,7 +106,48 @@ export default function App() {
 
       return true; 
     });
-  }, [getfindButton, deviceType, priceTier, RecChoos, minPrice, maxPrice, searchTerm]); 
+
+    // Default: smart_shuffle (สุ่มปนๆ กันโดยจัดกลุ่มตามระดับเรือธง -> ระดับสูง -> กลาง -> เริ่มต้น แล้วสุ่มคละในแต่ละกลุ่มและสลับแบรนด์ให้หลากหลาย)
+    const tierPriorityOrder: Record<string, number> = {
+      "flagship": 1,
+      "high-end": 2,
+      "upper-midrange": 3,
+      "midrange": 4,
+      "entry-midrange": 5,
+      "budget": 6,
+      "entry": 7
+    };
+
+    // Group items by tier group
+    const groups: Record<number, typeof filtered> = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 99: [] };
+    filtered.forEach(item => {
+      const order = tierPriorityOrder[item.priceTier] || 99;
+      groups[order].push(item);
+    });
+
+    let result: typeof filtered = [];
+    let seed = randomSeed;
+
+    // Helper seeded shuffle for an array
+    const shuffleArray = (arr: typeof filtered) => {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        seed = (seed * 9301 + 49297) % 233280;
+        const j = Math.floor((seed / 233280) * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    };
+
+    [1, 2, 3, 4, 5, 6, 7, 99].forEach(tierKey => {
+      const tierItems = groups[tierKey];
+      if (tierItems && tierItems.length > 0) {
+        result = result.concat(shuffleArray(tierItems));
+      }
+    });
+
+    return result;
+  }, [getfindButton, deviceType, priceTier, RecChoos, minPrice, maxPrice, searchTerm, randomSeed]); 
 
   const filterLabels: Record<string, {text: string}> = {
     gaming: { text: "การเล่นเกม" },
@@ -160,6 +202,22 @@ export default function App() {
               className="flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
             />
             
+            <button 
+              onClick={() => setRandomSeed(prev => prev + 1)}
+              title="เรียบเรียงลำดับใหม่"
+              aria-label="เรียบเรียงลำดับใหม่"
+              className="whitespace-nowrap flex items-center justify-center p-3 rounded-xl bg-gray-100 hover:bg-gray-200 active:bg-gray-300 border border-gray-200 text-gray-700 transition-all duration-300 active:scale-95 shadow-sm"
+            >
+              <svg 
+                className="w-5 h-5 text-gray-700 hover:rotate-180 transition-transform duration-500" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+
             <button 
               onClick={() => setFilterbutton(!filterbutton)} 
               className={`whitespace-nowrap flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-sm font-prompt ${
@@ -296,7 +354,7 @@ export default function App() {
           </div>
         </div>
         
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[700px] content-start items-start">
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[700px] content-start items-start">
           {PhoneArr.length > 0 ? (
             PhoneArr.map((Data, index) => (
               <Phonecard key={Data.name || index} Device={Data} PropCard={handleExplorePhone}/>

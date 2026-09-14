@@ -6,14 +6,16 @@ import { oppophone } from "./Phone/oppo"
 import { huaweiphone } from "./Phone/huawei"
 import { infinixphone } from "./Phone/infinix"
 import { realmephone } from "./Phone/realme"
+import { honorphone } from "./Phone/honor"
 
-export { xiaomiphone, samsungphone, vivophone, applephone, oppophone, huaweiphone, infinixphone, realmephone };
+export { xiaomiphone, samsungphone, vivophone, applephone, oppophone, huaweiphone, infinixphone, realmephone, honorphone };
 
 export const Allphone = [
   ...xiaomiphone,
   ...vivophone,
   ...oppophone,
   ...realmephone,
+  ...honorphone,
   ...infinixphone,
   ...samsungphone,
   ...applephone,

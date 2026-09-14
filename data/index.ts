@@ -7,8 +7,9 @@ import { huaweiphone } from "./Phone/huawei"
 import { infinixphone } from "./Phone/infinix"
 import { realmephone } from "./Phone/realme"
 import { honorphone } from "./Phone/honor"
+import { tecnophone } from "./Phone/tecno"
 
-export { xiaomiphone, samsungphone, vivophone, applephone, oppophone, huaweiphone, infinixphone, realmephone, honorphone };
+export { xiaomiphone, samsungphone, vivophone, applephone, oppophone, huaweiphone, infinixphone, realmephone, honorphone, tecnophone };
 
 export const Allphone = [
   ...xiaomiphone,
@@ -16,6 +17,7 @@ export const Allphone = [
   ...oppophone,
   ...realmephone,
   ...honorphone,
+  ...tecnophone,
   ...infinixphone,
   ...samsungphone,
   ...applephone,

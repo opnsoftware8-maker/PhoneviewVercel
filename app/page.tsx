@@ -91,8 +91,10 @@ export default function App() {
 
       if (searchTerm.trim() !== "") {
         const searchWords = searchTerm.toLowerCase().trim().split(/\s+/);
-        const phoneName = phone.name?.toLowerCase() || "";
-        const matchName = searchWords.every(word => phoneName.includes(word));
+        const phoneName = (phone.name || "").toLowerCase();
+        const brandName = (phone.brand || "").toLowerCase();
+        const fullName = `${brandName} ${phoneName}`;
+        const matchName = searchWords.every(word => fullName.includes(word));
         if (!matchName) return false; 
       }
 

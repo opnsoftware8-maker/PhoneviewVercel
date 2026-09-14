@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Allphone } from '../data/index';
 import { Phonecard } from '../components/Cardphone'; 
 import Phonepage from './phonepage/Phonepages';
@@ -10,6 +10,21 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [getfindButton, SetfindButton] = useState(false);
   const [randomSeed, setRandomSeed] = useState(1);
+
+  const priceTierScrollRef = useRef<HTMLDivElement>(null);
+  const recChoosScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollBy({ left: -220, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollBy({ left: 220, behavior: 'smooth' });
+    }
+  };
 
   const [deviceType, setDeviceType] = useState<string>("all");
   const [priceTier, setPriceTier] = useState<string>("all");
@@ -195,145 +210,211 @@ export default function App() {
       </header>
       
       <main className="p-4 sm:p-6 max-w-6xl mx-auto mt-4 w-full overflow-x-hidden">
-        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-200/80 mb-8 transition-all">
-          <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full">
-            <input 
-              placeholder="ค้นหารุ่นมือถือ... (เช่น Xiaomi 15)" 
-              value={searchTerm} 
-              onChange={(e) => setSearchTerm(e.target.value)} 
-              className="flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
-            />
-            
-            <button 
-              onClick={() => setRandomSeed(prev => prev + 1)}
-              title="เรียบเรียงลำดับใหม่"
-              aria-label="เรียบเรียงลำดับใหม่"
-              className="whitespace-nowrap flex items-center justify-center p-3 rounded-xl bg-gray-100 hover:bg-gray-200 active:bg-gray-300 border border-gray-200 text-gray-700 transition-all duration-300 active:scale-95 shadow-sm"
-            >
-              <svg 
-                className="w-5 h-5 text-gray-700 hover:rotate-180 transition-transform duration-500" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+        <div className="relative z-30 mb-8">
+          <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-200/80 transition-all">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full">
+              <input 
+                placeholder="ค้นหารุ่นมือถือ... (เช่น Xiaomi 15)" 
+                value={searchTerm} 
+                onChange={(e) => setSearchTerm(e.target.value)} 
+                className="flex-1 min-w-[180px] border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-3 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
+              />
+              
+              <button 
+                onClick={() => setRandomSeed(prev => prev + 1)}
+                title="เรียบเรียงลำดับใหม่"
+                aria-label="เรียบเรียงลำดับใหม่"
+                className="whitespace-nowrap flex items-center justify-center p-3 rounded-xl bg-gray-100 hover:bg-gray-200 active:bg-gray-300 border border-gray-200 text-gray-700 transition-all duration-300 active:scale-95 shadow-sm"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-            </button>
+                <svg 
+                  className="w-5 h-5 text-gray-700 hover:rotate-180 transition-transform duration-500" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </button>
 
-            <button 
-              onClick={() => setFilterbutton(!filterbutton)} 
-              className={`whitespace-nowrap flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-sm font-prompt ${
-                filterbutton 
-                ? 'bg-zinc-800 text-white hover:bg-zinc-900' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
-              }`}
-            >
-              <svg 
-                className={`w-4 h-4 transition-transform duration-300 ${filterbutton ? 'rotate-180' : 'rotate-0'}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+              <button 
+                onClick={() => setFilterbutton(!filterbutton)} 
+                className={`whitespace-nowrap flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-sm font-prompt ${
+                  filterbutton 
+                  ? 'bg-zinc-800 text-white hover:bg-zinc-900' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                }`}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-              คัดกรอง
-            </button>
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-300 ${filterbutton ? 'rotate-180' : 'rotate-0'}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                คัดกรอง
+              </button>
 
-            <button 
-              onClick={() => SetfindButton(!getfindButton)}
-              className="whitespace-nowrap flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white py-3 px-7 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg font-prompt"
-            >
-              <span>ค้นหาเลย</span>
-            </button>
+              <button 
+                onClick={() => SetfindButton(!getfindButton)}
+                className="whitespace-nowrap flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white py-3 px-7 rounded-xl text-sm font-bold transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg font-prompt"
+              >
+                <span>ค้นหาเลย</span>
+              </button>
+            </div>
           </div>
 
+          {/* เมนูคัดกรองแบบ Overlay ลอยทับเนื้อหาด้านล่าง โดยไม่ดันการ์ดมือถือลงไป */}
           <div 
-            className={`grid transition-all duration-300 ease-in-out ${
+            className={`absolute left-0 right-0 top-full mt-2 z-40 transition-all duration-300 origin-top ${
               filterbutton 
-                ? 'grid-rows-[1fr] opacity-100' 
-                : 'grid-rows-[0fr] opacity-0'
+                ? 'opacity-100 scale-y-100 pointer-events-auto visible' 
+                : 'opacity-0 scale-y-95 pointer-events-none invisible'
             }`}
           >
-            <div className="overflow-hidden">
-              <div className="mt-5 pt-5 border-t border-gray-100 space-y-6">
-                <div>
-                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">ประเภทอุปกรณ์</p>
-                  <div className="flex flex-wrap gap-2">
-                    <button onClick={() => setDeviceType("all")} className={`${btnBaseClass} ${deviceType === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
-                    <button onClick={() => setDeviceType("phone")} className={`${btnBaseClass} ${deviceType === "phone" ? btnActiveClass : btnInactiveClass}`}>สมาร์ทโฟน</button>
-                    <button onClick={() => setDeviceType("tablet")} className={`${btnBaseClass} ${deviceType === "tablet" ? btnActiveClass : btnInactiveClass}`}>แท็บเล็ต</button>
-                  </div>
+            <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200/90 p-5 sm:p-6 space-y-6">
+              {/* ประเภทอุปกรณ์ */}
+              <div>
+                <p className="text-base font-bold text-gray-800 mb-3 font-trirong">ประเภทอุปกรณ์</p>
+                <div className="flex flex-wrap gap-2">
+                  <button onClick={() => setDeviceType("all")} className={`${btnBaseClass} ${deviceType === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
+                  <button onClick={() => setDeviceType("phone")} className={`${btnBaseClass} ${deviceType === "phone" ? btnActiveClass : btnInactiveClass}`}>สมาร์ทโฟน</button>
+                  <button onClick={() => setDeviceType("tablet")} className={`${btnBaseClass} ${deviceType === "tablet" ? btnActiveClass : btnInactiveClass}`}>แท็บเล็ต</button>
                 </div>
+              </div>
 
-                <div>
-                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">ระดับราคา (Price Tier)</p>
-                  <div className="flex flex-wrap gap-2">
-                    <button onClick={() => {
+              {/* ระดับราคา (เลื่อนซ้าย-ขวา พร้อมปุ่ม Glassmorphism ไม่บังปุ่ม) */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-base font-bold text-gray-800 font-trirong">ระดับราคา (Price Tier)</p>
+                  <span className="text-xs text-gray-400 font-prompt hidden sm:inline">เลื่อนซ้าย-ขวาเพื่อดูเพิ่มเติม</span>
+                </div>
+                
+                <div className="relative group w-full">
+                  {/* ปุ่มเลื่อนซ้าย Glassmorphism */}
+                  <button
+                    type="button"
+                    onClick={() => scrollLeft(priceTierScrollRef)}
+                    aria-label="เลื่อนซ้าย"
+                    className="absolute -left-2 sm:-left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md border border-white/60 shadow-md flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all active:scale-90 hover:shadow-lg"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+
+                  {/* แถบรายการระดับราคาเลื่อนแนวนอน */}
+                  <div
+                    ref={priceTierScrollRef}
+                    className="flex items-center gap-2.5 overflow-x-auto hide-scrollbar scroll-smooth px-8 sm:px-9 py-1.5 w-full"
+                  >
+                    <button 
+                      onClick={() => {
                         setPriceTier("all");
                         setInputMinPrice("");
                         setInputMaxPrice("");
-                    }} className={`${btnBaseClass} ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}>ทั้งหมด</button>
+                      }} 
+                      className={`${btnBaseClass} shrink-0 whitespace-nowrap ${priceTier === "all" ? btnActiveClass : btnInactiveClass}`}
+                    >
+                      ทั้งหมด
+                    </button>
+
                     {Object.entries(priceTierLabels).map(([key, label]) => (
                       <button 
                         key={key} 
                         onClick={() => {
-                            setPriceTier(key);
-                            setInputMinPrice("");
-                            setInputMaxPrice("");
+                          setPriceTier(key);
+                          setInputMinPrice("");
+                          setInputMaxPrice("");
                         }} 
-                        className={`${btnBaseClass} ${priceTier === key ? btnActiveClass : btnInactiveClass}`}
+                        className={`${btnBaseClass} shrink-0 whitespace-nowrap ${priceTier === key ? btnActiveClass : btnInactiveClass}`}
                       >
                         {label}
                       </button>
                     ))}
                   </div>
-                  
-                  <div className="flex items-center gap-2 sm:gap-3 mt-4 w-full max-w-full">
-                    <input 
-                      type="number"
-                      placeholder="ราคาต่ำสุด"
-                      value={inputMinPrice}
-                      onChange={(e) => {
-                        setInputMinPrice(e.target.value);
-                        if (e.target.value !== "") setPriceTier("all");
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                          setMinPrice(inputMinPrice);
-                          e.currentTarget.blur();
-                          handleResetScroll();
-                        }
-                      }}
-                      onBlur={handleResetScroll}
-                      className="flex-1 min-w-0 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
-                    />
-                    <span className="text-gray-400 font-medium shrink-0">-</span>
-                    <input 
-                      type="number"
-                      placeholder="ราคาสูงสุด"
-                      value={inputMaxPrice}
-                      onChange={(e) => {
-                        setInputMaxPrice(e.target.value);
-                        if (e.target.value !== "") setPriceTier("all");
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                          setMaxPrice(inputMaxPrice);
-                          e.currentTarget.blur();
-                          handleResetScroll();
-                        }
-                      }}
-                      onBlur={handleResetScroll}
-                      className="flex-1 min-w-0 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
-                    />
-                  </div>
+
+                  {/* ปุ่มเลื่อนขวา Glassmorphism */}
+                  <button
+                    type="button"
+                    onClick={() => scrollRight(priceTierScrollRef)}
+                    aria-label="เลื่อนขวา"
+                    className="absolute -right-2 sm:-right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md border border-white/60 shadow-md flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all active:scale-90 hover:shadow-lg"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+                
+                <div className="flex items-center gap-2 sm:gap-3 mt-4 w-full max-w-full">
+                  <input 
+                    type="number"
+                    placeholder="ราคาต่ำสุด"
+                    value={inputMinPrice}
+                    onChange={(e) => {
+                      setInputMinPrice(e.target.value);
+                      if (e.target.value !== "") setPriceTier("all");
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        setMinPrice(inputMinPrice);
+                        e.currentTarget.blur();
+                        handleResetScroll();
+                      }
+                    }}
+                    onBlur={handleResetScroll}
+                    className="flex-1 min-w-0 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
+                  />
+                  <span className="text-gray-400 font-medium shrink-0">-</span>
+                  <input 
+                    type="number"
+                    placeholder="ราคาสูงสุด"
+                    value={inputMaxPrice}
+                    onChange={(e) => {
+                      setInputMaxPrice(e.target.value);
+                      if (e.target.value !== "") setPriceTier("all");
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        setMaxPrice(inputMaxPrice);
+                        e.currentTarget.blur();
+                        handleResetScroll();
+                      }
+                    }}
+                    onBlur={handleResetScroll}
+                    className="flex-1 min-w-0 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 p-2.5 text-gray-800 text-base sm:text-sm rounded-xl outline-none transition-all duration-300 bg-gray-50 focus:bg-white font-prompt"
+                  />
+                </div>
+              </div>
+
+              {/* จุดเด่นที่คุณต้องการ (เลื่อนซ้าย-ขวา พร้อมปุ่ม Glassmorphism ไม่บังปุ่ม) */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-base font-bold text-gray-800 font-trirong">จุดเด่นที่คุณต้องการ</p>
+                  <span className="text-xs text-gray-400 font-prompt hidden sm:inline">เลื่อนซ้าย-ขวาเพื่อเลือกจุดเด่น</span>
                 </div>
 
-                <div>
-                  <p className="text-base font-bold text-gray-800 mb-3 font-trirong">จุดเด่นที่คุณต้องการ</p>
-                  <div className="flex flex-wrap gap-2.5">
+                <div className="relative group w-full">
+                  {/* ปุ่มเลื่อนซ้าย Glassmorphism */}
+                  <button
+                    type="button"
+                    onClick={() => scrollLeft(recChoosScrollRef)}
+                    aria-label="เลื่อนซ้าย"
+                    className="absolute -left-2 sm:-left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md border border-white/60 shadow-md flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all active:scale-90 hover:shadow-lg"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+
+                  {/* แถบรายการจุดเด่นเลื่อนแนวนอน */}
+                  <div
+                    ref={recChoosScrollRef}
+                    className="flex items-center gap-2.5 overflow-x-auto hide-scrollbar scroll-smooth px-8 sm:px-9 py-1.5 w-full"
+                  >
                     {Object.keys(RecChoos).map((key) => {
                       if (key === "activate") return null;
                       const filterKey = key as keyof typeof RecChoos;
@@ -343,13 +424,25 @@ export default function App() {
                         <button 
                           key={filterKey}
                           onClick={() => SetRecChoos({ ...RecChoos, [filterKey]: !RecChoos[filterKey] })}
-                          className={`${btnBaseClass} ${RecChoos[filterKey] ? btnActiveClass : btnInactiveClass}`}
+                          className={`${btnBaseClass} shrink-0 whitespace-nowrap ${RecChoos[filterKey] ? btnActiveClass : btnInactiveClass}`}
                         >
                           {filterLabels[filterKey].text}
                         </button>
                       );
                     })}
                   </div>
+
+                  {/* ปุ่มเลื่อนขวา Glassmorphism */}
+                  <button
+                    type="button"
+                    onClick={() => scrollRight(recChoosScrollRef)}
+                    aria-label="เลื่อนขวา"
+                    className="absolute -right-2 sm:-right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md border border-white/60 shadow-md flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all active:scale-90 hover:shadow-lg"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
